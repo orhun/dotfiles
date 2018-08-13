@@ -1,0 +1,40 @@
+# vim: filetype=yaml
+---
+meta:
+  description: Gray and lime based i3wm theme
+colors:
+  darkslategrey: '#101010'
+  white: '#FFFFFF'
+  black: '#000000'
+  darkgray1: '#111111'
+  darkgray2: '#101010'
+  lime: '#00FF00'
+  lightblue1: '#0099e6'
+  lightblue2: '#994466'
+window_colors:
+  unfocused:
+    border: darkslategrey
+    background: darkslategrey
+    text: white
+    indicator: darkslategrey
+  focused_inactive:
+    border: darkslategrey
+    background: darkslategrey
+    text: white
+    indicator: black
+  focused:
+    border: black
+    background: black
+    text: lightblue1
+    indicator: black
+bar_colors:
+  statusline: lime
+  background: darkslategrey
+  focused_workspace:
+    border: darkgray1
+    background: darkgray2
+    text: white
+  inactive_workspace:
+    border: darkslategrey
+    background: darkslategrey
+    text: lightblue2
