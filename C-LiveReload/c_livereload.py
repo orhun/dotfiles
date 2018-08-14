@@ -12,6 +12,7 @@ class LiveReloader(PatternMatchingEventHandler):
         if os.path.exists(self.tmp_path): os.remove(self.tmp_path)
 
     def process(self, event):
+        if os.path.exists(self.mainfile.replace('.c', '')): os.remove(self.mainfile.replace('.c', ''))
         if self.mainfile in event.src_path and event.event_type == 'modified' and not event.is_directory:
             cfile = event.src_path.replace('./', '')
             if not os.path.exists(self.tmp_path):
