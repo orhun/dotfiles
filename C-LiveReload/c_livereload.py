@@ -24,7 +24,7 @@ class LiveReloader(PatternMatchingEventHandler):
                 print('\n===============')
                 print(get_time()+'Waiting for state changes..')
             else:
-                os.remove('tmp')
+                os.remove(self.tmp_path)
 
     def on_modified(self, event):
         self.process(event)
