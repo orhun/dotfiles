@@ -1,2 +1,2 @@
 # GNUseful
-Some useful scripts that I use [GNU/Linux]
+Some useful scripts for GNU/Linux.
