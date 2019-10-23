@@ -1,11 +1,12 @@
 {
-    "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
     "workbench.colorCustomizations": {
         "statusBar.background" : "#1e1e1e",
         "statusBar.noFolderBackground" : "#212121",
-        "statusBar.debuggingBackground": "#263238"
+        "statusBar.debuggingBackground": "#263238",
     },
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
 }
