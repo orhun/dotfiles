@@ -27,9 +27,7 @@
 	t = tag
 	f = fetch
 	p = pull
-	ps = push
-	mt = master
-	o = origin
+	psomt = push origin master
 	aa = add -A
 	cmt = commit -m
 	rmt = remote -v
