@@ -1,0 +1,40 @@
+[user]
+	email = orhunparmaksiz@gmail.com
+	name = orhun
+	signingkey = 39E678DF
+[gpg]
+	program = gpg2
+[url "https://"]
+	insteadOf = git://
+[alias]
+	c = clone
+	i = init
+	a = add
+	m = mv
+	r = restore
+	rm = rm
+	b = bisect
+	d = diff
+	g = grep
+	l = log
+	s = show
+	st = status
+	bn = branch
+	cm = commit
+	mr = merge
+	ra = rebase
+	rs = reset
+	t = tag
+	f = fetch
+	p = pull
+	ps = push
+	mt = master
+	o = origin
+	aa = add -A
+	cmt = commit -m
+	rmt = remote -v
+	rr = rm -r
+	ll = log --graph --decorate --all
+	lo = log --graph --decorate --oneline --all
+	ls = ls-files
+	crds = config credential.helper store
