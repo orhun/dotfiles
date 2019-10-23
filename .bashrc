@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias c='vscodium'
+alias xc='vscodium'
 PS1='[\u@\h \W]\$ '
 export GPG_TTY=$(tty)
 export XDG_CONFIG_HOME="$HOME/.config"
