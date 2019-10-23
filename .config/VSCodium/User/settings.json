@@ -3,7 +3,7 @@
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
     "workbench.colorCustomizations": {
-        "statusBar.background" : "#ffffff",
+        "statusBar.background" : "#1e1e1e",
         "statusBar.noFolderBackground" : "#212121",
         "statusBar.debuggingBackground": "#263238"
     },
