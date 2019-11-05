@@ -36,3 +36,5 @@
 	lo = log --graph --decorate --oneline --all
 	ls = ls-files
 	crds = config credential.helper store
+[commit]
+	template = /home/orhun/.git-commit-template
