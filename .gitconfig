@@ -38,3 +38,5 @@
 	crds = config credential.helper store
 [commit]
 	template = /home/orhun/.git-commit-template
+[core]
+	editor = vim
