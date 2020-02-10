@@ -23,12 +23,11 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# composite manager
+# start composite manager
 xcompmgr &
 
-# background
-feh --bg-fill bg.jpg
+# set background image
+feh --no-fehbg --bg-fill '/home/orhun/images/bg.jpg'
 
-# i3
+# start i3
 exec i3
-
