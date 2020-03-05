@@ -9,4 +9,11 @@
     "files.eol": "\n",
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "node_modules": true,
+        "target": true
+    }
 }
