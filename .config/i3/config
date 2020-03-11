@@ -188,6 +188,10 @@ mode "resize" {
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
+# for recording gif files with peek
+# peek: 900x497
+bindsym $mod+Shift+m resize set 900 px 500 px
+
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
