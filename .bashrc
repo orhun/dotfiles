@@ -16,3 +16,4 @@ export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 alias ls='ls --color=auto'
 alias code='vscodium'
+alias kmon='kmon -c blue'
