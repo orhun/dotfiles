@@ -1,0 +1,52 @@
+# Base16 IR Black - k3rmit color config
+# Author: Timothée Poisot (http://timotheepoisot.fr)
+
+# Foreground color
+foreground         0xb5b3aa
+foreground_bold    0xd9d7cc
+
+# Cursor color
+cursor             0xd9d7cc
+cursor_foreground  0x000000
+
+# Background color
+background         0x000000
+
+# Color palette (16)
+## Black, Gray, Silver, White
+color0  0x000000
+color8  0x6c6c66
+color7  0xb5b3aa
+color15 0xfdfbee
+
+## Red
+color1  0xff6c60
+color9  0xff6c60
+
+## Green
+color2  0xa8ff60
+color10 0xa8ff60
+
+## Yellow
+color3  0xffffb6
+color11 0xffffb6
+
+## Blue
+color4  0x96cbfe
+color12 0x96cbfe
+
+## Purple
+color5  0xff73fd
+color13 0xff73fd
+
+## Teal
+color6  0xc6c5fe
+color14 0xc6c5fe
+
+## Extra colors
+color16 0xe9c062
+color17 0xb18a3d
+color18 0x242422
+color19 0x484844
+color20 0x918f88
+color21 0xd9d7cc
