@@ -15,5 +15,6 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 alias ls='ls --color=auto'
+alias rm="rm -i"
 alias code='vscodium'
 alias kmon='kmon -c blue'
