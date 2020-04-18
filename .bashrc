@@ -18,3 +18,4 @@ alias ls='ls --color=auto'
 alias rm="rm -i"
 alias code='vscodium'
 alias kmon='kmon -c blue'
+alias clippy='cargo clippy -- -A clippy::tabs-in-doc-comments -D warnings'
