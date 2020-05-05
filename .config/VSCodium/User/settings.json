@@ -15,5 +15,12 @@
         "**/node_modules": true,
         "node_modules": true,
         "target": true
-    }
+    },
+    "rust.mode": "legacy",
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-unknown-linux-gnu"
+    },
+    "workbench.colorTheme": "Dark++",
+    "git.autofetch": true,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
 }
