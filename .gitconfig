@@ -16,7 +16,6 @@
 	b = bisect
 	d = diff
 	g = grep
-	l = log
 	s = show
 	st = status
 	bn = branch
@@ -27,16 +26,16 @@
 	t = tag
 	f = fetch
 	p = pull
-	psomt = push origin master
 	aa = add -A
 	cmt = commit -m
 	rmt = remote -v
 	rr = rm -r
+	l = log
 	ll = log --graph --decorate --all
 	lo = log --graph --decorate --oneline --all
 	ls = ls-files
 	crds = config credential.helper store
 [commit]
-	template = /home/orhun/.git-commit-template
+	template = ~/.git-commit-template
 [core]
 	editor = vim
