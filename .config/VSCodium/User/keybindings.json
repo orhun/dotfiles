@@ -3,5 +3,13 @@
     {
         "key": "ctrl+m",
         "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+        "key": "alt+`",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "alt+tab",
+        "command": "workbench.action.previousEditorInGroup"
     }
 ]

@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='(\u \e[36mλ\e[39m \W) '
+PS1='(\u \e[35mλ\e[39m \W) '
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"
 export LC_ALL=en_US.utf-8
@@ -17,5 +17,4 @@ export GPG_TTY=$(tty)
 alias ls='ls --color=auto'
 alias rm="rm -i"
 alias code='vscodium'
-alias kmon='kmon -c blue'
 alias clippy='cargo clippy -- -A clippy::tabs-in-doc-comments -D warnings'

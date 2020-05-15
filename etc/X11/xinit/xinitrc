@@ -26,6 +26,9 @@ fi
 # start composite manager
 xcompmgr &
 
+# start devil's pie
+devilspie -a &
+
 # set background image
 feh --no-fehbg --bg-fill '/home/orhun/images/bg.jpg'
 

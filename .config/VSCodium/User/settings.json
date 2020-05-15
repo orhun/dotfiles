@@ -2,9 +2,30 @@
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
     "workbench.colorCustomizations": {
-        "statusBar.background" : "#1e1e1e",
-        "statusBar.noFolderBackground" : "#212121",
-        "statusBar.debuggingBackground": "#263238",
+        "[Outrun Electric]": {
+            "editorCursor.foreground": "#ffffff",
+            "gitDecoration.modifiedResourceForeground": "#E6DB74",
+            "terminal.ansiGreen": "#27df4e",
+            "terminal.ansiRed": "#833d9c"
+        },
+        "[Dark++]": {
+            "statusBar.background" : "#1e1e1e",
+            "statusBar.noFolderBackground" : "#212121",
+            "statusBar.debuggingBackground": "#263238",
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Outrun Electric]": {
+            "comments": {
+                "fontStyle": ""
+            },
+            "types": {
+                "fontStyle": ""
+            },
+            "variables": {
+                "foreground": "#4b76c2"
+            }
+        }
     },
     "files.eol": "\n",
     "window.menuBarVisibility": "toggle",
@@ -20,7 +41,7 @@
     "rust.rustup": {
         "toolchain": "stable-x86_64-unknown-linux-gnu"
     },
-    "workbench.colorTheme": "Dark++",
     "git.autofetch": true,
     "files.saveConflictResolution": "overwriteFileOnDisk",
+    "workbench.colorTheme": "Outrun Electric",
 }
