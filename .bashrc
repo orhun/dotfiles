@@ -17,4 +17,3 @@ export GPG_TTY=$(tty)
 alias ls='ls --color=auto'
 alias rm="rm -i"
 alias code='vscodium'
-alias clippy='cargo clippy -- -A clippy::tabs-in-doc-comments -D warnings'
