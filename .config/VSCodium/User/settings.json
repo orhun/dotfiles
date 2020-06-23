@@ -27,9 +27,12 @@
             }
         }
     },
-    "files.eol": "\n",
+    "editor.fontFamily": "'Borg Sans Mono', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
+    "files.eol": "\n",
     "files.exclude": {
         "**/.git": true,
         "**/.DS_Store": true,
@@ -37,11 +40,41 @@
         "node_modules": true,
         "target": true
     },
+    "files.saveConflictResolution": "overwriteFileOnDisk",
     "rust.mode": "legacy",
     "rust.rustup": {
         "toolchain": "stable-x86_64-unknown-linux-gnu"
     },
     "git.autofetch": true,
-    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "tabnine.experimentalAutoImports": true,
+    "discord.silent": true,
+    "discord.workspaceElapsedTime": true,
+    "discord.detailsEditing": "✎ {dirname}/{filename}:L{currentline}",
+    "discord.lowerDetailsEditing": "⚙ {workspace}",
+    "discord.lowerDetailsDebugging": "⚒: {workspace}",
+    "discord.lowerDetailsNotFound": "none",
+    "discord.detailsIdle": "chillin'",
+    "discord.largeImageIdle": "chillin'",
+    "discord.lowerDetailsIdle": "😴",
+    "gitlens.modes": {
+        "zen": {
+            "name": "Zen",
+            "statusBarItemName": "Zen",
+            "description": "for a zen-like experience, disables many visual features",
+            "codeLens": false,
+            "currentLine": false,
+            "hovers": false,
+            "statusBar": false,
+        },
+        "review": {
+            "name": "Review",
+            "statusBarItemName": "Reviewing",
+            "description": "for reviewing code, enables many visual features",
+            "codeLens": true,
+            "currentLine": true,
+            "hovers": true
+        }
+    },
     "workbench.colorTheme": "Outrun Electric",
+    "gitlens.mode.active": "zen"
 }
