@@ -5,11 +5,27 @@
         "command": "-editor.action.toggleTabFocusMode"
     },
     {
-        "key": "alt+`",
+        "key": "alt+right",
         "command": "workbench.action.nextEditorInGroup"
     },
     {
-        "key": "alt+tab",
+        "key": "alt+left",
         "command": "workbench.action.previousEditorInGroup"
-    }
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "gitlens.toggleZenMode",
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "gitlens.showRepositoriesView",
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "discord.disconnect",
+    },
+    {
+        "key": "shift+alt+d",
+        "command": "discord.reconnect",
+    },
 ]
