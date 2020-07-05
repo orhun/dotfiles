@@ -1,9 +1,9 @@
 [user]
 	email = orhunparmaksiz@gmail.com
 	name = orhun
-	signingkey = 39E678DF
+	signingkey = 39E678DF63BE20EA5A175156B928720AEC532117
 [gpg]
-	program = gpg2
+	program = gpg
 [url "https://"]
 	insteadOf = git://
 [alias]
@@ -37,5 +37,7 @@
 	crds = config credential.helper store
 [commit]
 	template = ~/.git-commit-template
+	gpgsign = true
+	verbose = true
 [core]
 	editor = vim
