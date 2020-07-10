@@ -53,7 +53,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec k3rmit
+bindsym $mod+Return exec kermit
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -187,10 +187,6 @@ mode "resize" {
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-# for recording gif files with peek
-# peek: 900x497
-bindsym $mod+Shift+m resize set 900 px 500 px
 
 bindsym $mod+r mode "resize"
 
