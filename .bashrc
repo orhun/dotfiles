@@ -14,7 +14,8 @@ export TERM=xterm-color
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
-alias ls='ls --color=auto'
+alias ls='exa --icons --color-scale'
+alias cat='bat --theme "TwoDark"'
 alias rm="rm -i"
 alias cg='cargo'
 alias code='vscodium'
