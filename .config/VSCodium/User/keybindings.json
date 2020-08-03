@@ -51,7 +51,7 @@
         "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
     },
     {
-        "key": "alt+tab",
+        "key": "ctrl+alt+b",
         "command": "workbench.action.navigateBack"
     },
     {
@@ -67,5 +67,20 @@
         "key": "ctrl+alt+-",
         "command": "-workbench.action.quickInputBack",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+space ctrl+space",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+space ctrl+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
 ]

@@ -18,10 +18,10 @@
 	g = grep
 	s = show
 	st = status
-	bn = branch
+	br = branch
 	cm = commit
 	mr = merge
-	ra = rebase
+	rb = rebase
 	rs = reset
 	t = tag
 	f = fetch

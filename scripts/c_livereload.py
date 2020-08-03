@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+'''
+A program that recompiles and runs a C file when it's saved.
+(Educational purposes)
+'''
+
 import time, os, sys 
 from datetime import datetime
 from watchdog.observers import Observer  

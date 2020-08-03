@@ -23,6 +23,9 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+# preferences
+xset r rate 400 35
+
 # start composite manager
 xcompmgr &
 
@@ -30,7 +33,7 @@ xcompmgr &
 devilspie -a &
 
 # set background image
-feh --no-fehbg --bg-fill '/home/orhun/images/bg.jpg'
+feh --no-fehbg --bg-scale '/home/orhun/images/bg.jpg'
 
 # start i3
 exec i3

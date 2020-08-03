@@ -184,7 +184,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 

@@ -1,0 +1,7 @@
+set join_new_window on
+set join_new_window_type new hide swap last double on
+set window_destroy_part on
+bind ^x parse_command window next
+on connect "*freenode*" {
+        msg nickserv identify PASSWORD
+}
