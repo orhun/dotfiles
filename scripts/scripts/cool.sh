@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Plays a random MOD file from https://modarchive.org
 # Depends on XMP (http://xmp.sourceforge.net/)
 # https://gist.github.com/orhun/eda9701e357b625c2bada19563872715

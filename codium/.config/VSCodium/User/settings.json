@@ -1,8 +1,38 @@
 {
-    "workbench.colorTheme": "Outrun Electric",
+    "workbench.colorTheme": "Lilac",
+    "workbench.iconTheme": "keen-neutral-icon-theme",
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
     "workbench.colorCustomizations": {
+        "[Lilac]": {
+            "gitDecoration.modifiedResourceForeground": "#e6db74",
+            "statusBar.background" : "#080709",
+            "statusBar.noFolderBackground" : "#080709",
+            "statusBar.debuggingBackground": "#080709",
+            "statusBar.foreground": "#61556d",
+            "sideBar.background": "#030303",
+            "sideBar.foreground": "#e0ceed",
+            "sideBarSectionHeader.background": "#030303",
+            "sideBarSectionHeader.foreground": "#e0ceed",
+            "editorGutter.background": "#030303",
+            "editorGroupHeader.tabsBackground": "#030303",
+            "list.focusBackground": "#2e2834",
+            "list.hoverBackground": "#61556d",
+            "list.hoverForeground": "#e0ceed",
+            "tab.inactiveBackground": "#030303",
+            "tab.inactiveForeground": "#61556d",
+            "tab.activeBackground": "#030303",
+            "tab.activeForeground": "#e0ceed",
+            "tab.activeBorder": "#9a16ff",
+            "focusBorder": "#9a16ff",
+            "editorWidget.background": "#080709",
+            "extensionButton.prominentBackground": "#e0ceed",
+            "extensionButton.prominentForeground": "#030303",
+            "badge.background": "#61556d",
+            "terminal.ansiGreen": "#a7da1e",
+            "terminal.ansiRed": "#b657ff",
+            "terminal.background": "#080709"
+        },
         "[Outrun Electric]": {
             "editorCursor.foreground": "#ffffff",
             "gitDecoration.modifiedResourceForeground": "#E6DB74",
@@ -26,6 +56,12 @@
             "variables": {
                 "foreground": "#4b76c2"
             }
+        },
+        "[Lilac]": {
+            "variables": {
+                "foreground": "#8f33b1"
+            },
+            "strings": "#b657ff"
         }
     },
     "editor.fontFamily": "'Borg Sans Mono', Consolas, 'Courier New', monospace",
@@ -105,5 +141,5 @@
       "<C-h>": false,
       "<C-j>": false,
       "<C-w>": false,
-    }
+    },
 }

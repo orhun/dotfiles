@@ -19,6 +19,7 @@ gaps outer 5
 gaps inner 5
 smart_gaps on
 smart_borders no_gaps
+hide_edge_borders smart_no_gaps
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -33,11 +34,11 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Alternating layout
 exec --no-startup-id ~/.config/i3/alternating_layouts.py
@@ -59,7 +60,7 @@ bindsym $mod+Return exec kermit
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -nb '#090819' -nf '#3c70a4' -sb '#9d16ce' -sf '#ffffff' -fn 'pango:monospace:pixelsize=13'
+bindsym $mod+d exec dmenu_run -nb '#030303' -nf '#c7b4e4' -sb '#61556d' -sf '#e0ceed' -fn 'pango:monospace:pixelsize=12'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -190,6 +191,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Shift+m resize set 900 px 500 px
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -197,13 +200,13 @@ bar {
   status_command i3status
   tray_output none
   colors {
-    statusline #ae64c9
-    background #090819
-    focused_workspace #090819 #090819 #ffffff
-    inactive_workspace #090819 #090819 #8791e4
+    statusline #b657ff
+    background #030303
+    focused_workspace #030303 #030303 #e0ceed
+    inactive_workspace #030303 #030303 #61556d
   }
 }
 
-client.unfocused        #090819 #090819 #FFFFFF #090819
-client.focused_inactive #090819 #090819 #FFFFFF #090819
-client.focused          #ae64c9 #ae64c9 #FFFFFF #090819
+client.unfocused        #030303 #030303 #e0ceed #030303
+client.focused_inactive #030303 #030303 #e0ceed #030303
+client.focused          #b657ff #b657ff #e0ceed #030303

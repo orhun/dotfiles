@@ -22,4 +22,6 @@ IRC Client      : bitchx
 
 ## Preview
 
-![Preview I](https://user-images.githubusercontent.com/24392180/89210076-1f170800-d5c8-11ea-8566-572f6238f2da.jpg)
+![Preview I](https://user-images.githubusercontent.com/24392180/89739461-87169400-da89-11ea-9c7a-a9087c474865.jpg)
+
+![Preview II](https://user-images.githubusercontent.com/24392180/89739455-79f9a500-da89-11ea-9d60-8b35d067c34e.jpg)
