@@ -41,7 +41,10 @@ font pango:monospace 8
 # exec --no-startup-id nm-applet
 
 # Alternating layout
-exec --no-startup-id ~/.config/i3/alternating_layouts.py
+exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
+
+# Workspace brightness
+exec_always --no-startup-id i3-workspace-brightness
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

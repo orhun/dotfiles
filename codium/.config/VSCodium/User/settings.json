@@ -84,6 +84,8 @@
     },
     "git.autofetch": true,
     "tabnine.experimentalAutoImports": true,
+    "crates.latestDecorator": "Up! -> ${version} 📥",
+    "crates.upToDateDecorator": "",
     "discord.silent": true,
     "discord.workspaceElapsedTime": true,
     "discord.detailsEditing": "✎ {dirname}/{filename}:L{currentline}",
