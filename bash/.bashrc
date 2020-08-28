@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Pull in bash alias definitions, if they exist
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
 PS1='(\u \[\e[35m\]λ\[\e[39m\] \W) '
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"
@@ -17,9 +20,3 @@ export GPG_TTY=$(tty)
 export IRCNICK="orhun"
 export IRCNAME="orhun"
 export IRCSERVER=irc.freenode.net
-alias ls='exa --icons --color-scale'
-alias cat='bat --theme "TwoDark"'
-alias rm="rm -i"
-alias cg='cargo'
-alias code='vscodium'
-alias bx='cp437 BitchX'
