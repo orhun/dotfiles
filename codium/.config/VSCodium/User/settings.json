@@ -86,6 +86,7 @@
     "tabnine.experimentalAutoImports": true,
     "crates.latestDecorator": "Up! -> ${version} 📥",
     "crates.upToDateDecorator": "",
+    "html.format.wrapLineLength": 85,
     "discord.silent": true,
     "discord.workspaceElapsedTime": true,
     "discord.detailsEditing": "✎ {dirname}/{filename}:L{currentline}",
@@ -143,5 +144,11 @@
       "<C-h>": false,
       "<C-j>": false,
       "<C-w>": false,
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 }
