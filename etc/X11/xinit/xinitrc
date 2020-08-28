@@ -32,8 +32,11 @@ xcompmgr &
 # start devil's pie
 devilspie -a &
 
+# PRIME GPU offloading
+prime-offload
+
 # set background image
-feh --no-fehbg --bg-scale '/home/orhun/images/bg.jpg'
+~/.fehbg &
 
 # start i3
 exec i3
