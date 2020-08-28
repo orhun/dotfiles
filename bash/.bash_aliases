@@ -25,8 +25,11 @@ aurpush() {
 
 # optimus-manager wrapper for switching GPU
 optimus() {
-    GPU_STATUS=$(optimus-manager --print-next-mode | cut -d ':' -f 2 | tr -d ' \n')
-    if [[ $GPU_STATUS != "nochange" ]] && [[ ! $GPU_STATUS =~ "error" ]]; then
+    GPU_STATUS=$(optimus-manager --print-next-mode \
+        | cut -d ':' -f 2 | tr -d ' \n')
+    if [[ $GPU_STATUS != "nochange" ]] &&
+    [[ ! $GPU_STATUS =~ "error" ]];
+    then
         sudo prime-switch && startx
     elif [[ -z "$1" ]]; then
         optimus-manager --status
