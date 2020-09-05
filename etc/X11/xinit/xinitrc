@@ -25,6 +25,7 @@ fi
 
 # preferences
 xset r rate 400 35
+xset m 1 4
 
 # start composite manager
 xcompmgr &
