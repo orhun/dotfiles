@@ -11,6 +11,7 @@
 PS1='(\u \[\e[35m\]λ\[\e[39m\] \W) '
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"
+export CHROOT=$HOME/.chroot
 export LC_ALL=en_US.utf-8
 export LANG=en_US.utf-8
 export TERM=xterm-color

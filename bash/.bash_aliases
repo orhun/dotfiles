@@ -6,6 +6,7 @@ alias cg='cargo'
 alias code='vscodium'
 alias bx='cp437 BitchX'
 alias aur='aurpublish'
+alias pkg='makechrootpkg -c -r $CHROOT'
 
 # nvchecker wrapper for release checking
 nv() {
