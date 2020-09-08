@@ -67,6 +67,8 @@
     "editor.fontFamily": "'Borg Sans Mono', Consolas, 'Courier New', monospace",
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
+    "editor.fastScrollSensitivity": 4,
+    "editor.mouseWheelScrollSensitivity": 1,
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
     "files.eol": "\n",
