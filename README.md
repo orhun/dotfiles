@@ -39,3 +39,7 @@ IRC Client      : bitchx
 ### 13-08-2018
 
 ![13-08-2018](https://user-images.githubusercontent.com/24392180/92523571-41d0b800-f229-11ea-8ae5-2df8031f4071.png)
+
+### 02-01-2018
+
+![02-01-2018 (screenshot date is 21-07-2018, I don't remember why I blurred things)](https://user-images.githubusercontent.com/24392180/92667231-04952480-f314-11ea-93e7-5e8d55758ec0.png)
