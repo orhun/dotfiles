@@ -1,4 +1,6 @@
 alias v='vim'
+alias c='xclip -selection clipboard'
+alias p='xclip -o'
 alias ls='exa --icons --color-scale'
 alias bat='bat --theme "TwoDark"'
 alias rm="rm -i"
