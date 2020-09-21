@@ -7,3 +7,6 @@ t = "test"
 r = "run"
 rr = "run --release"
 pp = "clippy"
+
+[net]
+git-fetch-with-cli = true
