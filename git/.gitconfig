@@ -4,8 +4,12 @@
 	signingkey = 39E678DF63BE20EA5A175156B928720AEC532117
 [gpg]
 	program = gpg
-[url "https://"]
-	insteadOf = git://
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+  insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/
 [alias]
 	c = clone
 	i = init
