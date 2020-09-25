@@ -11,6 +11,10 @@ alias bx='cp437 BitchX'
 alias aur='aurpublish'
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
+alias pacman='sudo pacman'
+alias tgif='$HOME/gh/tgif/target/release/tgif' # temporary
+alias mdp='mdp -sc' # temporary
+alias kermitarch='kermit -c $HOME/conf/arch-theme.config' # temporary
 
 # nvchecker wrapper for release checking
 nv() {
