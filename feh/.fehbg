@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill --randomize ~/images/alena-aenami-*
+feh --no-fehbg --bg-fill '/home/orhun/downloads/wallpaperz/wolpeypir/Found_on_web/ankaray.jpg'
