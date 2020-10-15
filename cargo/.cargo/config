@@ -1,11 +1,11 @@
 [alias]
 a = "add"
 b = "build"
+br = "run"
+brr = "run --release"
 c = "check"
 f = "fmt"
 t = "test"
-r = "run"
-rr = "run --release"
 pp = "clippy"
 
 [net]
