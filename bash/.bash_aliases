@@ -13,18 +13,17 @@ alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias pacman='sudo pacman'
 alias tgif='$HOME/gh/tgif/target/release/tgif' # temporary
-alias mdp='mdp -sc' # temporary
-alias kermitarch='kermit -c $HOME/conf/arch-theme.config' # temporary
+alias mdp='mdp -sc'
 
 # nvchecker wrapper for release checking
 nv() {
-    local cfg=$PKGBUILDS/nvchecker.ini
+    local cfg=$PKGBUILDS/nvchecker.toml
     local act=${1:-checker}; shift
-    nv$act "$cfg" "$@"
+    nv$act -c "$cfg" "$@"
 }
 
-# sync all AUR packages with aurpublish
-syncpkgs() {
+# push all AUR packages with aurpublish
+pushpkgs() {
     olddir=$(pwd)
     cd $PKGBUILDS
     for d in */ ; do
@@ -43,6 +42,23 @@ checkpkgs() {
         namcap ${d::-1}/PKGBUILD
     done
     cd $olddir
+}
+
+# update the pkgver in PKGBUILD
+updpkgver() {
+    if [ -n "$1" ]; then
+        sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
+        updpkgsums
+    fi
+}
+
+# push AUR package
+pushpkg() {
+    PKG=${PWD##*/}
+    git diff PKGBUILD
+    git add PKGBUILD
+    git commit --allow-empty-message -m ""
+    aur $PKG
 }
 
 # optimus-manager wrapper for switching GPU
