@@ -3,12 +3,12 @@
 This repository contains the configuration files and scripts that I use in my GNU/Linux working environment.
 
 ```
-Distribution    : Arch Linux
-Window Manager  : i3-gaps
-Terminal        : kermit
-Font            : borg-sans-mono
-Editor          : vscodium
-IRC Client      : bitchx
+Distribution      : Arch Linux
+Window Manager    : i3-gaps
+Shell             : bash
+Terminal          : kermit
+Resource Monitor  : kpytop
+Editor            : vscodium
 ```
 
 ## Installation
@@ -22,17 +22,23 @@ IRC Client      : bitchx
 
 ## Preview
 
-![Preview I](https://user-images.githubusercontent.com/24392180/89739461-87169400-da89-11ea-9c7a-a9087c474865.jpg)
+![20-10-2020](https://user-images.githubusercontent.com/24392180/96750521-b411ec00-13d4-11eb-8402-41f7f0e76525.jpg)
 
-![Preview II](https://user-images.githubusercontent.com/24392180/89739455-79f9a500-da89-11ea-9d60-8b35d067c34e.jpg)
+![20-10-2020](https://user-images.githubusercontent.com/24392180/96750534-b83e0980-13d4-11eb-9ede-404f0ba9bd47.jpg)
 
 ## History
 
-### 08-05-2019
+### 09-08-2020
+
+![09-08-2020](https://user-images.githubusercontent.com/24392180/89739461-87169400-da89-11ea-9c7a-a9087c474865.jpg)
+
+![09-08-2020](https://user-images.githubusercontent.com/24392180/89739455-79f9a500-da89-11ea-9d60-8b35d067c34e.jpg)
+
+### 08-05-2020
 
 ![08-05-2019](https://user-images.githubusercontent.com/24392180/92525006-c02e5980-f22b-11ea-9ae5-9478e2025577.jpg)
 
-### 04-04-2019
+### 04-04-2020
 
 ![04-04-2019](https://user-images.githubusercontent.com/24392180/92524298-890b7880-f22a-11ea-859e-79237ec19e02.png)
 

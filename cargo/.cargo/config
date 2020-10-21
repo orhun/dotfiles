@@ -2,11 +2,14 @@
 a = "add"
 b = "build"
 br = "run"
+r = "run"
 brr = "run --release"
+rr = "run --release"
 c = "check"
 f = "fmt"
 t = "test"
 pp = "clippy"
+cl = "clean"
 
 [net]
 git-fetch-with-cli = true

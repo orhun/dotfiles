@@ -42,7 +42,7 @@ bindsym $mod+Return exec kermit
 bindsym $mod+Shift+q kill
 
 # Start the dmenu
-bindsym $mod+d exec dmenu_run -nb '#030303' -nf '#c7b4e4' -sb '#61556d' -sf '#e0ceed' -fn 'pango:monospace:pixelsize=12'
+bindsym $mod+d exec dmenu_run -nb '#030303' -nf '#999999' -sb '#505050' -sf '#ffffff' -fn 'pango:monospace:pixelsize=12'
 
 # Change focus
 bindsym $mod+j focus left
@@ -175,13 +175,13 @@ bar {
   status_command i3status
   tray_output none
   colors {
-    statusline #b657ff
-    background #030303
-    focused_workspace #030303 #030303 #e0ceed
-    inactive_workspace #030303 #030303 #61556d
+    statusline #ffffff
+    background #000000
+    focused_workspace #030303 #030303 #909090
+    inactive_workspace #030303 #030303 #505050
   }
 }
 
-client.unfocused        #030303 #030303 #e0ceed #030303
-client.focused_inactive #030303 #030303 #e0ceed #030303
-client.focused          #b657ff #b657ff #e0ceed #030303
+client.unfocused        #000000 #000000 #505050 #000000
+client.focused_inactive #000000 #000000 #505050 #000000
+client.focused          #909090 #909090 #505050 #000000

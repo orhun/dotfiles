@@ -1,160 +1,215 @@
 {
-    "workbench.colorTheme": "Lilac",
-    "workbench.iconTheme": "keen-neutral-icon-theme",
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true,
-    "workbench.colorCustomizations": {
-        "[Lilac]": {
-            "gitDecoration.modifiedResourceForeground": "#e6db74",
-            "statusBar.background" : "#080709",
-            "statusBar.noFolderBackground" : "#080709",
-            "statusBar.debuggingBackground": "#080709",
-            "statusBar.foreground": "#61556d",
-            "sideBar.background": "#030303",
-            "sideBar.foreground": "#e0ceed",
-            "sideBarSectionHeader.background": "#030303",
-            "sideBarSectionHeader.foreground": "#e0ceed",
-            "editorGutter.background": "#030303",
-            "editorGroupHeader.tabsBackground": "#030303",
-            "list.focusBackground": "#2e2834",
-            "list.hoverBackground": "#61556d",
-            "list.hoverForeground": "#e0ceed",
-            "tab.inactiveBackground": "#030303",
-            "tab.inactiveForeground": "#61556d",
-            "tab.activeBackground": "#030303",
-            "tab.activeForeground": "#e0ceed",
-            "tab.activeBorder": "#9a16ff",
-            "focusBorder": "#9a16ff",
-            "editorWidget.background": "#080709",
-            "extensionButton.prominentBackground": "#e0ceed",
-            "extensionButton.prominentForeground": "#030303",
-            "badge.background": "#61556d",
-            "terminal.ansiGreen": "#a7da1e",
-            "terminal.ansiRed": "#b657ff",
-            "terminal.background": "#080709"
-        },
-        "[Outrun Electric]": {
-            "editorCursor.foreground": "#ffffff",
-            "gitDecoration.modifiedResourceForeground": "#E6DB74",
-            "terminal.ansiGreen": "#27df4e",
-            "terminal.ansiRed": "#833d9c"
-        },
-        "[Dark++]": {
-            "statusBar.background" : "#1e1e1e",
-            "statusBar.noFolderBackground" : "#212121",
-            "statusBar.debuggingBackground": "#263238",
-        }
+  "workbench.iconTheme": "keen-neutral-icon-theme",
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": true,
+  "workbench.colorCustomizations": {
+    "[Lilac]": {
+      "gitDecoration.modifiedResourceForeground": "#e6db74",
+      "statusBar.background": "#080709",
+      "statusBar.noFolderBackground": "#080709",
+      "statusBar.debuggingBackground": "#080709",
+      "statusBar.foreground": "#61556d",
+      "sideBar.background": "#030303",
+      "sideBar.foreground": "#e0ceed",
+      "sideBarSectionHeader.background": "#030303",
+      "sideBarSectionHeader.foreground": "#e0ceed",
+      "editorGutter.background": "#030303",
+      "editorGroupHeader.tabsBackground": "#030303",
+      "list.focusBackground": "#2e2834",
+      "list.hoverBackground": "#61556d",
+      "list.hoverForeground": "#e0ceed",
+      "tab.inactiveBackground": "#030303",
+      "tab.inactiveForeground": "#61556d",
+      "tab.activeBackground": "#030303",
+      "tab.activeForeground": "#e0ceed",
+      "tab.activeBorder": "#9a16ff",
+      "focusBorder": "#9a16ff",
+      "editorWidget.background": "#080709",
+      "extensionButton.prominentBackground": "#e0ceed",
+      "extensionButton.prominentForeground": "#030303",
+      "badge.background": "#61556d",
+      "terminal.ansiGreen": "#a7da1e",
+      "terminal.ansiRed": "#b657ff",
+      "terminal.background": "#080709"
     },
-    "editor.tokenColorCustomizations": {
-        "[Outrun Electric]": {
-            "comments": {
-                "fontStyle": ""
-            },
-            "types": {
-                "fontStyle": ""
-            },
-            "variables": {
-                "foreground": "#4b76c2"
-            }
-        },
-        "[Lilac]": {
-            "variables": {
-                "foreground": "#8f33b1"
-            },
-            "strings": "#b657ff"
-        }
+    "[Outrun Electric]": {
+      "editorCursor.foreground": "#ffffff",
+      "gitDecoration.modifiedResourceForeground": "#E6DB74",
+      "terminal.ansiGreen": "#27df4e",
+      "terminal.ansiRed": "#833d9c"
     },
-    "editor.fontFamily": "'Borg Sans Mono', Consolas, 'Courier New', monospace",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": true,
-    "editor.fastScrollSensitivity": 4,
-    "editor.mouseWheelScrollSensitivity": 1,
-    "window.menuBarVisibility": "toggle",
-    "window.titleBarStyle": "native",
-    "files.eol": "\n",
-    "files.exclude": {
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/node_modules": true,
-        "node_modules": true,
-        "target": true
+    "[Dark++]": {
+      "statusBar.background": "#1e1e1e",
+      "statusBar.noFolderBackground": "#212121",
+      "statusBar.debuggingBackground": "#263238"
     },
-    "files.saveConflictResolution": "overwriteFileOnDisk",
-    "rust.mode": "legacy",
-    "rust.rustup": {
-        "toolchain": "stable-x86_64-unknown-linux-gnu"
-    },
-    "git.autofetch": true,
-    "tabnine.experimentalAutoImports": true,
-    "crates.latestDecorator": "Up! -> ${version} 📥",
-    "crates.upToDateDecorator": "",
-    "html.format.wrapLineLength": 85,
-    "discord.silent": true,
-    "discord.workspaceElapsedTime": true,
-    "discord.detailsEditing": "✎ {dirname}/{filename}:L{currentline}",
-    "discord.lowerDetailsEditing": "⚙ {workspace}",
-    "discord.lowerDetailsDebugging": "⚒: {workspace}",
-    "discord.lowerDetailsNotFound": "none",
-    "discord.detailsIdle": "chillin'",
-    "discord.largeImageIdle": "chillin'",
-    "discord.lowerDetailsIdle": "😴",
-    "gitlens.modes": {
-        "zen": {
-            "name": "Zen",
-            "statusBarItemName": "Zen",
-            "description": "for a zen-like experience, disables many visual features",
-            "codeLens": false,
-            "currentLine": false,
-            "hovers": false,
-            "statusBar": false,
-        },
-        "review": {
-            "name": "Review",
-            "statusBarItemName": "Reviewing",
-            "description": "for reviewing code, enables many visual features",
-            "codeLens": true,
-            "currentLine": true,
-            "hovers": true
-        }
-    },
-    "gitlens.mode.active": "zen",
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
-      }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-      {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
+    "[Mokka]": {
+      "statusBar.background": "#000000",
+      "statusBar.noFolderBackground": "#000000",
+      "statusBar.debuggingBackground": "#000000",
+      "statusBar.foreground": "#505050",
+      "statusBar.border": "#000000",
+      "statusBar.noFolderBorder": "#000000",
+      "sideBar.background": "#000000",
+      "sideBar.foreground": "#cccccc",
+      "sideBarSectionHeader.background": "#000000",
+      "sideBarSectionHeader.foreground": "#cccccc",
+      "editorGutter.background": "#000000",
+      "editorGroupHeader.tabsBackground": "#000000",
+      "editor.background": "#000000",
+      "list.focusBackground": "#101010",
+      "list.hoverBackground": "#101010",
+      "list.hoverForeground": "#cccccc",
+      "tab.inactiveBackground": "#000000",
+      "tab.inactiveForeground": "#505050",
+      "tab.activeBackground": "#000000",
+      "tab.activeForeground": "#cccccc",
+      "tab.activeBorder": "#ffffff",
+      "breadcrumb.background": "#000000",
+      "breadcrumb.focusForeground": "#cccccc",
+      "breadcrumb.foreground": "#cccccc",
+      "activityBar.activeBackground": "#202020",
+      "activityBar.activeBorder": "#202020",
+      "activityBar.activeFocusBorder": "#202020",
+      "activityBar.background": "#202020",
+      "activityBar.border": "#202020",
+      "focusBorder": "#ffffff",
+      "editorWidget.background": "#000000",
+      "extensionButton.prominentBackground": "#cccccc",
+      "extensionButton.prominentForeground": "#000000",
+      "badge.background": "#505050",
+      "terminal.ansiGreen": "#a7da1e",
+      "terminal.ansiRed": "#b657ff",
+      "panel.background": "#000000",
+      "panelTitle.activeBorder": "#ffffff",
+      "panel.dropBorder": "#b3b3b3",
+      "gitDecoration.modifiedResourceForeground": "#E6AC73",
+      "gitDecoration.ignoredResourceForeground": "#333333",
+      "terminal.background": "#000000"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Outrun Electric]": {
+      "comments": {
+        "fontStyle": ""
       },
-      {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
+      "types": {
+        "fontStyle": ""
+      },
+      "variables": {
+        "foreground": "#4b76c2"
       }
-    ],
-    "vim.leader": "<space>",
-    "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false,
-      "<C-h>": false,
-      "<C-j>": false,
-      "<C-w>": false,
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[Lilac]": {
+      "variables": {
+        "foreground": "#8f33b1"
+      },
+      "strings": "#b657ff"
     },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[Mokka]": {
+        "strings": "#ddeecc",
+        "functions": "#6ca3a3",
+        "keywords": "#f1f1f1",
+        "comments": "#606060",
+        "types": "#E6AC73",
+        "numbers": "#e9e96a",
+      }
+  },
+  "editor.fontFamily": "'Borg Sans Mono', Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fastScrollSensitivity": 4,
+  "editor.mouseWheelScrollSensitivity": 1,
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "node_modules": true,
+    "target": true
+  },
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "rust.mode": "legacy",
+  "rust.rustup": {
+    "toolchain": "stable-x86_64-unknown-linux-gnu"
+  },
+  "git.autofetch": true,
+  "tabnine.experimentalAutoImports": true,
+  "crates.latestDecorator": "Up! -> ${version} 📥",
+  "crates.upToDateDecorator": "",
+  "html.format.wrapLineLength": 85,
+  "discord.silent": true,
+  "discord.workspaceElapsedTime": true,
+  "discord.detailsEditing": "✎ {dirname}/{filename}:L{currentline}",
+  "discord.lowerDetailsEditing": "⚙ {workspace}",
+  "discord.lowerDetailsDebugging": "⚒: {workspace}",
+  "discord.lowerDetailsNotFound": "none",
+  "discord.detailsIdle": "chillin'",
+  "discord.largeImageIdle": "chillin'",
+  "discord.lowerDetailsIdle": "😴",
+  "gitlens.modes": {
+    "zen": {
+      "name": "Zen",
+      "statusBarItemName": "Zen",
+      "description": "for a zen-like experience, disables many visual features",
+      "codeLens": false,
+      "currentLine": false,
+      "hovers": false,
+      "statusBar": false
     },
-    "go.formatTool": "goimports",
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "review": {
+      "name": "Review",
+      "statusBarItemName": "Reviewing",
+      "description": "for reviewing code, enables many visual features",
+      "codeLens": true,
+      "currentLine": true,
+      "hovers": true
+    }
+  },
+  "gitlens.mode.active": "zen",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
     },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-h>": false,
+    "<C-j>": false,
+    "<C-w>": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "go.formatTool": "goimports",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Mokka",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
