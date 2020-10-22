@@ -26,6 +26,8 @@ Editor            : vscodium
 
 ![20-10-2020](https://user-images.githubusercontent.com/24392180/96750534-b83e0980-13d4-11eb-9ede-404f0ba9bd47.jpg)
 
+![20-10-2020](https://user-images.githubusercontent.com/24392180/96847513-f2062300-145b-11eb-8911-2e9248c5b868.jpg)
+
 ## History
 
 ### 09-08-2020
