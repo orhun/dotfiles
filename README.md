@@ -7,7 +7,7 @@ Distribution      : Arch Linux
 Window Manager    : i3-gaps
 Shell             : bash
 Terminal          : kermit
-Resource Monitor  : kpytop
+Resource Monitor  : bpytop
 Editor            : vscodium
 ```
 
