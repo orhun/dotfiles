@@ -80,6 +80,8 @@
       "badge.background": "#505050",
       "terminal.ansiGreen": "#a7da1e",
       "terminal.ansiRed": "#b657ff",
+      "terminalCursor.background": "#000000",
+      "terminalCursor.foreground": "#b3b3b3",
       "panel.background": "#000000",
       "panelTitle.activeBorder": "#ffffff",
       "panel.dropBorder": "#b3b3b3",
@@ -90,7 +92,7 @@
       "input.background": "#000000",
       "input.border": "#333333",
       "input.foreground": "#b3b3b3",
-      "editorGroup.emptyBackground": "#000000",
+      "editorGroup.emptyBackground": "#000000"
     }
   },
   "editor.tokenColorCustomizations": {
@@ -112,6 +114,9 @@
       "strings": "#b657ff"
     },
     "[Mokka]": {
+      "variables": {
+        "foreground": "#C19A6B"
+      },
       "strings": "#ddeecc",
       "functions": "#6ca3a3",
       "keywords": "#f1f1f1",
