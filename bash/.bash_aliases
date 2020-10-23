@@ -14,8 +14,16 @@ alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias pacman='sudo pacman'
 alias tgif='$HOME/gh/tgif/target/release/tgif' # temporary
 alias mdp='mdp -sc'
-alias ups='checkupdates'
+alias upd='pacman -Syu'
 alias ktop='bpytop'
+
+# check updates and new releases
+ups() {
+    echo "==> Checking updates..."
+    checkupdates
+    echo "==> Checking new releases..."
+    nv
+}
 
 # nvchecker wrapper for release checking
 nv() {
