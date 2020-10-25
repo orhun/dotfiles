@@ -14,7 +14,7 @@ alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias pacman='sudo pacman'
 alias tgif='$HOME/gh/tgif/target/release/tgif' # temporary
 alias mdp='mdp -sc'
-alias upd='pacman -Syu'
+alias upd='trizen -Syu'
 alias ktop='bpytop'
 
 # check updates and new releases
