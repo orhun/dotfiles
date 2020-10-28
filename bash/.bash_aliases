@@ -67,7 +67,7 @@ pushpkg() {
     PKG=${PWD##*/}
     git diff PKGBUILD
     git add PKGBUILD
-    git commit --allow-empty-message -m ""
+    git commit --allow-empty-message -m "$1"
     aur $PKG
 }
 

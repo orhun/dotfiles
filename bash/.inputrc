@@ -1,0 +1,7 @@
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+set colored-stats On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set visible-stats On
