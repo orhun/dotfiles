@@ -3,6 +3,7 @@ alias c='xclip -selection clipboard'
 alias p='xclip -o'
 alias x='startx'
 alias ls='exa --icons --color-scale'
+alias ll='ls -lah'
 alias bat='bat --theme "TwoDark"'
 alias rm="rm -i"
 alias cg='cargo'
@@ -11,11 +12,19 @@ alias bx='cp437 BitchX'
 alias aur='aurpublish'
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
+alias treepkg='tar -tf'
 alias pacman='sudo pacman'
-alias tgif='$HOME/gh/tgif/target/release/tgif' # temporary
 alias mdp='mdp -sc'
 alias upd='trizen -Syu'
+alias paclogr='paclog --after=`date +%F`'
+alias paclogi='paclog --grep="installed|upgraded"'
 alias ktop='bpytop'
+alias menyoki='$HOME/gh/menyoki/target/release/menyoki'
+
+# !aurctl (phrik)
+aurctl() {
+    git clone "https://aur.archlinux.org/$1"
+}
 
 # check updates and new releases
 ups() {
@@ -37,8 +46,13 @@ pushpkgs() {
     olddir=$(pwd)
     cd $PKGBUILDS
     for d in */ ; do
-        echo "==> PUSH: ${d::-1}"
-        aur ${d::-1}
+        cd "$PKGBUILDS/${d::-1}"
+        if ! git diff --quiet PKGBUILD;
+        then
+            echo "==> PUSH: ${d::-1}"
+            pushpkg "$1"
+        fi
+        # aur ${d::-1}
     done
     cd $olddir
 }
@@ -54,15 +68,43 @@ checkpkgs() {
     cd $olddir
 }
 
+prunepkgs() {
+    olddir=$(pwd)
+    cd $PKGBUILDS
+    for d in */ ; do
+        echo "==> PRUNE: ${d::-1}"
+        rm -rf ${d::-1}/src
+        rm -rf ${d::-1}/pkg
+    done
+    cd $olddir
+}
+
 # update the pkgver in PKGBUILD
 updpkgver() {
     if [ -n "$1" ]; then
+        sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
         sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
         updpkgsums
     fi
 }
 
-# push AUR package
+# commit a package file
+cmtpkgfile() {
+    git diff "$PKGBUILDS/$1*"
+    git add "$PKGBUILDS/$1*"
+    git commit -m "${1,,} += $2"
+}
+
+# commit package files
+cmtpkgfiles() {
+    olddir=$(pwd)
+    cd $PKGBUILDS
+    cmtpkgfile "README" "$1"
+    cmtpkgfile "nvchecker" "$1"
+    cd $olddir
+}
+
+# push package to AUR
 pushpkg() {
     PKG=${PWD##*/}
     git diff PKGBUILD
