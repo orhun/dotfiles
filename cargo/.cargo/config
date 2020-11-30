@@ -1,15 +1,16 @@
 [alias]
 a = "add"
-b = "build"
+b = "build --release"
 br = "build --release"
 brr = "build --release"
-r = "run"
+r = "run --locked"
 rr = "run --release"
 c = "check"
 f = "fmt"
 t = "test"
 pp = "clippy"
 cl = "clean"
+trp = "tarpaulin -o Xml -v"
 
 [net]
 git-fetch-with-cli = true
