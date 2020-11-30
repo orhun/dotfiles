@@ -150,6 +150,7 @@
   "crates.latestDecorator": "Up! -> ${version} 📥",
   "crates.upToDateDecorator": "",
   "html.format.wrapLineLength": 85,
+  "markdown.extension.toc.updateOnSave": false,
   "discord.silent": true,
   "discord.workspaceElapsedTime": true,
   "discord.detailsEditing": "✎ {dirname}/{filename}:L{currentline}",
@@ -228,5 +229,6 @@
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+  "window.zoomLevel": 0
 }
