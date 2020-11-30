@@ -8,8 +8,8 @@
   insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
-[url "ssh://git@bitbucket.org/"]
-  insteadOf = https://bitbucket.org/
+#[url "ssh://git@bitbucket.org/"]
+#  insteadOf = https://bitbucket.org/
 [alias]
 	c = clone
 	i = init
@@ -35,8 +35,8 @@
 	rmt = remote -v
 	rr = rm -r
 	l = log
-	ll = log --graph --decorate --all
-	lo = log --graph --decorate --oneline --all
+	lo = log --graph --decorate --all
+	ll = log --graph --decorate --oneline --all
 	ls = ls-files
 	crds = config credential.helper store
 [commit]
