@@ -11,6 +11,7 @@
 PS1='(\u \[\e[37m\]λ\[\e[39m\] \W) '
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"
+export ARCH="x86_64"
 export CHROOT=$HOME/.chroot
 export DOTFILES=$HOME/.dotfiles
 export PKGBUILDS=$HOME/.pkgbuilds

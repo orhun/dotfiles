@@ -15,11 +15,13 @@ alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias treepkg='tar -tf'
 alias pacman='sudo pacman'
 alias mdp='mdp -sc'
-alias upd='trizen -Syu'
+alias upd='paru -Syuv'
 alias paclogr='paclog --after=`date +%F`'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias ktop='bpytop'
-alias menyoki='$HOME/gh/menyoki/target/release/menyoki'
+alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
+alias trizen='paru'
+alias bt='bluetoothctl'
 
 # !aurctl (phrik)
 aurctl() {
@@ -30,6 +32,8 @@ aurctl() {
 ups() {
     echo "==> Checking updates..."
     checkupdates
+    echo "==> Checking AUR updates..."
+    paru -Qua
     echo "==> Checking new releases..."
     nv
 }
