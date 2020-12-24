@@ -147,8 +147,6 @@
   },
   "git.autofetch": true,
   "tabnine.experimentalAutoImports": true,
-  "crates.latestDecorator": "Up! -> ${version} 📥",
-  "crates.upToDateDecorator": "",
   "html.format.wrapLineLength": 85,
   "markdown.extension.toc.updateOnSave": false,
   "discord.silent": true,
@@ -219,7 +217,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Mokka",
+  "workbench.colorTheme": "Black Waves",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

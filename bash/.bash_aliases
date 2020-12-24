@@ -13,19 +13,16 @@ alias ktop='bpytop'
 alias code='vscodium'
 alias bt='bluetoothctl'
 alias xwinlist='xwininfo -tree -root'
-alias bx='cp437 BitchX'
-alias aur='aurpublish'
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias pacman='sudo pacman'
-alias trizen='paru'
 alias mdp='mdp -sc'
 alias upd='paru -Syuv'
 alias paclogr='paclog --after=`date +%F`'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias cap='menyoki -q cap --root --size $(slop -k) png save - | 0x0 - 2>/dev/null | c'
-alias rec='menyoki -q rec --root --size $(slop -k) apng save - | 0x0 - 2>/dev/null | c'
+alias rec='menyoki -q rec --root --size $(slop -k) gif save - | 0x0 - 2>/dev/null | c'
 
 # !aurctl (phrik)
 aurctl() {
@@ -60,7 +57,7 @@ pushpkgs() {
             echo "==> PUSH: ${d::-1}"
             pushpkg "$1"
         fi
-        # aur ${d::-1}
+        # aurpublish ${d::-1}
     done
     cd "$olddir" || exit
 }
@@ -118,7 +115,7 @@ pushpkg() {
     git diff PKGBUILD
     git add PKGBUILD
     git commit --allow-empty-message -m "$1"
-    aur "$PKG"
+    aurpublish "$PKG"
 }
 
 # optimus-manager wrapper for switching GPU

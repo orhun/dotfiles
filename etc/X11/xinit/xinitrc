@@ -39,5 +39,8 @@ prime-offload
 # set background image
 ~/.fehbg &
 
+# notification daemon
+dunst &
+
 # start i3
 exec i3

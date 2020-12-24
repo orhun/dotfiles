@@ -9,6 +9,7 @@ Shell             : bash
 Terminal          : kermit
 Resource Monitor  : bpytop
 Editor            : vscodium
+IRC Client        : weechat
 ```
 
 ## Installation
