@@ -736,6 +736,11 @@ def send_notification(notification):
                 stderr=subprocess.STDOUT,
                 stdout=devnull,
             )
+            subprocess.check_call(
+                ['aplay', '/home/orhun/audio/notif.wav'],
+                stderr=subprocess.STDOUT,
+                stdout=devnull,
+            )
         except Exception as ex:
             error_message = '{} (reason: {!r}). {}'.format(
                 'Failed to send the notification via notify-send',
