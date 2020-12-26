@@ -736,7 +736,7 @@ def send_notification(notification):
                 stderr=subprocess.STDOUT,
                 stdout=devnull,
             )
-            subprocess.check_call(
+            subprocess.Popen(
                 ['aplay', '/home/orhun/audio/notif.wav'],
                 stderr=subprocess.STDOUT,
                 stdout=devnull,
