@@ -12,6 +12,7 @@ pp = "clippy"
 clr = "clean"
 upd = "update"
 trp = "tarpaulin -o Xml -v"
+d = "doc"
 
 [net]
 git-fetch-with-cli = true
