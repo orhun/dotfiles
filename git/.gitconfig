@@ -1,6 +1,6 @@
 [user]
-	email = orhunparmaksiz@gmail.com
 	name = orhun
+	email = orhun@archlinux.org
 	signingkey = 39E678DF63BE20EA5A175156B928720AEC532117
 [gpg]
 	program = gpg
