@@ -1,7 +1,7 @@
 [user]
 	name = orhun
 	email = orhun@archlinux.org
-	signingkey = 39E678DF63BE20EA5A175156B928720AEC532117
+	signingkey = 165E0FF7C48C226E1EC363A7F83424824B3E4B90
 [gpg]
 	program = gpg
 [url "ssh://git@github.com/"]
