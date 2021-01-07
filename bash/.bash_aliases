@@ -100,15 +100,6 @@ cmtpkgfile() {
     git commit -m "${1,,} += $2"
 }
 
-# commit package files
-cmtpkgfiles() {
-    olddir=$(pwd)
-    cd "$PKGBUILDS" || exit
-    cmtpkgfile "README" "$1"
-    cmtpkgfile "nvchecker" "$1"
-    cd "$olddir" || exit
-}
-
 # push package to AUR
 pushpkg() {
     PKG=${PWD##*/}
