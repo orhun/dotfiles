@@ -13,6 +13,7 @@ clr = "clean"
 upd = "update"
 trp = "tarpaulin -o Xml -v"
 d = "doc"
+i = "install"
 
 [net]
 git-fetch-with-cli = true
