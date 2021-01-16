@@ -23,6 +23,7 @@ alias paclogi='paclog --grep="installed|upgraded"'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias cap='menyoki -q cap --root --size $(slop -k) png save - | 0x0 - 2>/dev/null | c'
 alias rec='menyoki -q rec --root --size $(slop -k) gif save - | 0x0 - 2>/dev/null | c'
+alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
 
 # !aurctl (phrik)
 aurctl() {
@@ -33,10 +34,10 @@ aurctl() {
 ups() {
     echo "==> Checking updates..."
     checkupdates
-    echo "==> Checking AUR updates..."
-    paru -Qua
     echo "==> Checking new releases..."
     nv "$@"
+    echo "==> Checking AUR updates..."
+    paru -Qua
 }
 
 # nvchecker wrapper for release checking
@@ -73,17 +74,6 @@ checkpkgs() {
     cd "$olddir" || exit
 }
 
-prunepkgs() {
-    olddir=$(pwd)
-    cd "$PKGBUILDS" || exit
-    for d in */ ; do
-        echo "==> PRUNE: ${d::-1}"
-        rm -rf "${d::-1}/src"
-        rm -rf "${d::-1}/pkg"
-    done
-    cd "$olddir" || exit
-}
-
 # update the pkgver in PKGBUILD
 updpkgver() {
     if [ -n "$1" ]; then
@@ -93,13 +83,6 @@ updpkgver() {
     fi
 }
 
-# commit a package file
-cmtpkgfile() {
-    git diff "$PKGBUILDS/$1*"
-    git add "$PKGBUILDS/$1*"
-    git commit -m "${1,,} += $2"
-}
-
 # push package to AUR
 pushpkg() {
     PKG=${PWD##*/}
@@ -107,6 +90,37 @@ pushpkg() {
     git add PKGBUILD
     git commit --allow-empty-message -m "$1"
     aurpublish "$PKG"
+}
+
+# create a new package directory in SVN
+newpkg() {
+    if [ -n "$1" ]; then
+        cd "$PKGS/svn-community" || exit
+        mkdir -p "$1"/{repos,trunk}
+        cd "$1" || exit
+        cp /usr/share/pacman/PKGBUILD.proto trunk/PKGBUILD
+    fi
+}
+
+# commit the new package into SVN
+commitnewpkg() {
+    if [ -n "$1" ]; then
+        cd "$PKGS/svn-community/$1" || exit
+        svn add --parents repos trunk/PKGBUILD
+        PKGVER=$(grep -Eo "^pkgver=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
+        PKGREL=$(grep -Eo "^pkgrel=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
+        PKG="$1 $PKGVER-$PKGREL"
+        read -p "==> Commit new package: '$PKG'? [Y/n] " -n 1 -r
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            printf "\n==> Committing package...\n"
+            svn commit -m "addpkg: $PKG"
+        else
+            printf "\n==> Bail.\n"
+        fi
+    else
+        echo "==> Tell me the package."
+    fi
 }
 
 # optimus-manager wrapper for switching GPU
@@ -122,10 +136,4 @@ optimus() {
     else
         optimus-manager --switch "$1" --no-confirm
     fi
-}
-
-# check coverage for a golang project
-gocov () {
-    t="/tmp/go-cover.$$.tmp"
-    go test -coverprofile=$t "$@" && go tool cover -html=$t && unlink $t
 }
