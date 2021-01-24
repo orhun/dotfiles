@@ -16,6 +16,7 @@ alias lswin='xwininfo -tree -root'
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias pacman='sudo pacman'
+alias aur='paru'
 alias mdp='mdp -sc'
 alias upd='paru -Syuv'
 alias paclogr='paclog --after=`date +%F`'
@@ -97,8 +98,8 @@ newpkg() {
     if [ -n "$1" ]; then
         cd "$PKGS/svn-community" || exit
         mkdir -p "$1"/{repos,trunk}
-        cd "$1" || exit
-        cp /usr/share/pacman/PKGBUILD.proto trunk/PKGBUILD
+        cd "$1/trunk" || exit
+        cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
     fi
 }
 
@@ -118,6 +119,7 @@ commitnewpkg() {
         else
             printf "\n==> Bail.\n"
         fi
+	cd "trunk" || exit
     else
         echo "==> Tell me the package."
     fi
