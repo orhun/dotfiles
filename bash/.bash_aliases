@@ -25,10 +25,16 @@ alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias cap='menyoki -q cap --root --size $(slop -k) png save - | 0x0 - 2>/dev/null | c'
 alias rec='menyoki -q rec --root --size $(slop -k) gif save - | 0x0 - 2>/dev/null | c'
 alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
+alias tasks='taskwarrior-tui'
 
 # !aurctl (phrik)
 aurctl() {
     git clone "https://aur.archlinux.org/$1"
+}
+
+# fetch PKGBUILD
+fetchpkg() {
+    curl "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=$1" > PKGBUILD
 }
 
 # check updates and new releases
@@ -111,7 +117,7 @@ commitnewpkg() {
         PKGVER=$(grep -Eo "^pkgver=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
         PKGREL=$(grep -Eo "^pkgrel=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
         PKG="$1 $PKGVER-$PKGREL"
-        read -p "==> Commit new package: '$PKG'? [Y/n] " -n 1 -r
+        read -p "==> Commit new package: '$PKG'? [Y/n] " -r
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
             printf "\n==> Committing package...\n"
@@ -119,7 +125,7 @@ commitnewpkg() {
         else
             printf "\n==> Bail.\n"
         fi
-	cd "trunk" || exit
+	    cd "trunk" || exit
     else
         echo "==> Tell me the package."
     fi
