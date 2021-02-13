@@ -25,7 +25,7 @@ alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias cap='menyoki -q cap --root --size $(slop -k) png save - | 0x0 - 2>/dev/null | c'
 alias rec='menyoki -q rec --root --size $(slop -k) gif save - | 0x0 - 2>/dev/null | c'
 alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
-alias makepkgquick='offload-build -s build.archlinux.org ; notify'
+alias offload-build='offload-build -s build.archlinux.org'
 alias tasks='taskwarrior-tui'
 alias notify='notify-send --urgency=normal "Task $([ $? -eq 0 ] && echo "completed" || echo "failed"): $(history | tail -n1 | sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*notify$//")"'
 
@@ -104,7 +104,7 @@ pushpkg() {
 # create a new package directory in SVN
 newpkg() {
     if [ -n "$1" ]; then
-        cd "$PKGS/svn-community" || exit
+        cd "$PKGS" || exit
         mkdir -p "$1"/{repos,trunk}
         cd "$1/trunk" || exit
         cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
@@ -114,7 +114,7 @@ newpkg() {
 # commit the new package into SVN
 commitnewpkg() {
     if [ -n "$1" ]; then
-        cd "$PKGS/svn-community/$1" || exit
+        cd "$PKGS/$1" || exit
         svn add --parents repos trunk/PKGBUILD
         PKGVER=$(grep -Eo "^pkgver=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
         PKGREL=$(grep -Eo "^pkgrel=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
