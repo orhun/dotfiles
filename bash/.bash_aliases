@@ -28,6 +28,7 @@ alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
 alias offload-build='offload-build -s build.archlinux.org'
 alias tasks='taskwarrior-tui'
 alias notify='notify-send --urgency=normal "Task $([ $? -eq 0 ] && echo "completed" || echo "failed"): $(history | tail -n1 | sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*notify$//")"'
+alias mictest='arecord -vvv -f dat /dev/null'
 
 # !aurctl (phrik)
 aurctl() {
