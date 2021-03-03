@@ -14,6 +14,7 @@ upd = "update"
 trp = "tarpaulin -o Xml -v"
 d = "doc"
 i = "install"
+o = "outdated -Rv"
 
 [net]
 git-fetch-with-cli = true
