@@ -5,10 +5,11 @@
 
 # Find out the wireless device name.
 # iw dev
+dev=$(ip -br link | grep wlan | awk '{ print $1 }')
 
 # Check if the device is up.
 # ip link set interface up
-ip link set wlan1 up
+ip link set $dev up
 #ip link set wlp3s0 up
 
 # Check connection status.
@@ -20,7 +21,7 @@ ip link set wlan1 up
 # Connect to WPA/WPA2 WiFi network.
 # wpa_passphrase SSID >> /etc/wpa_supplicant.conf
 # wpa_supplicant -B -D wext -i interface -c /etc/wpa_supplicant.conf -f /var/log/wpa_supplicant.log -t -d
-wpa_supplicant -B -D wext -i wlan1 -c /etc/wpa_supplicant.conf -f /var/log/wpa_supplicant.log -t -d
+wpa_supplicant -B -D wext -i $dev -c /etc/wpa_supplicant.conf -f /var/log/wpa_supplicant.log -t -d
 #wpa_supplicant -B -D wext -i wlp3s0 -c /etc/wpa_supplicant.conf -f /var/log/wpa_supplicant.log -t -d
 # dhcpcd
 dhcpcd
