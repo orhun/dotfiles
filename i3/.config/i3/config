@@ -32,6 +32,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Change keyboard layout (tr, us, de)
+bindsym $mod+shift+t exec setxkbmap tr && notify-send -u low "Keyboard layout: TR"
+bindsym $mod+shift+u exec setxkbmap us && notify-send -u low "Keyboard layout: US"
+bindsym $mod+shift+d exec setxkbmap de && notify-send -u low "Keyboard layout: DE"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
