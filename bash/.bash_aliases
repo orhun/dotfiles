@@ -63,10 +63,11 @@ pushpkgs() {
     cd "$PKGBUILDS" || exit
     for d in */ ; do
         cd "$PKGBUILDS/${d::-1}" || exit
-        if ! git diff --quiet PKGBUILD;
-        then
+        if ! git diff --quiet PKGBUILD; then
             echo "==> PUSH: ${d::-1}"
             pushpkg "$1"
+        else
+            echo "==> SKIP: ${d::-1}"
         fi
         # aurpublish ${d::-1}
     done
@@ -78,6 +79,7 @@ checkpkgs() {
     olddir=$(pwd)
     cd "$PKGBUILDS" || exit
     for d in */ ; do
+        cd ${d::-1}
         echo "==> CHECK: ${d::-1}"
         namcap "${d::-1}/PKGBUILD"
     done
@@ -99,7 +101,7 @@ pushpkg() {
     git diff PKGBUILD
     git add PKGBUILD
     git commit --allow-empty-message -m "$1"
-    aurpublish "$PKG"
+    aurpublish "$PKG" && arch-repo-release -u -p PKGBUILD
 }
 
 # create a new package directory in SVN
