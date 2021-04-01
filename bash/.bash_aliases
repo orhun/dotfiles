@@ -102,7 +102,7 @@ pushpkg() {
     git diff PKGBUILD
     git add PKGBUILD
     git commit --allow-empty-message -m "$1"
-    aurpublish "$PKG" && arch-repo-release -u -p PKGBUILD
+    aurpublish "$PKG" && arch-repo-release -u -p PKGBUILD && git push origin master
 }
 
 # create a new package directory in SVN
