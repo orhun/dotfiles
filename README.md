@@ -3,13 +3,15 @@
 This repository contains the configuration files and scripts that I use in my GNU/Linux working environment.
 
 ```
-Distribution      : Arch Linux
-Window Manager    : i3-gaps
-Shell             : bash
-Terminal          : kermit
-Resource Monitor  : bpytop
-Editor            : vscodium
-IRC Client        : weechat
+Distribution        : Arch Linux
+Window Manager      : i3-gaps
+Shell               : bash
+Terminal            : kermit
+Resource Monitor    : bpytop
+Editor              : vscodium
+IRC Client          : weechat
+Network Manager     : netctl
+Notification Daemon : dunst
 ```
 
 ## Installation
