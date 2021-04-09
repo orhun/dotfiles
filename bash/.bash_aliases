@@ -16,10 +16,8 @@ alias lswin='xwininfo -tree -root'
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias pacman='sudo pacman'
-alias aur='paru'
 alias mdp='mdp -sc'
 alias upd='paru -Syuv'
-alias paclogr='paclog --after=`date +%F`'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias cap='menyoki -q cap --root --size $(slop -k) png save - | 0x0 - 2>/dev/null | c'
@@ -57,35 +55,6 @@ nv() {
     local cfg=$PKGBUILDS/nvchecker.toml
     local act=${1:-checker}; shift
     "nv$act" -c "$cfg" "$@"
-}
-
-# push all AUR packages with aurpublish
-pushpkgs() {
-    olddir=$(pwd)
-    cd "$PKGBUILDS" || exit
-    for d in */ ; do
-        cd "$PKGBUILDS/${d::-1}" || exit
-        if ! git diff --quiet PKGBUILD; then
-            echo "==> PUSH: ${d::-1}"
-            pushpkg "$1"
-        else
-            echo "==> SKIP: ${d::-1}"
-        fi
-        # aurpublish ${d::-1}
-    done
-    cd "$olddir" || exit
-}
-
-# check all AUR packages with namcap
-checkpkgs() {
-    olddir=$(pwd)
-    cd "$PKGBUILDS" || exit
-    for d in */ ; do
-        cd ${d::-1}
-        echo "==> CHECK: ${d::-1}"
-        namcap "${d::-1}/PKGBUILD"
-    done
-    cd "$olddir" || exit
 }
 
 # update the pkgver in PKGBUILD
