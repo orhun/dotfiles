@@ -58,6 +58,8 @@ One can get the full script help print with:
 import json
 import socket
 import argparse
+import subprocess
+import os
 
 try:
     import notify2 as Notify
@@ -98,7 +100,13 @@ def listener(sockt):
         return
 
     if data:
-        print("{}: {}".format(addr, data.strip('\n')))
+        #print("{}: {}".format(addr, data.strip('\n')))
+        with open(os.devnull, 'wb') as devnull:
+            subprocess.Popen(
+                ['aplay', '/home/orhun/audio/notif.wav'],
+                stderr=subprocess.STDOUT,
+                stdout=devnull,
+            )
         notify(json.loads(data.strip()))
 
 def server(host, port):
@@ -196,7 +204,7 @@ def weechat_parser(data, buffer, date, tags, displayed,
                    highlight, prefix, message):
     """ Method to parte data coming from weechat and take action on it """
     buffer_name = w.buffer_get_string(buffer, 'short_name')
-    if "NOTICE" in data and buffer_name != "highmon":
+    if "NOTICE" in data and buffer_name != "highmon" and prefix != "--":
         if buffer_name == prefix:
             buffer_name = data
         return { 'buffer': buffer_name,
@@ -214,6 +222,13 @@ def weechat_parser(data, buffer, date, tags, displayed,
                  'type': data,
                  'prefix': prefix,
                  'message': message }
+    elif "CHANMSG" in data and prefix != "--" \
+        and prefix != "<--" and prefix != "-->" and prefix != "===":
+        if buffer_name in w.config_get_plugin('notify_for'):
+            return { 'buffer': buffer_name,
+                     'type': data,
+                     'prefix': prefix,
+                     'message': message }
 
 def client():
     """ Method to register the plugin and hook into weechat """
@@ -238,6 +253,11 @@ def client():
             'description': 'Set the server port to use to send notifcation.',
             'values': None,
             'default': '5431'
+        },
+        'notify_for': {
+            'description': 'A comma-separated list of buffers for which you want to receive notifications.',
+            'values': None,
+            'default': ''
         }
     }
 
@@ -252,6 +272,7 @@ def client():
             else:
                 w.config_set_desc_plugin(option, '{} (default: {})'.format(
                     value['description'], value['default']))
+        w.hook_print('', '', '', 1, 'on_notify', 'CHANMSG')
         w.hook_print('', 'notify_message', '', 1, 'on_notify', 'MSG')
         w.hook_print('', 'notify_private', '', 1, 'on_notify', 'PRIVMSG')
         w.hook_print('', 'irc_notice', '', 1, 'on_notify', 'NOTICE')
