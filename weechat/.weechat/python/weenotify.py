@@ -224,11 +224,12 @@ def weechat_parser(data, buffer, date, tags, displayed,
                  'message': message }
     elif "CHANMSG" in data and prefix != "--" \
         and prefix != "<--" and prefix != "-->" and prefix != "===":
-        if buffer_name in w.config_get_plugin('notify_for'):
-            return { 'buffer': buffer_name,
-                     'type': data,
-                     'prefix': prefix,
-                     'message': message }
+        if buffer_name in w.config_get_plugin('notify_for').split(","):
+            if not prefix in w.config_get_plugin('ignore_nicks').split(","):
+                return { 'buffer': buffer_name,
+                    'type': data,
+                    'prefix': prefix,
+                    'message': message }
 
 def client():
     """ Method to register the plugin and hook into weechat """
@@ -258,6 +259,11 @@ def client():
             'description': 'A comma-separated list of buffers for which you want to receive notifications.',
             'values': None,
             'default': ''
+        },
+        'ignore_nicks': {
+            'description': 'A comma-separated list of nicks from which no notifications should be shown.',
+            'values': None,
+            'default': '-,--,-->,<--,==='
         }
     }
 
