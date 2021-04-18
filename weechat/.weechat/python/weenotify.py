@@ -222,8 +222,8 @@ def weechat_parser(data, buffer, date, tags, displayed,
                  'type': data,
                  'prefix': prefix,
                  'message': message }
-    elif "CHANMSG" in data and prefix != "--" \
-        and prefix != "<--" and prefix != "-->" and prefix != "===":
+    elif "IRC" in data and prefix != "--" and not "*" in prefix \
+        and prefix != "<--" and prefix != "-->" and prefix != "===" and prefix != "":
         if buffer_name in w.config_get_plugin('notify_for').split(","):
             if not prefix in w.config_get_plugin('ignore_nicks').split(","):
                 return { 'buffer': buffer_name,
@@ -278,7 +278,7 @@ def client():
             else:
                 w.config_set_desc_plugin(option, '{} (default: {})'.format(
                     value['description'], value['default']))
-        w.hook_print('', '', '', 1, 'on_notify', 'CHANMSG')
+        w.hook_print('', '', '', 1, 'on_notify', 'IRC')
         w.hook_print('', 'notify_message', '', 1, 'on_notify', 'MSG')
         w.hook_print('', 'notify_private', '', 1, 'on_notify', 'PRIVMSG')
         w.hook_print('', 'irc_notice', '', 1, 'on_notify', 'NOTICE')
