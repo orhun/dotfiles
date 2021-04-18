@@ -30,6 +30,14 @@ alias notify='notify-send --urgency=normal "Task $([ $? -eq 0 ] && echo "complet
 alias mictest='arecord -vvv -f dat /dev/null'
 alias rustc++='rustup update'
 
+# launch WeeChat
+weechat() {
+    python "$DOTFILES/weechat/.weechat/python/weenotify.py" -s &
+    NOTIFIER_PID=$!
+    ssh -R 5431:localhost:5431 -t archbox tmux attach-session -t weechat
+    kill $NOTIFIER_PID
+}
+
 # !aurctl (phrik)
 aurctl() {
     git clone "https://aur.archlinux.org/$1"
