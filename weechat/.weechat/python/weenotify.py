@@ -133,24 +133,25 @@ def notify(data):
     """ Method to notify the user through dbus """
     if data['prefix'] != '--':
         try:
-            msg = "{} => {}: {}".format(data['buffer'],
+            msg = "{} | {}: {}".format(data['buffer'],
                                         data['prefix'],
                                         data['message'])
         except UnicodeEncodeError:
-            # Yey to python2
-            msg = "{} => {}: {}".format(data['buffer'],
+            msg = "{} | {}: {}".format(data['buffer'],
                                         data['prefix'],
                                         data['message'].encode('utf-8'))
     else:
         try:
-            msg = "{} => {}".format(data['buffer'],
+            msg = "{} | {}".format(data['buffer'],
                                     data['message'])
         except UnicodeEncodeError:
-            # Woohoo python2
-            msg = "{} => {}".format(data['buffer'],
+            msg = "{} | {}".format(data['buffer'],
                                     data['message'].encode('utf-8'))
-    Notify.init(SCRIPT_NAME)
     notification = Notify.Notification(data['type'], msg)
+    notification.set_hint("transient", "false")
+    notification.set_hint("desktop-entry", "weechat")
+    notification.set_category("im.received")
+    notification.set_timeout(3000)
     try:
         notification.show()
     except dbus.exceptions.DBusException as e:
@@ -222,8 +223,7 @@ def weechat_parser(data, buffer, date, tags, displayed,
                  'type': data,
                  'prefix': prefix,
                  'message': message }
-    elif "IRC" in data and prefix != "--" and not "*" in prefix \
-        and prefix != "<--" and prefix != "-->" and prefix != "===" and prefix != "":
+    elif "IRC" in data:
         if buffer_name in w.config_get_plugin('notify_for').split(","):
             if not prefix in w.config_get_plugin('ignore_nicks').split(","):
                 return { 'buffer': buffer_name,
@@ -263,7 +263,7 @@ def client():
         'ignore_nicks': {
             'description': 'A comma-separated list of nicks from which no notifications should be shown.',
             'values': None,
-            'default': '-,--,-->,<--,==='
+            'default': '-,--,-->,<--,===,*,* , *,,'
         }
     }
 
@@ -308,6 +308,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.server:
         if notify_imported:
+            Notify.init(SCRIPT_NAME)
             server(args.host, args.port)
         else:
             if dbus_imported:
