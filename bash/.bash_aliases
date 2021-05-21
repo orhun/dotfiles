@@ -38,6 +38,12 @@ weechat() {
     kill $NOTIFIER_PID
 }
 
+# connect to bluetooth headset
+btct () {
+   bt power on
+   bt connect E8:D0:3C:8B:7B:48
+}
+
 # !aurctl (phrik)
 aurctl() {
     git clone "https://aur.archlinux.org/$1"
@@ -65,12 +71,27 @@ nv() {
     "nv$act" -c "$cfg" "$@"
 }
 
-# update the pkgver in PKGBUILD
+# update the version in a PKGBUILD
 updpkgver() {
     if [ -n "$1" ]; then
         sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
         sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
         updpkgsums
+        svn diff PKGBUILD 2>/dev/null
+        git diff PKGBUILD 2>/dev/null
+    else
+        pkgname=$(basename "$PWD")
+        if [[ $pkgname == "trunk" ]]; then
+            pkgname=$(basename $(dirname $(pwd)))
+        fi
+        echo "==> Found package: $pkgname"
+        version=$(cat $PKGBUILDS/new_ver.json | jq -r ".\"${pkgname%-bin}\"")
+        if [[ -n "$version" ]] ; then
+            echo "==> New version: $version"
+            updpkgver "$version"
+        else
+            echo "==> Cannot get version"
+        fi
     fi
 }
 
