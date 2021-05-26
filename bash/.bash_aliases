@@ -30,6 +30,12 @@ alias notify='notify-send --urgency=normal "Task $([ $? -eq 0 ] && echo "complet
 alias mictest='arecord -vvv -f dat /dev/null'
 alias rustc++='rustup update'
 
+# play game
+cdd() {
+  $RPG_CLI "$@"
+  cd "$($RPG_CLI --pwd)"
+}
+
 # launch WeeChat
 weechat() {
     python "$DOTFILES/weechat/.weechat/python/weenotify.py" -s &
