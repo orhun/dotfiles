@@ -7,7 +7,7 @@ alias x='startx'
 alias ls='exa --icons --color-scale'
 alias ll='ls -lah'
 alias bat='bat --theme "TwoDark"'
-alias rm="rm -i"
+alias rm="trash"
 alias cg='cargo'
 alias ktop='bpytop'
 alias code='vscodium'
@@ -29,12 +29,6 @@ alias tasks='taskwarrior-tui'
 alias notify='notify-send --urgency=normal "Task $([ $? -eq 0 ] && echo "completed" || echo "failed"): $(history | tail -n1 | sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*notify$//")"'
 alias mictest='arecord -vvv -f dat /dev/null'
 alias rustc++='rustup update'
-
-# play game
-cdd() {
-  $RPG_CLI "$@"
-  cd "$($RPG_CLI --pwd)"
-}
 
 # launch WeeChat
 weechat() {

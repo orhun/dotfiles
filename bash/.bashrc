@@ -25,4 +25,3 @@ export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export CACHEDIR="/var/lib/repro/cache"
-export RPG_CLI=/usr/bin/rpg-cli
