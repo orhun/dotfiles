@@ -4,7 +4,7 @@
 set -e
 nohup $1 >/dev/null 2>&1 &
 PID=$(pidof $1 | awk '{print $1}')
-trap "kill $PID" EXIT
+#trap "kill $PID" EXIT
 if [[ $PID ]]; then
     echo "==> SYS:" `uname -a`
     echo "==> CPU:" `awk -F':' '/^model name/ {print $2}' /proc/cpuinfo | uniq | cut -c 2-`
