@@ -111,15 +111,15 @@ def listener(sockt):
 
 def server(host, port):
     """ Method to run the server in a loop """
-    print("Starting server...")
+    #print("Starting server...")
     host = host if host else ''
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))
     s.listen(5)
-    if host:
-        print("Server listening on {}:{}...".format(host, port))
-    else:
-        print("Server listening locally on port {}...".format(port))
+    #if host:
+    #    print("Server listening on {}:{}...".format(host, port))
+    #else:
+    #    print("Server listening locally on port {}...".format(port))
 
     try:
         while True:
