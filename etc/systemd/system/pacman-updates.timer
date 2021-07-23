@@ -1,0 +1,10 @@
+[Unit]
+Description=Pacman update timer
+
+[Timer]
+Unit=pacman-updates.service
+OnCalendar=00/4:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

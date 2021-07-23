@@ -1,0 +1,14 @@
+[Unit]
+Description=Pacman update checker
+Wants=pacman-updates.timer
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sh -c 'until ping -q -c 1 google.com > /dev/null 2>&1; do sleep 5; done;'
+ExecStart=/usr/bin/sh -c '/usr/bin/checkupdates | wc -l > /var/local/updates/count'
+Restart=on-failure
+RestartSec=1h
+TimeoutSec=5min
+
+[Install]
+WantedBy=multi-user.target
