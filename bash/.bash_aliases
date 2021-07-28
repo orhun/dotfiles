@@ -20,8 +20,8 @@ alias mdp='mdp -sc'
 alias upd='paru -Syuv'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
-alias cap='menyoki -q cap --root --size $(slop -k) png save - | 0x0 - 2>/dev/null | c'
-alias rec='menyoki -q rec --root --size $(slop -k) gif --gifski save - | 0x0 - 2>/dev/null | c'
+alias cap='menyoki -q cap --root --size $(slop -k) png save - | rpaste - 2>/dev/null | c'
+alias rec='menyoki -q rec --root --size $(slop -k) gif --gifski save - | rpaste - 2>/dev/null | c'
 alias ezrec='menyoki rec -t 10000 -r --select gif --gifski -q 75 save -d'
 alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
 alias offload-build='offload-build -s build.archlinux.org'
@@ -36,6 +36,11 @@ weechat() {
     NOTIFIER_PID=$!
     ssh -R 5431:localhost:5431 -t archbox tmux attach-session -t weechat
     kill $NOTIFIER_PID
+}
+
+# paste files
+rpaste() {
+    curl -F "file=@$1" -H @/home/orhun/.rpaste_auth https://paste.orhun.dev
 }
 
 # connect to bluetooth headset
@@ -77,7 +82,7 @@ updpkgver() {
         sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
         sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
         updpkgsums
-        svn diff PKGBUILD 2>/dev/null
+        svn diff PKGBUILD 2>/dev/null | diff-so-fancy
         git diff PKGBUILD 2>/dev/null
     else
         pkgname=$(basename "$PWD")
