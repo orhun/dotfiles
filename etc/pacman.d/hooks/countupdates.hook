@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Updating the package count...
+When = PostTransaction
+Exec = /usr/bin/sh -c '/usr/bin/checkupdates | /usr/bin/wc -l > /var/local/updates/count'
