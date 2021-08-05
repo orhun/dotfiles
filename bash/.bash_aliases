@@ -20,6 +20,7 @@ alias mictest='arecord -vvv -f dat /dev/null'
 alias pacman='sudo pacman'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias upd='paru -Syuv'
+alias sys='systemctl'
 
 alias rm="trash"
 alias mdp='mdp -sc'
