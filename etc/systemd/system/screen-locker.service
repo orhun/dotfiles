@@ -1,0 +1,11 @@
+[Unit]
+Description=Lock the screen automatically after a timeout
+
+[Service]
+Type=simple
+User=orhun
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xautolock -time 5 -locker /home/orhun/scripts/lock.sh -detectsleep
+
+[Install]
+WantedBy=graphical.target
