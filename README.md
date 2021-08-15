@@ -53,3 +53,9 @@ Notification Daemon : dunst
 ### 02-01-2018
 
 ![02-01-2018 (screenshot date is 21-07-2018, I don't remember why I blurred things)](https://user-images.githubusercontent.com/24392180/92667231-04952480-f314-11ea-93e7-5e8d55758ec0.png)
+
+#### License
+
+<sup>
+Licensed under <a href="LICENSE">GPLv3</a>.
+</sup>
