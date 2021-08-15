@@ -1,6 +1,6 @@
-# (•) files
+# (•) files ![colors](https://user-images.githubusercontent.com/24392180/129487004-0147d8d8-aba6-4e9c-a3c1-33b4bf784278.png)
 
-This repository contains the configuration files and scripts that I use in my GNU/Linux working environment.
+This repository contains the configuration files and scripts that I use in my Arch Linux daily working environment.
 
 ```
 Distribution        : Arch Linux
@@ -10,18 +10,17 @@ Terminal            : kermit
 Resource Monitor    : bpytop
 Editor              : vscodium
 IRC Client          : weechat
-Network Manager     : netctl
 Notification Daemon : dunst
 ```
 
 ## Installation
 
-* Install [GNU Stow](https://www.gnu.org/software/stow/).
-* Go to the `$HOME` directory.
+* `pacman -S stow`
+* `cd "$HOME/"`
 * `git clone --depth 1 https://github.com/orhun/dotfiles .dotfiles`
-* `cd ~/.dotfiles`
+* `cd .dotfiles/`
+* `stow bash git i3 ...`
 * `stow etc -t /etc/`
-* `stow bash git i3...`
 
 ## Preview
 
@@ -54,3 +53,9 @@ Notification Daemon : dunst
 ### 02-01-2018
 
 ![02-01-2018 (screenshot date is 21-07-2018, I don't remember why I blurred things)](https://user-images.githubusercontent.com/24392180/92667231-04952480-f314-11ea-93e7-5e8d55758ec0.png)
+
+#### License
+
+<sup>
+Licensed under <a href="LICENSE">GPLv3</a>.
+</sup>
