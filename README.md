@@ -1,6 +1,6 @@
 # (•) files
 
-This repository contains the configuration files and scripts that I use in my GNU/Linux working environment.
+This repository contains the configuration files and scripts that I use in my Arch Linux daily working environment.
 
 ```
 Distribution        : Arch Linux
@@ -10,18 +10,17 @@ Terminal            : kermit
 Resource Monitor    : bpytop
 Editor              : vscodium
 IRC Client          : weechat
-Network Manager     : netctl
 Notification Daemon : dunst
 ```
 
 ## Installation
 
-* Install [GNU Stow](https://www.gnu.org/software/stow/).
-* Go to the `$HOME` directory.
+* `pacman -S stow`
+* `cd "$HOME/"`
 * `git clone --depth 1 https://github.com/orhun/dotfiles .dotfiles`
-* `cd ~/.dotfiles`
+* `cd .dotfiles/`
+* `stow bash git i3 ...`
 * `stow etc -t /etc/`
-* `stow bash git i3...`
 
 ## Preview
 
