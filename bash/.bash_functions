@@ -39,6 +39,18 @@ ups() {
     paru -Qua
 }
 
+# https://github.com/facundoolano/rpg-cli
+rpg() {
+  case "${1}" in
+    buy | use | battle | stat)
+      rpg-cli "${@}"
+      ;;
+    *)
+      cd "${@}" && rpg-cli cd "${PWD}"
+      ;;
+  esac
+}
+
 # optimus-manager wrapper for switching GPU
 optimus() {
     GPU_STATUS=$(optimus-manager --print-next-mode \
