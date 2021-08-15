@@ -1,4 +1,4 @@
-# (•) files
+# (•) files ![colors](https://user-images.githubusercontent.com/24392180/129487004-0147d8d8-aba6-4e9c-a3c1-33b4bf784278.png)
 
 This repository contains the configuration files and scripts that I use in my Arch Linux daily working environment.
 
