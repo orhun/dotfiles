@@ -6,6 +6,8 @@ Type=simple
 User=orhun
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/xautolock -time 5 -locker /home/orhun/scripts/lock.sh -detectsleep
+Restart=on-failure
+RestartSec=5m
 
 [Install]
 WantedBy=graphical.target
