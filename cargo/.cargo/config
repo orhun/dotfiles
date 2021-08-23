@@ -21,10 +21,3 @@ git-fetch-with-cli = true
 
 [build]
 rustc-wrapper = "sccache"
-
-[target.x86_64-pc-windows-gnu]
-linker = "/usr/bin/x86_64-w64-mingw32-gcc"
-ar = "/usr/x86_64-w64-mingw32/bin/ar"
-
-[target.arm-unknown-linux-gnueabihf]
-linker = "/usr/bin/arm-linux-gnueabihf-gcc"

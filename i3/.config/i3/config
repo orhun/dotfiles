@@ -17,7 +17,7 @@ hide_edge_borders smart_no_gaps
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # Alternating layout
 exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
@@ -27,6 +27,11 @@ exec_always --no-startup-id GET_BRIGHTNESS="light" SET_BRIGHTNESS="light -S {}" 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pipewire sset Master 5%+ && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pipewire sset Master 5%- && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id amixer -D pipewire sset Master toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id amixer -D pipewire sset @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -36,6 +41,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+shift+t exec setxkbmap tr && notify-send -u low "Keyboard layout: TR"
 bindsym $mod+shift+u exec setxkbmap us && notify-send -u low "Keyboard layout: US"
 bindsym $mod+shift+d exec setxkbmap de && notify-send -u low "Keyboard layout: DE"
+
+# Systemctl calls
+bindsym $mod+shift+s exec systemctl suspend
+bindsym $mod+shift+h exec systemctl hibernate
+
+# Lock the screen
+bindsym $mod+shift+l exec ~/scripts/lock.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -47,7 +59,7 @@ bindsym $mod+Return exec kermit
 bindsym $mod+Shift+q kill
 
 # Start the dmenu
-bindsym $mod+d exec dmenu_run -nb '#030303' -nf '#999999' -sb '#505050' -sf '#ffffff' -fn 'pango:monospace:pixelsize=12'
+bindsym $mod+d exec dmenu_run -nb '#030303' -nf '#999999' -sb '#505050' -sf '#ffffff' -fn 'pango:monospace:pixelsize=14'
 
 # Change focus
 bindsym $mod+j focus left
@@ -60,10 +72,6 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up

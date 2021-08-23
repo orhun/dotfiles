@@ -20,14 +20,4 @@ alias mictest='arecord -vvv -f dat /dev/null'
 alias pacman='sudo pacman'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias upd='paru -Syuv'
-
-alias rm="trash"
-alias mdp='mdp -sc'
-alias tasks='taskwarrior-tui'
-alias lswin='xwininfo -tree -root'
-alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
-
-alias pkg='makechrootpkg -c -r $CHROOT'
-alias pkgroot='arch-nspawn $CHROOT/orhun'
-alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
-alias offload-build='offload-build -s build.archlinux.org'
+alias sys='systemctl'
