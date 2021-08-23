@@ -13,6 +13,11 @@ rpaste() {
     curl -F "file=@$1" -H @/home/orhun/.rpaste_auth https://paste.orhun.dev
 }
 
+# shorten URLs
+shorten() {
+    curl -F "url=$1" -H @/home/orhun/.rpaste_auth https://paste.orhun.dev
+}
+
 # connect to bluetooth headset
 btct () {
    bt power on
@@ -32,6 +37,18 @@ ups() {
     nv
     echo "==> Checking AUR updates..."
     paru -Qua
+}
+
+# https://github.com/facundoolano/rpg-cli
+rpg() {
+  case "${1}" in
+    buy | use | battle | stat)
+      rpg-cli "${@}"
+      ;;
+    *)
+      cd "${@}" && rpg-cli cd "${PWD}"
+      ;;
+  esac
 }
 
 # optimus-manager wrapper for switching GPU
