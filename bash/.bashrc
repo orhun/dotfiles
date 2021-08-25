@@ -9,7 +9,7 @@
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 # Pull in bash functions, if they exist
-[[ -f ~/.bash_aliases ]] && . ~/.bash_functions
+[[ -f ~/.bash_functions ]] && . ~/.bash_functions
 
 PS1='(\u \[\e[37m\]λ\[\e[39m\] \w) '
 XDG_CONFIG_HOME="$HOME/.config"
