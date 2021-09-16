@@ -37,6 +37,7 @@
 	l = log
 	lo = log --graph --decorate --all
 	ll = log --graph --decorate --oneline --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	ls = ls-files
 	crds = config credential.helper store
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
