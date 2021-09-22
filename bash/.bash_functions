@@ -8,16 +8,6 @@ weechat() {
     kill $NOTIFIER_PID
 }
 
-# paste files
-rpaste() {
-    curl -F "file=@$1" -H @/home/orhun/.rpaste_auth https://paste.orhun.dev
-}
-
-# shorten URLs
-shorten() {
-    curl -F "url=$1" -H @/home/orhun/.rpaste_auth https://paste.orhun.dev
-}
-
 # connect to bluetooth headset
 btct () {
    bt power on
