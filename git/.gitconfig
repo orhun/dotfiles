@@ -1,6 +1,6 @@
 [user]
-	name = orhun
-	email = orhun@archlinux.org
+	name = Orhun Parmaksız
+	email = orhunparmaksiz@gmail.com
 	signingkey = 165E0FF7C48C226E1EC363A7F83424824B3E4B90
 [gpg]
 	program = gpg
@@ -38,6 +38,7 @@
 	lo = log --graph --decorate --all
 	ll = log --graph --decorate --oneline --all
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
 	ls = ls-files
 	crds = config credential.helper store
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
