@@ -27,6 +27,7 @@ alias mdp='mdp -sc'
 alias tasks='taskwarrior-tui'
 alias lswin='xwininfo -tree -root'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
+alias mc='java -jar ~/.minecraft/TLauncher-2.79.jar'
 
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
