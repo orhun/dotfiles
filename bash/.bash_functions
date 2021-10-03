@@ -1,18 +1,5 @@
 ### General ###
 
-# launch WeeChat
-weechat() {
-    python "$DOTFILES/weechat/.weechat/python/weenotify.py" -s &
-    NOTIFIER_PID=$!
-    ssh -R 5431:localhost:5431 -t alarm tmux -u -L weechat attach
-    kill $NOTIFIER_PID
-}
-
-# paste files
-rpaste() {
-    curl -F "file=@$1" -H @/home/orhun/.rpaste_auth https://paste.orhun.dev
-}
-
 # connect to bluetooth headset
 btct () {
    bt power on
