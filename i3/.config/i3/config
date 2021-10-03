@@ -37,6 +37,9 @@ bindsym $mod+shift+t exec setxkbmap tr && notify-send -u low "Keyboard layout: T
 bindsym $mod+shift+u exec setxkbmap us && notify-send -u low "Keyboard layout: US"
 bindsym $mod+shift+d exec setxkbmap de && notify-send -u low "Keyboard layout: DE"
 
+# Emoji selector
+bindsym $mod+shift+x exec ~/scripts/emoji-menu
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
