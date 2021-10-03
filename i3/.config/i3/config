@@ -44,6 +44,9 @@ bindsym $mod+shift+h exec systemctl hibernate
 # Lock the screen
 bindsym $mod+shift+l exec ~/scripts/lock.sh
 
+# Emoji selector
+bindsym $mod+shift+x exec ~/scripts/emoji-menu
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
