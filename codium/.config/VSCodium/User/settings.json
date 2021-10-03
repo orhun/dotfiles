@@ -9,6 +9,7 @@
   "editor.mouseWheelScrollSensitivity": 1,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
+  "window.zoomLevel": 1,
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
@@ -22,6 +23,8 @@
   "rust.rustup": {
     "toolchain": "stable-x86_64-unknown-linux-gnu"
   },
+  "rust-analyzer.inlayHints.enable": false,
+  //"rust-analyzer.checkOnSave.enable": false,
   "git.autofetch": true,
   "tabnine.experimentalAutoImports": true,
   "html.format.wrapLineLength": 85,
@@ -103,5 +106,5 @@
       "path": "/bin/bash"
     }
   },
-  "window.zoomLevel": 1,
+
 }
