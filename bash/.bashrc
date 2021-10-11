@@ -11,6 +11,13 @@
 # Pull in bash functions, if they exist
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
 
+# Helper utilities
+[[ -s /usr/share/doc/pkgfile/command-not-found.bash ]] && source /usr/share/doc/pkgfile/command-not-found.bash
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
+# Settings
+shopt -s autocd
+
 PS1='(\u \[\e[37m\]λ\[\e[39m\] \w) '
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"
