@@ -94,13 +94,25 @@ updpkgver() {
     fi
 }
 
-# push package to AUR
+# push package to the AUR
 pushpkg() {
+    LOCKFILE="${PKGBUILDS}/pkg.lock"
+    while [ -e "${LOCKFILE}" ] && kill -0 `cat ${LOCKFILE}`; do
+        echo "==> Waiting for the lock"
+        sleep 5
+    done
+    trap "rm -f ${LOCKFILE}; exit" INT TERM EXIT
+    echo $$ > "${LOCKFILE}"
+
+    echo "==> Publishing the AUR package"
     PKG=${PWD##*/}
-    git diff PKGBUILD
+    git --no-pager diff PKGBUILD
     git add PKGBUILD
     git commit --allow-empty-message -m "$1"
     aurpublish "$PKG" && arch-repo-release -u -p PKGBUILD && git push origin master
+
+    rm -f "${LOCKFILE}"
+    echo "==> Done publishing '$PKG'"
 }
 
 # create a new package directory in SVN
