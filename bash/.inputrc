@@ -6,3 +6,4 @@ set completion-prefix-display-length 3
 set mark-symlinked-directories On
 set visible-stats On
 set enable-bracketed-paste On
+

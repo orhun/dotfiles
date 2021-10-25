@@ -62,7 +62,7 @@ optimus() {
 nv() {
     local cfg=$PKGBUILDS/nvchecker.toml
     local act=${1:-checker}; shift
-    if [ "$act" = "get" ]; then
+    if [ "$act" = "open" ] || [ "$act" = "o" ]; then
         repo=$(rg "github = \".*/$1\"" "$PKGBUILDS/nvchecker.toml" | awk '{ print $NF }' | tr -d '"')
         xdg-open "https://github.com/$repo/releases"
     else
