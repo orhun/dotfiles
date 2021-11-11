@@ -11,6 +11,9 @@
 # Pull in bash functions, if they exist
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
 
+# Pull in git functions, if they exist
+[[ -f ~/.git_functions ]] && . ~/.git_functions
+
 PS1='(\u \[\e[37m\]λ\[\e[39m\] \w) '
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"

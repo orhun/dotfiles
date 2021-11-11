@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 alias v='vim'
+alias g='git'
 alias c='xclip -selection clipboard'
 alias p='xclip -o'
 alias x='startx'
