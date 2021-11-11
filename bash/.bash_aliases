@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 alias v='vim'
+alias g='git'
 alias c='xclip -selection clipboard'
 alias p='xclip -o'
 alias x='startx'
@@ -36,4 +37,3 @@ alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
 alias offload-build='offload-build -s build.archlinux.org ; notify'
 alias offload-inspect='ssh build.archlinux.org "arch-nspawn /var/lib/archbuild/extra-x86_64/orhun"'
 alias svn-diff='svn diff | dsf'
-
