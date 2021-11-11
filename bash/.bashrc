@@ -27,3 +27,6 @@ export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export BT_HEADSET="E8:D0:3C:8B:7B:48"
+
+source "$DOTFILES/scripts/scripts/fzf-bash-completion.sh"
+bind -x '"\t": fzf_bash_completion'
