@@ -28,8 +28,12 @@ alias tasks='taskwarrior-tui'
 alias lswin='xwininfo -tree -root'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias mc='java -jar ~/.minecraft/TLauncher-2.79.jar'
+alias dsf="diff-so-fancy"
 
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'
 alias updcomdb='ssh repos.archlinux.org "/community/db-update"'
 alias offload-build='offload-build -s build.archlinux.org ; notify'
+alias offload-inspect='ssh build.archlinux.org "arch-nspawn /var/lib/archbuild/extra-x86_64/orhun"'
+alias svn-diff='svn diff | dsf'
+
