@@ -5,14 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Pull in bash alias definitions, if they exist
+# Pull in bash alias/functions definitions
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-
-# Pull in bash functions, if they exist
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
-
-# Pull in git functions, if they exist
 [[ -f ~/.git_functions ]] && . ~/.git_functions
+[[ -f ~/.pkg_aliases ]] && . ~/.pkg_aliases
+[[ -f ~/.pkg_functions ]] && . ~/.pkg_functions
 
 # Helper utilities
 [[ -s /usr/share/doc/pkgfile/command-not-found.bash ]] && source /usr/share/doc/pkgfile/command-not-found.bash
