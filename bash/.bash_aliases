@@ -10,6 +10,8 @@ alias ll='ls -lah'
 alias bat='bat --theme "TwoDark"'
 alias cg='cargo'
 alias rustc++='rustup update'
+alias cgr='cgrun debug'
+alias cgrr='cgrun release'
 alias ktop='bpytop'
 alias code='vscodium'
 alias bt='bluetoothctl'
@@ -30,6 +32,8 @@ alias lswin='xwininfo -tree -root'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias mc='java -jar ~/.minecraft/TLauncher-2.79.jar'
 alias dsf="diff-so-fancy"
+alias bino="WGPU_BACKEND=gl binocle"
+alias gist="GITHUB_GIST_TOKEN=$(pass github/gist_token) gist"
 
 alias pkg='makechrootpkg -c -r $CHROOT'
 alias pkgroot='arch-nspawn $CHROOT/orhun'

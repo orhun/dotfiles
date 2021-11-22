@@ -41,6 +41,17 @@ rpg() {
   esac
 }
 
+# run the already built rust binary
+cgrun() {( set -e
+    if [ -n "$1" ]; then
+        metadata=$(cargo metadata --no-deps --format-version 1)
+        target_dir=$(jq -r '.target_directory' <<< "$metadata")
+        workspace_root=$(jq -r '.workspace_root' <<< "$metadata")
+        binary=$(basename "$workspace_root")
+        "$target_dir/$1/$binary" "${@:2}"
+    fi
+)}
+
 # optimus-manager wrapper for switching GPU
 optimus() {
     GPU_STATUS=$(optimus-manager --print-next-mode \
