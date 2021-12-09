@@ -33,4 +33,3 @@ alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias mc='java -jar ~/.minecraft/TLauncher-2.79.jar'
 alias dsf="diff-so-fancy"
 alias bino="WGPU_BACKEND=gl binocle"
-alias gist="GITHUB_GIST_TOKEN=$(pass github/gist_token) gist"

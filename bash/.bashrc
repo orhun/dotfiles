@@ -13,11 +13,12 @@
 [[ -f ~/.pkg_functions ]] && . ~/.pkg_functions
 
 # Helper utilities
-[[ -s /usr/share/doc/pkgfile/command-not-found.bash ]] && source /usr/share/doc/pkgfile/command-not-found.bash
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+[[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && source /usr/share/doc/pkgfile/command-not-found.bash
+[[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 # Settings
 shopt -s autocd
+shopt -s histappend
 
 PS1='(\u \[\e[37m\]λ\[\e[39m\] \w) '
 XDG_CONFIG_HOME="$HOME/.config"
@@ -32,6 +33,9 @@ export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export BT_HEADSET="E8:D0:3C:8B:7B:48"
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTSIZE=2000
+export HISTCONTROL=ignorespace:erasedups
 
 export CHROOT="$HOME/.chroot"
 export DOTFILES="$HOME/.dotfiles"

@@ -7,6 +7,7 @@
 "\C-g\C-l": "$(gl)\e\C-e\er"
 "\C-g\C-r": "$(gr)\e\C-e\er"
 "\C-g\C-v": "$(gs)\e\C-e\er"
+"\C-r": "$(hst)\e\C-e\er"
 
 set colored-stats On
 set completion-prefix-display-length 3

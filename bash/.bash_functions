@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # launch WeeChat
 weechat() {
     python "$DOTFILES/weechat/.weechat/python/weenotify.py" -s &
@@ -49,6 +51,17 @@ cgrun() {( set -e
         "$target_dir/$1/$binary" "${@:2}"
     fi
 )}
+
+# github gist client
+gist() {
+    GITHUB_GIST_TOKEN=$(pass github/gist_token) "$HOME/.cargo/bin/gist"
+}
+
+# history search helper
+hst() {
+    HISTORY_CMD="$(RUST_LOG=error atuin search -h -i "$BUFFER" 3>&1 1>&2 2>&3)"
+    echo "$HISTORY_CMD"
+}
 
 # optimus-manager wrapper for switching GPU
 optimus() {
