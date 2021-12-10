@@ -8,6 +8,7 @@
 # Pull in bash alias/functions definitions
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f ~/.bash_functions ]] && . ~/.bash_functions
+[[ -f ~/.git_aliases ]] && . ~/.git_aliases
 [[ -f ~/.git_functions ]] && . ~/.git_functions
 [[ -f ~/.pkg_aliases ]] && . ~/.pkg_aliases
 [[ -f ~/.pkg_functions ]] && . ~/.pkg_functions

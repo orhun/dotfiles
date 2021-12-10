@@ -52,7 +52,7 @@ gr() {
 }
 
 # git stash
-gst() {
+gstsh() {
   is_git_repo || return
   git stash list | fzf-tmux --reverse -d: --preview 'git show --color=always {1}' |
   cut -d: -f1

@@ -59,7 +59,7 @@ gist() {
 
 # history search helper
 hst() {
-    HISTORY_CMD="$(RUST_LOG=error atuin search -h -i "$BUFFER" 3>&1 1>&2 2>&3)"
+    HISTORY_CMD="$(RUST_LOG=error atuin search -h -i "*" 3>&1 1>&2 2>&3)"
     echo "$HISTORY_CMD"
 }
 

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+alias gco='git checkout $(gb)'
+alias gtv='git tag -v $(gt)'
+alias gpp='git pull $(gr) $(gb)'
+alias gcp='git rev-parse $(gl) | c'
