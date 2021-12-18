@@ -3,4 +3,6 @@
 alias gco='git checkout $(gb)'
 alias gtv='git tag -v $(gt)'
 alias gpp='git pull $(gr) $(gb)'
-alias gcp='git rev-parse $(gl) | c'
+alias gps='git push $(gr) $(gb)'
+alias gcpy='git rev-parse $(gl) | c'
+alias gpr='gh pr create'

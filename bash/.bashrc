@@ -16,6 +16,7 @@
 # Helper utilities
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && source /usr/share/doc/pkgfile/command-not-found.bash
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+[[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
 
 # Settings
 shopt -s autocd

@@ -57,10 +57,14 @@ gist() {
     GITHUB_GIST_TOKEN=$(pass github/gist_token) "$HOME/.cargo/bin/gist"
 }
 
-# history search helper
-hst() {
-    HISTORY_CMD="$(RUST_LOG=error atuin search -h -i "*" 3>&1 1>&2 2>&3)"
-    echo "$HISTORY_CMD"
+# file explorer
+cdj() {
+    selected=$(xplr)
+    if [[ -d $selected ]]; then
+        cd "$selected"
+    else
+        cd "$(dirname $selected)"
+    fi
 }
 
 # optimus-manager wrapper for switching GPU
