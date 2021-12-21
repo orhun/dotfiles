@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # nvchecker wrapper for checking new releases
 nv() {
     local cfg=$PKGBUILDS/nvchecker.toml
@@ -22,6 +24,32 @@ fetchpkg() {
     curl "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=$1" > PKGBUILD
 }
 
+# update the version and checksums of a package
+updpkg() {
+    pkg="$1"
+    if [ -z "$pkg" ]; then
+        pkg=$(jq -r 'keys[]' < "$PKGBUILDS/new_ver.json" | fzf --height 20%)
+    fi
+    if [[ ! -z "$pkg" ]]; then
+        version=$(jq -r ".\"${pkg%-bin}\"" < "$PKGBUILDS/new_ver.json")
+        if [[ -n "$version" ]]; then
+            pkg_dir="$PKGBUILDS/$pkg"
+            if [[ -n $(find "$PKGS" -type d -name "$pkg" 2>/dev/null) ]]; then
+                echo "==> Found in [community]"
+                pkg_dir="$PKGS/$pkg/trunk"
+            else
+                echo "==> Found in the AUR"
+            fi
+            cd "$pkg_dir" || return
+            updpkgver
+            read -r -p "==> Press enter to build package..." -r
+            offload-build
+        else
+            echo "==> Cannot get version"
+        fi
+    fi
+}
+
 # update the version in a PKGBUILD
 updpkgver() {
     if [ -n "$1" ]; then
@@ -36,7 +64,7 @@ updpkgver() {
             pkgname=$(basename $(dirname $(pwd)))
         fi
         echo "==> Found package: $pkgname"
-        version=$(cat $PKGBUILDS/new_ver.json | jq -r ".\"${pkgname%-bin}\"")
+        version=$(jq -r ".\"${pkgname%-bin}\"" < "$PKGBUILDS/new_ver.json")
         if [[ -n "$version" ]] ; then
             echo "==> New version: $version"
             updpkgver "$version"
@@ -85,7 +113,7 @@ commitnewpkg() {
         PKGVER=$(grep -Eo "^pkgver=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
         PKGREL=$(grep -Eo "^pkgrel=.*\$" < trunk/PKGBUILD | cut -d '=' -f2)
         PKG="$1 $PKGVER-$PKGREL"
-        read -p "==> Commit new package: '$PKG'? [Y/n] " -r
+        read -r -p "==> Commit new package: '$PKG'? [Y/n] "
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
             printf "\n==> Committing package...\n"
