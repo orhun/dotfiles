@@ -103,4 +103,6 @@
       "path": "/bin/bash"
     }
   },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
 }
