@@ -54,7 +54,7 @@ cgrun() {( set -e
 
 # github gist client
 gist() {
-    GITHUB_GIST_TOKEN=$(pass github/gist_token) "$HOME/.cargo/bin/gist"
+    GITHUB_GIST_TOKEN=$(pass github/gist_token) "$HOME/.cargo/bin/gist" $@
 }
 
 # file explorer
