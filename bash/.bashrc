@@ -21,6 +21,7 @@
 # Settings
 shopt -s autocd
 shopt -s histappend
+stty -ixon
 
 PS1='(\u \[\e[37m\]λ\[\e[39m\] \w) '
 XDG_CONFIG_HOME="$HOME/.config"
