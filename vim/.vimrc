@@ -1,5 +1,6 @@
 " General settings
 set ff=unix
+set encoding=utf-8
 set backupcopy=yes
 set number
 set updatetime=100
@@ -7,8 +8,11 @@ set nofixendofline
 set t_Co=256
 set undofile
 set undodir=~/.vim/undodir
-set autoread | au CursorHold * checktime | call feedkeys("lh")
-syntax on
+set autoread
+set wildmenu
+set wildmode=longest:full,full
+set ignorecase
+set smartcase
 
 " Plugins
 call plug#begin()
@@ -18,9 +22,13 @@ call plug#begin()
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
     Plug 'm-pilia/vim-pkgbuild'
+    Plug 'rust-lang/rust.vim'
+    Plug 'kien/ctrlp.vim'
 call plug#end()
 
-" Colors
+" Settings
+syntax enable
+filetype plugin indent on
 colorscheme monochrome
 
 " Bindings
