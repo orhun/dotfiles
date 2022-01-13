@@ -42,6 +42,7 @@
 	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
 	ls = ls-files
 	crds = config credential.helper store
+	ups = config --get remote.origin.url
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 	godsays = !git commit -m \"$(curl -s https://godsays.xyz)\"
 [commit]
