@@ -74,6 +74,15 @@ updpkgver() {
     fi
 }
 
+# publish a package to the [community]
+community_updpkg() {( set -e
+    pkgname=$(basename $(dirname $(pwd)))
+    echo "==> Found package: $pkgname"
+    communitypkg "upstream release"
+    updcomdb
+    nv take "$pkgname"
+)}
+
 # push package to the AUR
 pushpkg() {
     LOCKFILE="${PKGBUILDS}/pkg.lock"

@@ -8,6 +8,7 @@ alias x='startx'
 alias ls='exa --icons --color-scale'
 alias ll='ls -lah'
 alias bat='bat --theme "TwoDark"'
+alias b='bat'
 alias cg='cargo'
 alias rustc++='rustup update'
 alias cgr='cgrun debug'
@@ -21,16 +22,19 @@ alias ezrec='menyoki rec -r --select gif --gifski -q 75 save -d'
 alias notify='notify-send --urgency=normal "$([ $? -eq 0 ] && echo "Completed" || echo "Failed"): $(history | tail -n1 | sed -e "s/^\s*[0-9]\+\s*//;s/[;&|]\s*notify$//")"'
 alias mictest='arecord -vvv -f dat /dev/null'
 alias pacman='sudo pacman'
+alias pac='pacman'
 alias paclogi='paclog --grep="installed|upgraded"'
 alias upd='paru -Syuv'
 alias sys='systemctl'
+alias src="source $HOME/.bashrc"
+alias wee="weechat"
 
-alias rm="trash"
+alias rm='trash'
 alias mdp='mdp -sc'
 alias tasks='taskwarrior-tui'
 alias lswin='xwininfo -tree -root'
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
-alias mc='java -jar ~/.minecraft/TLauncher-2.79.jar'
-alias dsf="diff-so-fancy"
-alias bino="WGPU_BACKEND=gl binocle"
-alias chksrv="chkservice"
+alias mc="java -jar $HOME/.minecraft/TLauncher-2.79.jar"
+alias dsf='diff-so-fancy'
+alias bino='WGPU_BACKEND=gl binocle'
+alias chksrv='chkservice'
