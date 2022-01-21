@@ -36,6 +36,7 @@ export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export BT_HEADSET="E8:D0:3C:8B:7B:48"
+export BT_CONTROLLER="00:1A:7D:DA:71:15"
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export HISTSIZE=2000
 export HISTCONTROL=ignorespace:erasedups

@@ -10,8 +10,11 @@ weechat() {
 
 # connect to bluetooth headset
 btct () {
-   bt power on
-   bt connect "$BT_HEADSET"
+   bt << EOF
+select "$BT_CONTROLLER"
+power on
+connect "$BT_HEADSET"
+EOF
 }
 
 # !aurctl (phrik)

@@ -37,7 +37,7 @@ gl() {
   is_git_repo || return
   git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
   fzf-tmux --ansi --no-sort --reverse -m \
-    --preview-window top:60% \
+    --preview-window top:75% \
     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always' |
     grep -o "[a-f0-9]\{7,\}"
 }
