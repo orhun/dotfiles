@@ -44,7 +44,7 @@ bindsym $mod+shift+x exec ~/scripts/emoji-menu
 floating_modifier $mod
 
 # Start the terminal
-bindsym $mod+Return exec kermit
+bindsym $mod+Return exec alacritty
 
 # Kill the focused window
 bindsym $mod+Shift+q kill
