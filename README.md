@@ -6,7 +6,7 @@ This repository contains the configuration files and scripts that I use in my Ar
 Distribution        : Arch Linux
 Window Manager      : i3-gaps
 Shell               : bash
-Terminal            : kermit
+Terminal            : alacritty
 Resource Monitor    : bpytop
 Editor              : vscodium
 IRC Client          : weechat
