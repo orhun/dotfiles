@@ -1,5 +1,6 @@
 #
 # ~/.bashrc
+# The beginning of of everything.
 #
 
 # If not running interactively, don't do anything
@@ -23,7 +24,10 @@ shopt -s autocd
 shopt -s histappend
 stty -ixon
 
-PS1='(\u \[\e[37m\]λ\[\e[39m\] \w) '
+# Prompt
+PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
+
+# General variables
 XDG_CONFIG_HOME="$HOME/.config"
 PATH="$PATH:$HOME/.cargo/bin"
 export ARCH="x86_64"
@@ -41,6 +45,7 @@ export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export HISTSIZE=2000
 export HISTCONTROL=ignorespace:erasedups
 
+# Packaging related variables
 export CHROOT="$HOME/.chroot"
 export DOTFILES="$HOME/.dotfiles"
 export PKGBUILDS="$HOME/.pkgbuilds"
