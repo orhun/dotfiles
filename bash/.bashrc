@@ -25,7 +25,7 @@ shopt -s histappend
 stty -ixon
 
 # Prompt
-PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
+PS1='(\u \[\e[31m\]ζ\[\e[39m\] \w) '
 
 # General variables
 XDG_CONFIG_HOME="$HOME/.config"
