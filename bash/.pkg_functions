@@ -75,7 +75,7 @@ updpkgver() {
 }
 
 # publish a package to the [community]
-community_updpkg() {( set -e
+community-updpkg() {( set -e
     pkgname=$(basename $(dirname $(pwd)))
     echo "==> Found package: $pkgname"
     communitypkg "upstream release"
