@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# notify about the status of last command
+notify() {
+    status=$([ $? -eq 0 ] && echo "Completed" || echo "Failed")
+    last_cmd=$(fc -nl -1 | xargs | sed -e "s/;\s*notify$//")
+    notify-send --urgency=normal "$status: $last_cmd"
+    gotify push -t "$status" "$last_cmd" > /dev/null
+}
+
 # launch WeeChat
 weechat() {
     python "$DOTFILES/weechat/.weechat/python/weenotify.py" -s &
