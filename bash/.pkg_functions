@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# check updates and new releases
+ups() {
+    echo "==> Checking updates..."
+    checkupdates
+    echo "==> Checking new releases..."
+    nv
+    echo "==> Checking AUR updates..."
+    paru -Qua
+}
+
 # nvchecker wrapper for checking new releases
 nv() {
     local cfg=$PKGBUILDS/nvchecker.toml

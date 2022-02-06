@@ -30,16 +30,6 @@ aurctl() {
     git clone "https://aur.archlinux.org/$1"
 }
 
-# check updates and new releases
-ups() {
-    echo "==> Checking updates..."
-    checkupdates
-    echo "==> Checking new releases..."
-    nv
-    echo "==> Checking AUR updates..."
-    paru -Qua
-}
-
 # https://github.com/facundoolano/rpg-cli
 rpg() {
   case "${1}" in
@@ -68,27 +58,3 @@ gist() {
     GITHUB_GIST_TOKEN=$(pass github/gist_token) "$HOME/.cargo/bin/gist" $@
 }
 
-# file explorer
-cdj() {
-    selected=$(xplr)
-    if [[ -d $selected ]]; then
-        cd "$selected"
-    else
-        cd "$(dirname $selected)"
-    fi
-}
-
-# optimus-manager wrapper for switching GPU
-optimus() {
-    GPU_STATUS=$(optimus-manager --print-next-mode \
-        | cut -d ':' -f 2 | tr -d ' \n')
-    if [[ $GPU_STATUS != "nochange" ]] &&
-    [[ ! $GPU_STATUS =~ "error" ]];
-    then
-        sudo prime-switch && startx
-    elif [[ -z "$1" ]]; then
-        optimus-manager --status
-    else
-        optimus-manager --switch "$1" --no-confirm
-    fi
-}
