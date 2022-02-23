@@ -28,6 +28,7 @@
 	mr = merge
 	rb = rebase
 	rs = restore --staged
+	rst = restore
 	t = tag
 	f = fetch
 	p = pull
