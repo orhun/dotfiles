@@ -104,5 +104,6 @@
     }
   },
   "editor.unicodeHighlight.nonBasicASCII": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "svelte.enable-ts-plugin": true,
 }
