@@ -17,7 +17,7 @@ hide_edge_borders smart_no_gaps
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Borg Sans Mono 8
 
 # Alternating layout
 exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
@@ -39,12 +39,14 @@ bindsym $mod+shift+d exec setxkbmap de && notify-send -u low "Keyboard layout: D
 
 # Emoji selector
 bindsym $mod+shift+x exec ~/scripts/emoji-menu
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Start the terminal
+# Terminal
 bindsym $mod+Return exec alacritty
+
+# IRC client
+bindsym $mod+shift+i exec alacritty -e sh ~/scripts/weechat.sh
 
 # Kill the focused window
 bindsym $mod+Shift+q kill

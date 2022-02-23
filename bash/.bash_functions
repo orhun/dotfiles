@@ -8,14 +8,6 @@ notify() {
     gotify push -t "$status" "$last_cmd" > /dev/null
 }
 
-# launch WeeChat
-weechat() {
-    python "$DOTFILES/weechat/.weechat/python/weenotify.py" -s &
-    NOTIFIER_PID=$!
-    ssh -R 5431:localhost:5431 -t alarm tmux -u -L weechat attach
-    kill $NOTIFIER_PID
-}
-
 # connect to bluetooth headset
 btct () {
    bt << EOF
