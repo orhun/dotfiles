@@ -22,6 +22,11 @@ aurctl() {
     git clone "https://aur.archlinux.org/$1"
 }
 
+# switch to a temporary directory
+cdtmp() {
+    cd $(mktemp -d)
+}
+
 # https://github.com/facundoolano/rpg-cli
 rpg() {
   case "${1}" in
@@ -48,5 +53,11 @@ cgrun() {( set -e
 # github gist client
 gist() {
     GITHUB_GIST_TOKEN=$(pass github/gist_token) "$HOME/.cargo/bin/gist" $@
+}
+
+# https://patorjk.com/software/taag/
+taag() {
+    find /usr/share/figlet/ -type f -name "*.flf" -exec basename {} \; | \
+	    xargs -I {} sh -c "printf '\n\n{}\n\n' && figlet '$1' -f {}"
 }
 

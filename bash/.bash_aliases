@@ -26,7 +26,7 @@ alias paclogi='paclog --grep="installed|upgraded"'
 alias upd='paru -Syuv'
 alias sys='systemctl'
 alias src="source $HOME/.bashrc"
-alias wee="weechat"
+alias rless="less -R"
 
 alias rm='trash'
 alias mdp='mdp -sc'
