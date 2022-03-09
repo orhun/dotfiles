@@ -15,6 +15,7 @@
 	i = init
 	a = add
 	aa = add -A
+	ap = add -p
 	m = mv
 	r = restore
 	rm = rm
@@ -27,8 +28,8 @@
 	br = branch
 	mr = merge
 	rb = rebase
-	rs = restore --staged
-	rst = restore
+	rst = restore --staged
+	rs = restore
 	t = tag
 	f = fetch
 	p = pull
@@ -37,6 +38,7 @@
 	psmi = "push origin main"
 	cm = commit
 	cmt = commit -m
+	dd = commit --dry-run
 	rmt = remote -v
 	cb = checkout -b
 	ck = checkout
