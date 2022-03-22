@@ -25,7 +25,7 @@
   "git.autofetch": true,
   "tabnine.experimentalAutoImports": true,
   "html.format.wrapLineLength": 85,
-  "markdown.extension.toc.updateOnSave": false,
+  "markdown.extension.toc.updateOnSave": true,
   "gitlens.modes": {
     "zen": {
       "name": "Zen",
