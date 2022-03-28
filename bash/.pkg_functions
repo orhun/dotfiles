@@ -88,6 +88,7 @@ updpkgver() {
 community-updpkg() {( set -e
     pkgname=$(basename $(dirname $(pwd)))
     echo "==> Found package: $pkgname"
+    svn-diff
     communitypkg "upstream release"
     updcomdb
     nv take "$pkgname"
