@@ -5,7 +5,7 @@ env:
 
 window:
   opacity: 0.85
-  decorations: none
+  decorations: full
   dynamic_title: true
 
 font:
