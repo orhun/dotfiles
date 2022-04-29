@@ -9,7 +9,6 @@
   "editor.mouseWheelScrollSensitivity": 1,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
-  "window.zoomLevel": 1,
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
@@ -76,8 +75,19 @@
     "<C-f>": false,
     "<C-h>": false,
     "<C-j>": false,
-    "<C-w>": false
+    "<C-w>": false,
+    "<C-s>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-n>": false,
+    "<C-g>": false
   },
+  "editor.cursorBlinking": "solid",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -102,9 +112,19 @@
   "omnisharp.useGlobalMono": "always",
   "workbench.editor.untitled.hint": "hidden",
   "terminal.integrated.profiles.linux": {
-    "bash": {
+   "bash": {
       "path": "/bin/bash"
     }
   },
-
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[csharp]": {
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "[Black Waves]": {
+      "editorCursor.foreground": "#b3b3b3",
+      "editorCursor.background": "#1e1e1e"
+    }
+  }
 }
