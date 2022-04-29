@@ -1,11 +1,11 @@
 [user]
-	name = orhun
-	email = orhun@archlinux.org
+	name = Orhun Parmaksız
+	email = orhunparmaksiz@gmail.com
 	signingkey = 165E0FF7C48C226E1EC363A7F83424824B3E4B90
 [gpg]
 	program = gpg
-[url "ssh://git@github.com/"]
-  insteadOf = https://github.com/
+#[url "ssh://git@github.com/"]
+#  insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
 #[url "ssh://git@bitbucket.org/"]
@@ -14,31 +14,41 @@
 	c = clone
 	i = init
 	a = add
+	aa = add -A
 	m = mv
 	r = restore
 	rm = rm
 	b = bisect
 	d = diff
+	dc = diff --cached
 	g = grep
-	s = show
+	sh = show
 	st = status
 	br = branch
-	cm = commit
 	mr = merge
 	rb = rebase
-	rs = reset
+	rst = restore --staged
+	rs = restore
 	t = tag
 	f = fetch
 	p = pull
-	aa = add -A
+	ps = push
+	psmt = "push origin master"
+	psmi = "push origin main"
+	cm = commit
 	cmt = commit -m
+	dd = commit --dry-run
 	rmt = remote -v
-	rr = rm -r
+	cb = checkout -b
+	ck = checkout
 	l = log
 	lo = log --graph --decorate --all
 	ll = log --graph --decorate --oneline --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
 	ls = ls-files
 	crds = config credential.helper store
+	ups = config --get remote.origin.url
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 	godsays = !git commit -m \"$(curl -s https://godsays.xyz)\"
 [commit]
