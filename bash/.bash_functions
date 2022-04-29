@@ -18,3 +18,9 @@ ups() {
     echo "==> Checking AUR updates..."
     paru -Qua
 }
+
+# cd into a temporary directory
+cdtmp() {
+   cd $(mktemp -d)
+}
+

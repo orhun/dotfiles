@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # check if the current directory is a git repository
 is_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
