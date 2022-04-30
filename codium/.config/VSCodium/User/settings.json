@@ -1,12 +1,17 @@
 {
+  "workbench.colorTheme": "Black Waves",
   "workbench.iconTheme": "keen-neutral-icon-theme",
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
+  "workbench.editor.untitled.hint": "hidden",
   "editor.fontFamily": "'Borg Sans Mono', Consolas, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.fastScrollSensitivity": 4,
   "editor.mouseWheelScrollSensitivity": 1,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.cursorBlinking": "solid",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "files.eol": "\n",
@@ -18,74 +23,51 @@
     "**/target": true
   },
   "files.saveConflictResolution": "overwriteFileOnDisk",
-  "rust.mode": "legacy",
-  "rust.rustup": {
-    "toolchain": "stable-x86_64-unknown-linux-gnu"
-  },
-  "git.autofetch": true,
-  "tabnine.experimentalAutoImports": true,
-  "html.format.wrapLineLength": 85,
-  "markdown.extension.toc.updateOnSave": true,
-  "gitlens.modes": {
-    "zen": {
-      "name": "Zen",
-      "statusBarItemName": "Zen",
-      "description": "for a zen-like experience, disables many visual features",
-      "codeLens": false,
-      "currentLine": false,
-      "hovers": false,
-      "statusBar": false
-    },
-    "review": {
-      "name": "Review",
-      "statusBarItemName": "Reviewing",
-      "description": "for reviewing code, enables many visual features",
-      "codeLens": true,
-      "currentLine": true,
-      "hovers": true
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash"
     }
   },
-  "gitlens.mode.active": "zen",
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
-    },
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    }
-  ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
     "<C-h>": false,
     "<C-j>": false,
-    "<C-w>": false
+    "<C-w>": false,
+    "<C-s>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-n>": false,
+    "<C-g>": false,
+    "<C-b>": false
   },
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "git.autofetch": true,
+  "rust.mode": "legacy",
+  "rust.rustup": {
+    "toolchain": "stable-x86_64-unknown-linux-gnu"
+  },
+  "go.formatTool": "goimports",
+  "html.format.wrapLineLength": 85,
+  "markdown.extension.toc.updateOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "go.formatTool": "goimports",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Black Waves",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -95,15 +77,10 @@
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "omnisharp.useGlobalMono": "always",
-  "workbench.editor.untitled.hint": "hidden",
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "/bin/bash"
-    }
-  },
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-  "svelte.enable-ts-plugin": true,
+  "svelte.enable-ts-plugin": true
 }
