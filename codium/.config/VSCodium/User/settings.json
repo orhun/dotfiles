@@ -12,6 +12,7 @@
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.cursorBlinking": "solid",
+  "editor.hover.enabled": true,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "files.eol": "\n",
@@ -47,7 +48,9 @@
     "<C-y>": false,
     "<C-n>": false,
     "<C-g>": false,
-    "<C-b>": false
+    "<C-b>": false,
+    "<C-[>": false,
+    "<C-]>": false
   },
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
@@ -56,6 +59,12 @@
   "rust.rustup": {
     "toolchain": "stable-x86_64-unknown-linux-gnu"
   },
+  "rust-analyzer.checkOnSave.enable": false,
+  "rust-analyzer.inlayHints.maxLength": 25,
+  "rust-analyzer.inlayHints.chainingHints": false,
+  "rust-analyzer.inlayHints.closureReturnTypeHints": false,
+  "rust-analyzer.inlayHints.parameterHints": false,
+  "rust-analyzer.inlayHints.typeHints": false,
   "go.formatTool": "goimports",
   "html.format.wrapLineLength": 85,
   "markdown.extension.toc.updateOnSave": true,
@@ -79,6 +88,9 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.formatOnSave": true,
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "omnisharp.useGlobalMono": "always",
