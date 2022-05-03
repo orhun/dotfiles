@@ -13,6 +13,7 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.cursorBlinking": "solid",
   "editor.hover.enabled": true,
+  "editor.hover.delay": 100,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "files.eol": "\n",
