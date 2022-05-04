@@ -1,14 +1,22 @@
 {
+  "workbench.colorTheme": "Black Waves",
   "workbench.iconTheme": "keen-neutral-icon-theme",
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
+  "workbench.editor.untitled.hint": "hidden",
   "editor.fontFamily": "Ubuntu Mono Ligaturized",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
   "editor.fastScrollSensitivity": 4,
   "editor.mouseWheelScrollSensitivity": 1,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.cursorBlinking": "solid",
+  "editor.hover.enabled": true,
+  "editor.hover.delay": 100,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
+  "window.zoomLevel": 1,
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
@@ -18,57 +26,16 @@
     "**/target": true
   },
   "files.saveConflictResolution": "overwriteFileOnDisk",
-  "rust.mode": "legacy",
-  "rust.rustup": {
-    "toolchain": "stable-x86_64-unknown-linux-gnu"
-  },
-  "rust-analyzer.inlayHints.enable": false,
-  //"rust-analyzer.checkOnSave.enable": false,
-  "git.autofetch": true,
-  "tabnine.experimentalAutoImports": true,
-  "html.format.wrapLineLength": 85,
-  "markdown.extension.toc.updateOnSave": true,
-  "gitlens.modes": {
-    "zen": {
-      "name": "Zen",
-      "statusBarItemName": "Zen",
-      "description": "for a zen-like experience, disables many visual features",
-      "codeLens": false,
-      "currentLine": false,
-      "hovers": false,
-      "statusBar": false
-    },
-    "review": {
-      "name": "Review",
-      "statusBarItemName": "Reviewing",
-      "description": "for reviewing code, enables many visual features",
-      "codeLens": true,
-      "currentLine": true,
-      "hovers": true
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash"
     }
   },
-  "gitlens.mode.active": "zen",
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
-    },
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    }
-  ],
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
@@ -82,23 +49,36 @@
     "<C-x>": false,
     "<C-y>": false,
     "<C-n>": false,
-    "<C-g>": false
+    "<C-g>": false,
+    "<C-b>": false,
+    "<C-[>": false,
+    "<C-]>": false
   },
-  "editor.cursorBlinking": "solid",
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
-
+  "git.autofetch": true,
+  "rust.mode": "legacy",
+  "rust.rustup": {
+    "toolchain": "stable-x86_64-unknown-linux-gnu"
+  },
+  "rust-analyzer.checkOnSave.enable": false,
+  "rust-analyzer.inlayHints.maxLength": 25,
+  "rust-analyzer.inlayHints.chainingHints": false,
+  "rust-analyzer.inlayHints.closureReturnTypeHints": false,
+  "rust-analyzer.inlayHints.parameterHints": false,
+  "rust-analyzer.inlayHints.typeHints": false,
+  "go.formatTool": "goimports",
+  "html.format.wrapLineLength": 85,
+  "markdown.extension.toc.updateOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "go.formatTool": "goimports",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Black Waves",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -108,23 +88,13 @@
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.formatOnSave": true,
+  },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "omnisharp.useGlobalMono": "always",
-  "workbench.editor.untitled.hint": "hidden",
-  "terminal.integrated.profiles.linux": {
-   "bash": {
-      "path": "/bin/bash"
-    }
-  },
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-  "[csharp]": {
-    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
-  },
-  "window.zoomLevel": 1,
-  "workbench.colorCustomizations": {
-    "[Black Waves]": {
-      "editorCursor.foreground": "#b3b3b3",
-      "editorCursor.background": "#1e1e1e"
-    }
-  }
+  "svelte.enable-ts-plugin": true
 }
