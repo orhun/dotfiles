@@ -13,7 +13,8 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.cursorBlinking": "solid",
   "editor.hover.enabled": true,
-  "editor.hover.delay": 100,
+  "editor.hover.delay": 200,
+  "editor.bracketPairColorization.enabled": false,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
@@ -54,6 +55,12 @@
     "<C-[>": false,
     "<C-]>": false
   },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-y>"],
+      "commands": ["y", "y", "p"]
+    },
+  ],
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
   "git.autofetch": true,
@@ -63,10 +70,6 @@
   },
   "rust-analyzer.checkOnSave.enable": false,
   "rust-analyzer.inlayHints.maxLength": 25,
-  "rust-analyzer.inlayHints.chainingHints": false,
-  "rust-analyzer.inlayHints.closureReturnTypeHints": false,
-  "rust-analyzer.inlayHints.parameterHints": false,
-  "rust-analyzer.inlayHints.typeHints": false,
   "go.formatTool": "goimports",
   "html.format.wrapLineLength": 85,
   "markdown.extension.toc.updateOnSave": true,
@@ -96,5 +99,9 @@
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "omnisharp.useGlobalMono": "always",
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
 }
