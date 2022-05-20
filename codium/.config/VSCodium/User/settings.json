@@ -32,6 +32,14 @@
     }
   },
   "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+  "vim.easymotionMarkerForegroundColorOneChar": "#569cd6",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#ffffff",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#cccccc",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.color": "#ccc",
+  "vim.highlightedyank.textColor": "#000",
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
@@ -54,6 +62,18 @@
     "<C-[>": false,
     "<C-]>": false
   },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [" "],
+      "after": ["leader", "leader", "leader", "b", "d", "w"]
+    }
+  ],
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
   "git.autofetch": true,
@@ -92,7 +112,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[rust]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "omnisharp.useGlobalMono": "always",
