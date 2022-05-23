@@ -52,3 +52,5 @@ GRUB_BACKGROUND="/home/orhun/images/waves_small.png"
 # Uncomment to make GRUB remember the last selection. This requires to
 # set 'GRUB_DEFAULT=saved' above.
 GRUB_SAVEDEFAULT="true"
+
+GRUB_DISABLE_OS_PROBER=false
