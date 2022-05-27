@@ -17,7 +17,6 @@
   "editor.bracketPairColorization.enabled": false,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
-  "window.zoomLevel": 1,
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
@@ -117,5 +116,10 @@
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.closureReturnTypeHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.inlayHints.typeHints.enable": false
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+  },
+  "window.zoomLevel": 1
 }
