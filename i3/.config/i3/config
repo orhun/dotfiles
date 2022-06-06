@@ -56,6 +56,9 @@ bindsym $mod+Return exec alacritty
 # IRC client
 bindsym $mod+shift+i exec alacritty -e sh ~/scripts/weechat.sh
 
+# Copy GitHub access token
+bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
+
 # Kill the focused window
 bindsym $mod+Shift+q kill
 
