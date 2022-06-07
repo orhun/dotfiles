@@ -89,7 +89,7 @@
   "rust-analyzer.inlayHints.typeHints": false,
   "go.formatTool": "goimports",
   "html.format.wrapLineLength": 85,
-  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.updateOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
