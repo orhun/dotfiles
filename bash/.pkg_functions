@@ -23,7 +23,12 @@ nv() {
             fi
         fi
         repo=$(rg -i "github = \".*/$pkg\"" "$PKGBUILDS/nvchecker.toml" | awk '{ print $NF }' | tr -d '"')
-        xdg-open "https://github.com/$repo/releases"
+        if [ ! -z "$repo" ]; then
+                gh release view -R "$repo"
+                xdg-open "https://github.com/$repo/releases"
+        else
+                echo "==> Unknown repository."
+        fi
     else
         "nv$act" -c "$cfg" "$@"
     fi
