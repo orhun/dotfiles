@@ -10,6 +10,7 @@
 "\C-g\C-l": "$(gl)\e\C-e\er"
 "\C-g\C-r": "$(gr)\e\C-e\er"
 "\C-g\C-v": "$(gs)\e\C-e\er"
+"\C-a": "fg\n"
 
 # settings
 set colored-stats On
