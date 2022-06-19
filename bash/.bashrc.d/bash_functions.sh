@@ -62,3 +62,5 @@ taag() {
 cleanup-workspace() {
   find "$WORKSPACE/" -maxdepth 2 -type d -name target -exec /usr/bin/rm -vr "{}" \;
 }
+
+# vim:set ts=2 sw=2 et:
