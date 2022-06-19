@@ -4,8 +4,8 @@
 	signingkey = 165E0FF7C48C226E1EC363A7F83424824B3E4B90
 [gpg]
 	program = gpg
-#[url "ssh://git@github.com/"]
-#  insteadOf = https://github.com/
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
 #[url "ssh://git@bitbucket.org/"]
@@ -15,6 +15,7 @@
 	i = init
 	a = add
 	aa = add -A
+	ap = add -p
 	m = mv
 	r = restore
 	rm = rm
