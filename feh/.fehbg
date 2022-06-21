@@ -1,2 +1,3 @@
-#!/bin/sh
-feh --no-fehbg --bg-fill '/home/orhun/images/waves.png'
+#!/usr/bin/env bash
+
+feh --no-fehbg --bg-scale '/home/orhun/images/waves.png'
