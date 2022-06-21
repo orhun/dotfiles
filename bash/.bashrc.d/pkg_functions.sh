@@ -116,7 +116,9 @@ pushpkg() {
   git --no-pager diff PKGBUILD
   git add PKGBUILD
   git commit --allow-empty-message -m "$1"
-  aurpublish "$PKG" && arch-repo-release -u -p PKGBUILD && git push origin master
+  aurpublish "$PKG" && \
+     "$PKGBUILDS/arch-repo-release.sh" -u -p PKGBUILD && \
+     git push origin master
 
   rm -f "${LOCKFILE}"
   echo "==> Done publishing '$PKG'"

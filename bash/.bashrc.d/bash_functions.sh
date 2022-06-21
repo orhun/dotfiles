@@ -12,6 +12,7 @@ notify() {
 btct() {
   bt power on
   bt connect "$BT_HEADSET"
+  pactl set-card-profile "bluez_card.${BT_HEADSET//:/_}" a2dp-sink-sbc_xq
 }
 
 # !aurctl (phrik)
