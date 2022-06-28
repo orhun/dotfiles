@@ -25,7 +25,7 @@ PS1='(\u \[\e[31m\]ζ\[\e[39m\] \w) '
 
 # General variables
 XDG_CONFIG_HOME="$HOME/.config"
-PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.cargo/bin:$HOME/scripts"
 export ARCH="x86_64"
 export LC_ALL="en_US.utf-8"
 export LC_CTYPE="en_US.utf-8"
