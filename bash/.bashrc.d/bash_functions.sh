@@ -8,13 +8,6 @@ notify() {
   gotify push -t "$status" "$last_cmd" >/dev/null
 }
 
-# connect to bluetooth headset
-btct() {
-  bt power on
-  bt connect "$BT_HEADSET"
-  pactl set-card-profile "bluez_card.${BT_HEADSET//:/_}" a2dp-sink-sbc_xq
-}
-
 # !aurctl (phrik)
 aurctl() {
   git clone "https://aur.archlinux.org/$1"

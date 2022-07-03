@@ -35,7 +35,6 @@ export VISUAL="vim"
 export EDITOR="$VISUAL"
 export GPG_TTY=$(tty)
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
-export BT_HEADSET="00:1B:66:10:B6:B0"
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export HISTSIZE=2000
 export HISTCONTROL=ignorespace:erasedups
