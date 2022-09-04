@@ -1,0 +1,4 @@
+run_hook ()
+{
+  cryptsetup open /dev/disk/by-partlabel/cryptswap cryptswap
+}

@@ -1,0 +1,10 @@
+build ()
+{
+  add_runscript
+}
+help()
+{
+cat<<HELPEOF
+  Opens the encrypted swap
+HELPEOF
+}
