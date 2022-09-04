@@ -11,11 +11,13 @@ t = "nextest run"
 pp = "clippy"
 clr = "clean"
 upd = "update"
+updr = "update --dry-run"
 upg = "upgrade"
 trp = "tarpaulin -o Xml -v"
 d = "doc"
 i = "install"
 o = "outdated -Rv"
+au = "audit"
 
 [net]
 git-fetch-with-cli = true
