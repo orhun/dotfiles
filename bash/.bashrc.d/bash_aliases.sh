@@ -28,11 +28,14 @@ alias rm='trash'
 alias src="source $HOME/.bashrc"
 alias b="bat"
 alias less="less -R"
+alias vpn="sudo openvpn --config $HOME/.openvpn/client.ovpn"
+alias rst="reset"
 
 alias mdp='mdp -sc'
 alias tasks='taskwarrior-tui'
 alias lswin='xwininfo -tree -root'
 alias minecraft="java -jar $HOME/.minecraft/TLauncher*"
+alias aqw="$HOME/.aqw/Artix_Games_Launcher-x86_64.AppImage"
 alias rebuildpy='pacman -Qoq /usr/lib/python3.8/ | paru -S --rebuild -'
 alias dsf='diff-so-fancy'
 alias bino='WGPU_BACKEND=gl binocle'
