@@ -15,9 +15,9 @@
   "editor.hover.enabled": true,
   "editor.hover.delay": 200,
   "editor.bracketPairColorization.enabled": false,
+  "editor.codeLens": true,
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
-  "window.zoomLevel": 1,
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
@@ -121,5 +121,6 @@
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "omnisharp.useGlobalMono": "always",
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "window.zoomLevel": 1,
 }
