@@ -41,20 +41,20 @@ bindsym $mod+shift+d exec setxkbmap de && notify-send -u low "Keyboard layout: D
 bindsym $mod+shift+s exec systemctl suspend
 bindsym $mod+shift+h exec systemctl hibernate
 
+# Start the terminal
+bindsym $mod+Return exec alacritty
+
+# Bluetooth device selector
+bindsym $mod+shift+b exec alacritty -e sh ~/scripts/btselect.sh
+
+# IRC client
+bindsym $mod+shift+i exec alacritty -e sh ~/scripts/weechat.sh
+
 # Lock the screen
 bindsym $mod+shift+l exec ~/scripts/lock.sh
 
 # Emoji selector
-bindsym $mod+shift+x exec ~/scripts/emoji-menu
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# Start the terminal
-bindsym $mod+Return exec alacritty
-
-# IRC client
-bindsym $mod+shift+i exec alacritty -e sh ~/scripts/weechat.sh
+bindsym $mod+shift+x exec ~/scripts/emoji-menu.sh
 
 # Copy GitHub access token
 bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
@@ -106,6 +106,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
