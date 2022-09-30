@@ -30,6 +30,7 @@ alias b="bat"
 alias less="less -R"
 alias vpn="sudo openvpn --config $HOME/.openvpn/client.ovpn"
 alias rst="reset"
+alias bat-status="sudo tlp-stat"
 
 alias mdp='mdp -sc'
 alias tasks='taskwarrior-tui'
