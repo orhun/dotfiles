@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # Borders
-new_window 1pixel
+for_window [class=".*"] border pixel 0
 
 # Gaps
 gaps outer 5
