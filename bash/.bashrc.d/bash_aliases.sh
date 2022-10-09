@@ -8,7 +8,7 @@ alias y="yank"
 alias x='startx'
 alias ls='exa --icons --color-scale'
 alias ll='ls -lah'
-alias bat='bat --theme "ansi"'
+alias bat='bat --theme "TwoDark"'
 alias b="bat -p"
 alias cg='cargo'
 alias cgr='cgrun debug'
@@ -42,3 +42,4 @@ alias dsf='diff-so-fancy'
 alias bino='WGPU_BACKEND=gl binocle'
 alias chksrv='chkservice'
 alias cdj='cd "$(xplr --print-pwd-as-result)"'
+alias search-command='compgen -c | sort -u | fzf'

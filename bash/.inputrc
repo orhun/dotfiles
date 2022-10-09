@@ -11,6 +11,7 @@
 "\C-g\C-r": "$(gr)\e\C-e\er"
 "\C-g\C-v": "$(gs)\e\C-e\er"
 "\C-a": "fg\n"
+"\C-s": "$(search-command)\e\C-e\er"
 
 # settings
 set colored-stats On
