@@ -84,6 +84,7 @@ updpkgver() {
     if [[ -n "$version" ]]; then
       echo "==> New version: $version"
       updpkgver "$version"
+      nv o
     else
       echo "==> Cannot get version"
     fi
