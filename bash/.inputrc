@@ -1,6 +1,9 @@
 # bash shortcuts
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\C-a": "fg\n"
+"\C-s": "$(search-command)\e\C-e\er"
+"\e": "tere\n"
 
 # git shortcuts
 "\er": redraw-current-line
@@ -10,8 +13,6 @@
 "\C-g\C-l": "$(gl)\e\C-e\er"
 "\C-g\C-r": "$(gr)\e\C-e\er"
 "\C-g\C-v": "$(gs)\e\C-e\er"
-"\C-a": "fg\n"
-"\C-s": "$(search-command)\e\C-e\er"
 
 # settings
 set colored-stats On

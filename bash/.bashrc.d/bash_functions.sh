@@ -57,4 +57,10 @@ cleanup-workspace() {
   find "$WORKSPACE/" -maxdepth 2 -type d -name target -exec /usr/bin/rm -vr "{}" \;
 }
 
+# file explorer
+tere() {
+    local result=$(command tere "$@")
+    [ -n "$result" ] && cd -- $(dirname "$result")
+}
+
 # vim:set ts=2 sw=2 et:
