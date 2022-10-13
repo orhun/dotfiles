@@ -59,8 +59,8 @@ cleanup-workspace() {
 
 # file explorer
 tere() {
-    local result=$(command tere "$@")
-    [ -n "$result" ] && cd -- $(dirname "$result")
+    local result=$(command tere -m alt-enter:Exit "$@")
+    [ -n "$result" ] && cd -- "$result"
 }
 
 # vim:set ts=2 sw=2 et:
