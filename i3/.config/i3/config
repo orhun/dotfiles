@@ -49,6 +49,10 @@ bindsym $mod+Return exec alacritty
 # Bluetooth device selector
 bindsym $mod+shift+b exec alacritty -e sh ~/scripts/btselect.sh
 
+# Wireless network selector
+bindsym $mod+shift+w exec alacritty -e sh ~/scripts/wifiselect.sh
+
+
 # IRC client
 bindsym $mod+shift+i exec alacritty -e sh ~/scripts/weechat.sh
 
