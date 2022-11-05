@@ -151,7 +151,6 @@ def notify(data):
     notification.set_hint("transient", "false")
     notification.set_hint("desktop-entry", "weechat")
     notification.set_category("im.received")
-    notification.set_timeout(3000)
     try:
         notification.show()
     except dbus.exceptions.DBusException as e:
