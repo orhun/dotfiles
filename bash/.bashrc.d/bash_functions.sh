@@ -52,6 +52,11 @@ taag() {
     xargs -I {} sh -c "printf '\n\n{}\n\n' && figlet '$1' -f {}"
 }
 
+# find the total size to delete in workspace
+cleanup-workspace-find-size() {
+  find "$WORKSPACE/" -maxdepth 2 -type d -name target -exec du -ch {} + | grep total$
+}
+
 # clean up the workspace
 cleanup-workspace() {
   find "$WORKSPACE/" -maxdepth 2 -type d -name target -exec /usr/bin/rm -vr "{}" \;
