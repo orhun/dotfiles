@@ -24,7 +24,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # preferences
-xset r rate 400 35
+xset r rate 300 40
 xset m 1 4
 
 # start composite manager
@@ -37,7 +37,7 @@ devilspie -a &
 ~/.fehbg &
 
 # notification daemon
-dunst &
+{ sleep 2; RUST_LOG=trace runst; } &
 
 # start i3
 exec i3
