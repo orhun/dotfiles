@@ -12,7 +12,7 @@ ups() {
 
 # nvchecker wrapper for checking new releases
 nv() {
-  local cfg=$PKGBUILDS/nvchecker.toml
+  local cfg=$AUR_PKGS/nvchecker.toml
   local act=${1:-checker}
   shift
   if [ "$act" = "open" ] || [ "$act" = "o" ]; then
@@ -23,7 +23,7 @@ nv() {
         pkg=$(basename $(dirname $(pwd)))
       fi
     fi
-    repo=$(rg -i "github = \".*/$pkg\"" "$PKGBUILDS/nvchecker.toml" | awk '{ print $NF }' | tr -d '"')
+    repo=$(rg -i "github = \".*/$pkg\"" "$AUR_PKGS/nvchecker.toml" | awk '{ print $NF }' | tr -d '"')
     if [ ! -z "$repo" ]; then
       gh release view -R "$repo"
       xdg-open "https://github.com/$repo/releases"
@@ -44,15 +44,15 @@ fetchpkg() {
 updpkg() {
   pkg="$1"
   if [ -z "$pkg" ]; then
-    pkg=$(jq -r 'keys[]' <"$PKGBUILDS/new_ver.json" | fzf --height 20%)
+    pkg=$(jq -r 'keys[]' <"$AUR_PKGS/new_ver.json" | fzf --height 20%)
   fi
   if [[ ! -z "$pkg" ]]; then
-    version=$(jq -r ".\"${pkg%-bin}\"" <"$PKGBUILDS/new_ver.json")
+    version=$(jq -r ".\"${pkg%-bin}\"" <"$AUR_PKGS/new_ver.json")
     if [[ -n "$version" ]]; then
-      pkg_dir="$PKGBUILDS/$pkg"
-      if [[ -n $(find "$PKGS" -type d -name "$pkg" 2>/dev/null) ]]; then
+      pkg_dir="$AUR_PKGS/$pkg"
+      if [[ -n $(find "$COMMUNITY_PKGS" -type d -name "$pkg" 2>/dev/null) ]]; then
         echo "==> Found in [community]"
-        pkg_dir="$PKGS/$pkg/trunk"
+        pkg_dir="$COMMUNITY_PKGS/$pkg/trunk"
       else
         echo "==> Found in the AUR"
       fi
@@ -80,7 +80,7 @@ updpkgver() {
       pkgname=$(basename $(dirname $(pwd)))
     fi
     echo "==> Found package: $pkgname"
-    version=$(jq -r ".\"${pkgname%-bin}\"" <"$PKGBUILDS/new_ver.json")
+    version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
     if [[ -n "$version" ]]; then
       echo "==> New version: $version"
       updpkgver "$version"
@@ -104,7 +104,7 @@ community-updpkg() { (
 
 # push package to the AUR
 pushpkg() {
-  LOCKFILE="${PKGBUILDS}/pkg.lock"
+  LOCKFILE="${AUR_PKGS}/pkg.lock"
   while [ -e "${LOCKFILE}" ] && kill -0 $(cat ${LOCKFILE}); do
     echo "==> Waiting for the lock"
     sleep 5
@@ -118,7 +118,7 @@ pushpkg() {
   git add PKGBUILD
   git commit --allow-empty-message -m "$1"
   aurpublish "$PKG" && \
-     "$PKGBUILDS/arch-repo-release.sh" -u -p PKGBUILD && \
+     "$AUR_PKGS/arch-repo-release.sh" -u -p PKGBUILD && \
      git push origin master
 
   rm -f "${LOCKFILE}"
@@ -128,7 +128,7 @@ pushpkg() {
 # create a new package directory in SVN
 newpkg() {
   if [ -n "$1" ]; then
-    cd "$PKGS" || exit
+    cd "$COMMUNITY_PKGS" || exit
     mkdir -p "$1"/{repos,trunk}
     cd "$1/trunk" || exit
     cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
@@ -138,7 +138,7 @@ newpkg() {
 # commit the new package into SVN
 commitnewpkg() {
   if [ -n "$1" ]; then
-    cd "$PKGS/$1" || exit
+    cd "$COMMUNITY_PKGS/$1" || exit
     svn add --parents repos trunk/PKGBUILD
     PKGVER=$(grep -Eo "^pkgver=.*\$" <trunk/PKGBUILD | cut -d '=' -f2)
     PKGREL=$(grep -Eo "^pkgrel=.*\$" <trunk/PKGBUILD | cut -d '=' -f2)
