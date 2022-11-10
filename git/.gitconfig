@@ -38,6 +38,7 @@
 	psmi = "push origin main"
 	cm = commit
 	cmt = commit -m
+	cmta = commit --amend
 	dd = commit --dry-run
 	rmt = remote -v
 	cb = checkout -b
