@@ -1,0 +1,35 @@
+[global]
+    log_verbosity = "trace"
+    startup_notification = true
+    geometry = "1920x23+0+0"
+    font = "Monospace 10"
+    format = """
+    [{{app_name}}] <b>{{summary}}</b>\
+    {% if body %} {{body}}{% endif %}\
+    {% if now(timestamp=true) - timestamp > 60 %} \
+        ({{ now(timestamp=true) - timestamp | date(format="%M") | trim_start_matches(pat="0") }}m ago)\
+    {% endif %}\
+    {% if unread_count > 1 %} ({{unread_count}}){% endif %}
+    """
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#505050"
+    timeout = 2
+    text = "low"
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#aaaaaa"
+    timeout = 10
+    auto_clear = true
+    text = "normal"
+    custom_commands = [
+        { filter = '{ "app_name":"weenotify" }', command = 'aplay -D default /home/orhun/audio/notif.wav' }
+    ]
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#ffffff"
+    timeout = 0
+    text = "critical"

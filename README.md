@@ -10,7 +10,7 @@ Terminal            : kermit
 Resource Monitor    : bpytop
 Editor              : vscodium
 IRC Client          : weechat
-Notification Daemon : dunst
+Notification Daemon : runst
 ```
 
 ## Installation

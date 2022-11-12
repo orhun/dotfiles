@@ -37,7 +37,7 @@ devilspie -a &
 ~/.fehbg &
 
 # notification daemon
-{ sleep 2; RUST_LOG=trace runst; } &
+{ sleep 2; runst; } &
 
 # start i3
 exec i3

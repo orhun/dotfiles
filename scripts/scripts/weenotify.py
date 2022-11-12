@@ -100,13 +100,6 @@ def listener(sockt):
         return
 
     if data:
-        #print("{}: {}".format(addr, data.strip('\n')))
-        with open(os.devnull, 'wb') as devnull:
-            subprocess.Popen(
-                ['aplay', '/home/orhun/audio/notif.wav'],
-                stderr=subprocess.STDOUT,
-                stdout=devnull,
-            )
         notify(json.loads(data.strip()))
 
 def server(host, port):
