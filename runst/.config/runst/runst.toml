@@ -25,7 +25,8 @@
     auto_clear = true
     text = "normal"
     custom_commands = [
-        { filter = '{ "app_name":"weenotify" }', command = 'aplay -D default /home/orhun/audio/notif.wav' }
+        { filter = '{ "app_name":"weenotify" }', command = 'aplay -D default /home/orhun/audio/notif.wav' },
+        { filter = '{ "app_name":"notify-send" }', command = 'aplay -D default /home/orhun/audio/notif.wav' }
     ]
 
 [urgency_critical]
