@@ -4,8 +4,7 @@
 "\C-a": "fg\n"
 "\C-s": "$(search-command)\e\C-e\er"
 "\e": "tere\n"
-"\ec": "code .\n"
-"\ev": "$EDITOR .\n"
+"\ec": "$EDITOR .\n"
 
 # git shortcuts
 "\er": redraw-current-line

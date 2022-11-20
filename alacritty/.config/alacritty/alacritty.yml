@@ -4,7 +4,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.85
+  opacity: 0.90
   decorations: full
   dynamic_title: true
 
@@ -12,45 +12,13 @@ font:
   normal:
     family: Ubuntu Mono Ligaturized
     style: Regular
-
   bold:
     family: Ubuntu Mono Ligaturized
     style: Bold
-
   italic:
     family: Ubuntu Mono Ligaturized
     style: Italic
-
   size: 8.0
-
-colors:
-  primary:
-    background: '#000000'
-    foreground: '#ffffff'
-
-  cursor:
-    text:   '#000000'
-    cursor: '#ffffff'
-
-  normal:
-    black:   '#111111'
-    red:     '#b6403a'
-    green:   '#478226'
-    yellow:  '#cc8800'
-    blue:    '#778899'
-    magenta: '#8f6f8f'
-    cyan:    '#005f87'
-    white:   '#d3d3d3'
-
-  bright:
-    black:   '#333333'
-    red:     '#ff6a6a'
-    green:   '#b1d631'
-    yellow:  '#ff9800'
-    blue:    '#90b0d1'
-    magenta: '#8181a6'
-    cyan:    '#87ceeb'
-    white:   '#c1cdc1'
 
 shell:
   program: /bin/bash
@@ -70,3 +38,6 @@ key_bindings:
   - { key: Space,  mods: Control, action: ToggleViMode }
   - { key: Escape, action: ToggleViMode, mode: Vi }
   - { key: Return,   mods: Control|Alt, action: SpawnNewInstance }
+
+import:
+  - ~/.config/alacritty/theme.yml

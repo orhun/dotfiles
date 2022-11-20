@@ -1,0 +1,12 @@
+/**
+ * @name dracula
+ * @description a dark mode discord theme based on the dracula color palette.
+ * @author slowstab
+ * @version 1.3.1
+ * @authorId 336678828233588736
+ * @website https://github.com/slowstab/dracula
+ * @source https://github.com/slowstab/dracula/blob/main/dracula.scss
+ */
+
+@import url("https://slowstab.github.io/dracula/BetterDiscord/source.css");
+@import url("https://mulverinex.github.io/legacy-settings-icons/dist-native.css");

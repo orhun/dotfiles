@@ -1,36 +1,45 @@
-# (•) files ![colors](https://user-images.githubusercontent.com/24392180/129487004-0147d8d8-aba6-4e9c-a3c1-33b4bf784278.png)
+# (•) files ![colors](https://user-images.githubusercontent.com/24392180/202919385-74f1d901-459c-4e5b-8b84-a8a853ea4d46.png)
 
-This repository contains the configuration files and scripts that I use in my Arch Linux daily working environment.
+This repository contains the configuration files and scripts that I use on my [Arch Linux workstation](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6).
 
 ```
 Distribution        : Arch Linux
-Window Manager      : i3-gaps
+Window Manager      : i3-gaps + i3status
 Shell               : bash
-Terminal            : kermit
+Terminal            : alacritty
 Resource Monitor    : bpytop
-Editor              : vscodium
+Editor              : neovim
 IRC Client          : weechat
 Notification Daemon : runst
+Theme               : dracula
 ```
 
 ## Installation
 
-* `pacman -S stow`
-* `cd "$HOME/"`
-* `git clone --depth 1 https://github.com/orhun/dotfiles .dotfiles`
-* `cd .dotfiles/`
-* `stow bash git i3 ...`
-* `stow etc -t /etc/`
+- `pacman -S stow`
+- `cd "$HOME"`
+- `git clone --depth 1 https://github.com/orhun/dotfiles .dotfiles`
+- `cd .dotfiles/`
+- `stow bash git i3 ...`
+- `stow etc -t /etc/`
 
 ## Preview
+
+![20-11-2022](https://user-images.githubusercontent.com/24392180/202918885-6e1fbdfe-af10-4361-b982-b61227527357.jpg)
+
+![20-11-2022](https://user-images.githubusercontent.com/24392180/202918879-b519a2d3-39bf-472e-8dbc-2de33dbb8203.jpg)
+
+![20-11-2022](https://user-images.githubusercontent.com/24392180/202918882-eb3da01a-6f17-4fc2-ae51-4adeb88262a9.jpg)
+
+## History
+
+### 20-10-2020
 
 ![20-10-2020](https://user-images.githubusercontent.com/24392180/96750521-b411ec00-13d4-11eb-8402-41f7f0e76525.jpg)
 
 ![20-10-2020](https://user-images.githubusercontent.com/24392180/96750534-b83e0980-13d4-11eb-9ede-404f0ba9bd47.jpg)
 
 ![20-10-2020](https://user-images.githubusercontent.com/24392180/96847513-f2062300-145b-11eb-8911-2e9248c5b868.jpg)
-
-## History
 
 ### 09-08-2020
 
@@ -57,5 +66,5 @@ Notification Daemon : runst
 #### License
 
 <sup>
-Licensed under <a href="LICENSE">GPLv3</a>.
+Licensed under <a href="LICENSE">MIT</a>.
 </sup>
