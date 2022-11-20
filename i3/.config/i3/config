@@ -6,9 +6,9 @@
 set $mod Mod4
 
 # Borders
-for_window [class=".*"] border pixel 0
-default_border pixel 0
-default_floating_border pixel 0
+for_window [class=".*"] border pixel 1
+default_border pixel 1
+default_floating_border pixel 1
 
 # Gaps
 gaps outer 5
@@ -52,7 +52,6 @@ bindsym $mod+shift+b exec alacritty -e sh ~/scripts/btselect.sh
 # Wireless network selector
 bindsym $mod+shift+w exec alacritty -e sh ~/scripts/wifiselect.sh
 
-
 # IRC client
 bindsym $mod+shift+i exec alacritty -e sh ~/scripts/weechat.sh
 
@@ -65,11 +64,19 @@ bindsym $mod+shift+x exec ~/scripts/emoji-menu.sh
 # Copy GitHub access token
 bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
 
+# Notification history
+bindsym $mod+grave exec dbus-send --print-reply \
+        --dest=org.freedesktop.Notifications /org/freedesktop/Notifications/ctl org.freedesktop.Notifications.History
+
+# Close notification
+bindsym $mod+shift+grave exec dbus-send --print-reply \
+        --dest=org.freedesktop.Notifications /org/freedesktop/Notifications/ctl org.freedesktop.Notifications.Close
+
 # Kill the focused window
 bindsym $mod+Shift+q kill
 
 # Start the dmenu
-bindsym $mod+d exec dmenu_run -nb '#030303' -nf '#999999' -sb '#505050' -sf '#ffffff' -fn 'pango:monospace:pixelsize=14'
+bindsym $mod+d exec dmenu_run -nb '#191a21' -nf '#6272a4' -sb '#bd93f9' -sf '#21222c' -fn 'pango:monospace:pixelsize=14'
 
 # Change focus
 bindsym $mod+j focus left
@@ -201,13 +208,14 @@ bar {
   status_command i3status
   tray_output none
   colors {
-    statusline #ffffff
-    background #000000
-    focused_workspace #030303 #030303 #909090
-    inactive_workspace #030303 #030303 #505050
+    statusline #f8f8f2
+    background #191a21
+    focused_workspace #191a21 #191a21 #bd93f9
+    inactive_workspace #191a21 #191a21 #44475a
   }
 }
 
-client.unfocused        #000000 #000000 #505050 #000000
-client.focused_inactive #000000 #000000 #505050 #000000
-client.focused          #909090 #909090 #505050 #000000
+# class                 border  backgr. text    indicator child_border
+client.unfocused        #191a21 #191a21 #44475a #6272a4 #44475a
+client.focused_inactive #191a21 #191a21 #44475a #6272a4 #44475a
+client.focused          #191a21 #191a21 #bd93f9 #bd93f9 #bd93f9

@@ -21,7 +21,7 @@ stty -ixon
 bind -x '"\t": fzf_bash_completion'
 
 # Prompt
-PS1='(\u \[\e[31m\]ζ\[\e[39m\] \w) '
+PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
 
 # General variables
 XDG_CONFIG_HOME="$HOME/.config"
@@ -30,9 +30,9 @@ export ARCH="x86_64"
 export LC_ALL="en_US.utf-8"
 export LC_CTYPE="en_US.utf-8"
 export LANG="en_US.utf-8"
-export TERM="xterm-color"
+export TERM="xterm-256color"
 export VISUAL="vim"
-export EDITOR="$VISUAL"
+export EDITOR="nvim"
 export GPG_TTY=$(tty)
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export HISTTIMEFORMAT="%h %d %H:%M:%S "

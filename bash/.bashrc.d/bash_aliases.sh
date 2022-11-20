@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-alias v='vim'
+alias v='nvim'
 alias g='git'
 alias c='xclip -selection clipboard'
 alias p='xclip -o'
@@ -46,3 +46,8 @@ alias search-command='compgen -c | sort -u | fzf'
 alias rawterm='stty raw; sleep 2; echo; stty cooked'
 alias wifi-menu='sudo wifi-menu'
 alias xlog="/usr/bin/ls $HOME/.local/share/xorg/Xorg.*.log | fzf | xargs bat"
+alias hide-cursor="tput civis"
+alias v-edit-conf="v $DOTFILES/nvim/.config/nvim/lua/user/init.lua"
+alias xfindkey="xev -event keyboard"
+alias xlskey="xmodmap -pke"
+alias cpwd="pwd | tr -d '\n' | c"

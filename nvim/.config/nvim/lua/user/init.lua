@@ -26,7 +26,7 @@ local config = {
 	},
 
 	-- Set colorscheme to use
-	colorscheme = "carbonfox",
+	colorscheme = "dracula",
 
 	-- Add highlight groups in any theme
 	highlights = {
@@ -49,6 +49,7 @@ local config = {
 			wrap = false, -- sets vim.opt.wrap
 			smartcase = true, -- sets vim.opt.smartcase
 			ignorecase = true, -- sets vim.opt.ignorecase
+			modifiable = true,
 		},
 		g = {
 			mapleader = " ", -- sets vim.g.mapleader
@@ -59,6 +60,7 @@ local config = {
 			status_diagnostics_enabled = true, -- enable diagnostics in statusline
 			icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
 			ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+			mkdp_browser = "firefox-developer-edition", -- use Firefox for markdown preview
 		},
 	},
 	-- If you need more control, you can use the function()...end notation
@@ -84,50 +86,6 @@ local config = {
 		"    ██ ██  ██ ██    ██ ██ ██ ████ ██",
 		"    ██  ██ ██  ██  ██  ██ ██  ██  ██",
 		"    ██   ████   ████   ██ ██      ██",
-	},
-
-	-- Default theme configuration
-	default_theme = {
-		-- Modify the color palette for the default theme
-		colors = {
-			fg = "#abb2bf",
-			bg = "#1e222a",
-		},
-		highlights = function(hl) -- or a function that returns a new table of colors to set
-			local C = require("default_theme.colors")
-
-			hl.Normal = { fg = C.fg, bg = C.bg }
-
-			-- New approach instead of diagnostic_style
-			hl.DiagnosticError.italic = true
-			hl.DiagnosticHint.italic = true
-			hl.DiagnosticInfo.italic = true
-			hl.DiagnosticWarn.italic = true
-
-			return hl
-		end,
-		-- enable or disable highlighting for extra plugins
-		plugins = {
-			aerial = true,
-			beacon = false,
-			bufferline = true,
-			cmp = true,
-			dashboard = true,
-			highlighturl = true,
-			hop = false,
-			indent_blankline = true,
-			lightspeed = false,
-			["neo-tree"] = true,
-			notify = true,
-			["nvim-tree"] = false,
-			["nvim-web-devicons"] = true,
-			rainbow = true,
-			symbols_outline = false,
-			telescope = true,
-			treesitter = true,
-			vimwiki = false,
-			["which-key"] = true,
-		},
 	},
 
 	-- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
@@ -202,13 +160,13 @@ local config = {
 		n = {
 			["<leader>r"] = { ":AstroReload<cr>", desc = "Reload" },
 			["<C-s>"] = { ":w!<cr>", desc = "Save file" },
-			["<C-d>"] = { ":wq!<cr>", desc = "Save and exit" },
 			["<C-q>"] = { ":qa!<cr>", desc = "Exit" },
 			["<A-z>"] = { ":set wrap!<cr>", desc = "Toggle word wrap" },
+			["<C-j>"] = { ":ToggleTerm size=30 direction=horizontal<cr>", desc = "Toggle terminal" },
+			["<C-f>"] = { "*", desc = "Search for word" },
 		},
 		i = {
 			["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
-			["<C-d>"] = { "<esc>:wq!<cr>", desc = "Save and exit" },
 			["<C-q>"] = { "<esc>:qa!<cr>", desc = "Exit" },
 		},
 		t = {
@@ -221,91 +179,16 @@ local config = {
 	plugins = {
 		init = {
 			{
-				"xiyaowong/nvim-transparent",
+				"Mofiqul/dracula.nvim",
 				config = function()
-					require("transparent").setup({
-						enable = true,
+					local dracula = require("dracula")
+					dracula.setup({
+						transparent_bg = true,
 					})
 				end,
 			},
-			{
-				"fxn/vim-monochrome",
-				config = function()
-					vim.cmd("colorscheme monochrome")
-				end,
-			},
-			{
-				"kyazdani42/blue-moon",
-				config = function()
-					vim.opt.termguicolors = true
-					vim.cmd("colorscheme blue-moon")
-				end,
-			},
-			{
-				"andersevenrud/nordic.nvim",
-				config = function()
-					-- The table used in this example contains the default settings.
-					-- Modify or remove these to your liking (this also applies to alternatives below):
-					require("nordic").colorscheme({
-						-- Underline style used for spelling
-						-- Options: 'none', 'underline', 'undercurl'
-						underline_option = "none",
-
-						-- Italics for certain keywords such as constructors, functions,
-						-- labels and namespaces
-						italic = true,
-
-						-- Italic styled comments
-						italic_comments = false,
-
-						-- Minimal mode: different choice of colors for Tabs and StatusLine
-						minimal_mode = false,
-
-						-- Darker backgrounds for certain sidebars, popups, etc.
-						-- Options: true, false, or a table of explicit names
-						-- Supported: terminal, qf, vista_kind, packer, nvim-tree, telescope, whichkey
-						alternate_backgrounds = false,
-
-						-- Callback function to define custom color groups
-						-- See 'lua/nordic/colors/example.lua' for example defitions
-						custom_colors = function(c, s, cs)
-							return {}
-						end,
-					})
-				end,
-			},
-			{
-				"EdenEast/nightfox.nvim",
-				config = function()
-					require("nightfox").setup({
-						options = {
-							styles = {
-								comments = "italic",
-								keywords = "bold",
-								types = "italic,bold",
-							},
-						},
-					})
-				end,
-			},
-			{
-				"cocopon/iceberg.vim",
-				config = function()
-					vim.cmd("colorscheme iceberg")
-				end,
-			},
-			{
-				"owickstrom/vim-colors-paramount",
-				config = function()
-					vim.cmd("colorscheme paramount")
-				end,
-			},
-			{
-				"logico/typewriter-vim",
-				config = function()
-					vim.cmd("colorscheme typewriter")
-				end,
-			},
+			{ "m-pilia/vim-pkgbuild" },
+			{ "iamcco/markdown-preview.nvim" },
 			-- You can disable default plugins as follows:
 			-- ["goolord/alpha-nvim"] = { disable = true },
 
@@ -352,8 +235,35 @@ local config = {
 					hide_dotfiles = false,
 					hide_gitignored = false,
 					hide_hidden = false,
+					hide_by_pattern = {
+						"**/.git",
+						"**/.DS_Store",
+						"**/node_modules",
+						"**/target",
+					},
 				},
-				window = { mappings = { h = false } },
+				window = {
+					mappings = {
+						["h"] = function(state)
+							local node = state.tree:get_node()
+							if node.type == "directory" and node:is_expanded() then
+								require("neo-tree.sources.filesystem").toggle_directory(state, node)
+							else
+								require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+							end
+						end,
+						["l"] = function(state)
+							local node = state.tree:get_node()
+							if node.type == "directory" then
+								if not node:is_expanded() then
+									require("neo-tree.sources.filesystem").toggle_directory(state, node)
+								elseif node:has_children() then
+									require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
+								end
+							end
+						end,
+					},
+				},
 			},
 		},
 		-- use mason-lspconfig to configure LSP installations
