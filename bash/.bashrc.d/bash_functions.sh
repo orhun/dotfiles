@@ -48,8 +48,10 @@ gist() {
 
 # https://patorjk.com/software/taag/
 taag() {
-  find /usr/share/figlet/ -type f -name "*.flf" -exec basename {} \; |
-    xargs -I {} sh -c "printf '\n\n{}\n\n' && figlet '$1' -f {}"
+  if [ -n "$1" ]; then
+    find /usr/share/figlet/ -type f -name "*.flf" -exec basename {} \; |
+      xargs -I {} sh -c "printf '\n\n{}\n\n' && figlet $1 -f '{}'"
+  fi
 }
 
 # find the total size to delete in workspace
