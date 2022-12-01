@@ -20,6 +20,7 @@ shopt -s autocd
 shopt -s histappend
 stty -ixon
 bind -x '"\t": fzf_bash_completion'
+bind '"\ec": "$EDITOR .\n"'
 
 # Prompt
 PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
