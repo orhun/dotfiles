@@ -75,17 +75,14 @@ local config = {
 
 	-- Set dashboard header
 	header = {
-		" █████  ███████ ████████ ██████   ██████",
-		"██   ██ ██         ██    ██   ██ ██    ██",
-		"███████ ███████    ██    ██████  ██    ██",
-		"██   ██      ██    ██    ██   ██ ██    ██",
-		"██   ██ ███████    ██    ██   ██  ██████",
-		" ",
-		"    ███    ██ ██    ██ ██ ███    ███",
-		"    ████   ██ ██    ██ ██ ████  ████",
-		"    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-		"    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-		"    ██   ████   ████   ██ ██      ██",
+		" ████     ██ ██      ██ ██ ████     ████",
+		"░██░██   ░██░██     ░██░██░██░██   ██░██",
+		"░██░░██  ░██░██     ░██░██░██░░██ ██ ░██",
+		"░██ ░░██ ░██░░██    ██ ░██░██ ░░███  ░██",
+		"░██  ░░██░██ ░░██  ██  ░██░██  ░░█   ░██",
+		"░██   ░░████  ░░████   ░██░██   ░    ░██",
+		"░██    ░░███   ░░██    ░██░██        ░██",
+		"░░      ░░░     ░░     ░░ ░░         ░░",
 	},
 
 	-- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
@@ -164,6 +161,13 @@ local config = {
 			["<A-z>"] = { ":set wrap!<cr>", desc = "Toggle word wrap" },
 			["<C-j>"] = { ":ToggleTerm size=30 direction=horizontal<cr>", desc = "Toggle terminal" },
 			["<C-f>"] = { "*", desc = "Search for word" },
+			["[x"] = { ":GitConflictPrevConflict<cr>", desc = "Previous Git conflict" },
+			["]x"] = { ":GitConflictNextConflict<cr>", desc = "Next Git conflict" },
+			["cc"] = { ":GitConflictListQf<cr>", desc = "List Git conflicts" },
+			["co"] = { ":GitConflictChooseOurs<cr>", desc = "Git conflict - choose ours" },
+			["ct"] = { ":GitConflictChooseTheirs<cr>", desc = "Git conflict - choose theirs" },
+			["cb"] = { ":GitConflictChooseBoth<cr>", desc = "Git conflict - choose both" },
+			["c0"] = { ":GitConflictChooseNone<cr>", desc = "Git conflict - choose none" },
 		},
 		i = {
 			["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
@@ -189,6 +193,15 @@ local config = {
 			},
 			{ "m-pilia/vim-pkgbuild" },
 			{ "iamcco/markdown-preview.nvim" },
+			{
+				"akinsho/git-conflict.nvim",
+				tag = "*",
+				config = function()
+					require("git-conflict").setup({
+						default_mappings = false,
+					})
+				end,
+			},
 			-- You can disable default plugins as follows:
 			-- ["goolord/alpha-nvim"] = { disable = true },
 
