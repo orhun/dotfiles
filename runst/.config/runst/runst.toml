@@ -5,9 +5,9 @@
     font = "Monospace 10"
     format = """
     [{{app_name}}] <b>{{summary}}</b>\
-    {% if body %} {{body}}{% endif %}\
+    {% if body %} {{body}}{% endif %} \
     {% if now(timestamp=true) - timestamp > 60 %} \
-        ({{ now(timestamp=true) - timestamp | date(format="%M") | trim_start_matches(pat="0") }}m ago)\
+        ({{ (now(timestamp=true) - timestamp) | humantime }} ago)\
     {% endif %}\
     {% if unread_count > 1 %} ({{unread_count}}){% endif %}
     """
