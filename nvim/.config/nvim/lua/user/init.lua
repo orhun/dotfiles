@@ -75,14 +75,18 @@ local config = {
 
   -- Set dashboard header
   header = {
-    " ████     ██ ██      ██ ██ ████     ████",
-    "░██░██   ░██░██     ░██░██░██░██   ██░██",
-    "░██░░██  ░██░██     ░██░██░██░░██ ██ ░██",
-    "░██ ░░██ ░██░░██    ██ ░██░██ ░░███  ░██",
-    "░██  ░░██░██ ░░██  ██  ░██░██  ░░█   ░██",
-    "░██   ░░████  ░░████   ░██░██   ░    ░██",
-    "░██    ░░███   ░░██    ░██░██        ░██",
-    "░░      ░░░     ░░     ░░ ░░         ░░",
+    "  __      _____ ____",
+    " /---__  ( (O)|/(O) )",
+    "  \\\\\\\\/  \\___/U\\___/",
+    "    L\\       ||",
+    "     \\\\ ____|||_____",
+    "      \\\\|==|[]__/==|\\-|",
+    "       \\|* |||||\\==|/-|",
+    "    ____| *|[][]-- |_",
+    "   ||EEE|__EEEE_[]_|EE\\",
+    "   ||EEE|=O     O|=|EEE|",
+    "   \\LEEE|         \\|EEE|  __))",
+    "                          ```",
   },
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
@@ -303,7 +307,7 @@ local config = {
       render = "simple",
       stages = "fade",
       timeout = 3000,
-      top_down = true
+      top_down = true,
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
