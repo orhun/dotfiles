@@ -159,6 +159,7 @@ local config = {
   -- automatically pick-up stored data by this setting.)
   mappings = {
     n = {
+      ["<esc>"] = { ":nohl<cr>", desc = "No highlight" },
       ["<leader>r"] = { ":AstroReload<cr>", desc = "Reload" },
       ["<C-s>"] = { ":w!<cr>", desc = "Save file" },
       ["<C-q>"] = { ":qa!<cr>", desc = "Exit" },
@@ -173,6 +174,8 @@ local config = {
       ["ct"] = { ":GitConflictChooseTheirs<cr>", desc = "Git conflict - choose theirs" },
       ["cb"] = { ":GitConflictChooseBoth<cr>", desc = "Git conflict - choose both" },
       ["c0"] = { ":GitConflictChooseNone<cr>", desc = "Git conflict - choose none" },
+      ["<C-d>"] = { "<C-d>zz", desc = "Scroll down" },
+      ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
     },
     i = {
       ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
