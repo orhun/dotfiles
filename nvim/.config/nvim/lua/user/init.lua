@@ -213,6 +213,7 @@ local config = {
         end,
       },
       { "mhinz/vim-crates" },
+      { "folke/zen-mode.nvim" },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
