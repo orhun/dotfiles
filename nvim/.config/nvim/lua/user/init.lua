@@ -176,6 +176,7 @@ local config = {
       ["c0"] = { ":GitConflictChooseNone<cr>", desc = "Git conflict - choose none" },
       ["<C-d>"] = { "<C-d>zz", desc = "Scroll down" },
       ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
+      ["<leader>U"] = { ":UndotreeToggle<cr>", desc = "Toggle undo history" },
     },
     i = {
       ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
@@ -214,6 +215,7 @@ local config = {
       },
       { "mhinz/vim-crates" },
       { "folke/zen-mode.nvim" },
+      { "mbbill/undotree" },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
