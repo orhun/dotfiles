@@ -64,6 +64,9 @@ bindsym $mod+shift+x exec ~/scripts/emoji-menu.sh
 # Copy GitHub access token
 bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
 
+# Take a screenshot
+bindsym $mod+shift+o exec ~/scripts/capture.sh
+
 # Notification history
 bindsym $mod+grave exec dbus-send --print-reply \
         --dest=org.freedesktop.Notifications /org/freedesktop/Notifications/ctl org.freedesktop.Notifications.History
