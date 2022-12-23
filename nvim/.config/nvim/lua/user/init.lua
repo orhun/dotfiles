@@ -178,6 +178,7 @@ local config = {
       ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
       ["<leader>U"] = { ":UndotreeToggle<cr>", desc = "Toggle undo history" },
       ["<leader>gg"] = { ":Git<cr>", desc = "Open git" },
+      ["<leader>M"] = { ":MarkdownPreview<cr>", desc = "Show markdown preview" },
     },
     i = {
       ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
