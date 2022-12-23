@@ -39,6 +39,7 @@
 	cm = commit
 	cmt = commit -m
 	cmta = commit --amend
+	cmtf = commit --amend --no-edit
 	dd = commit --dry-run
 	rmt = remote -v
 	cb = checkout -b
