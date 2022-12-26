@@ -178,7 +178,8 @@ local config = {
       ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
       ["<leader>U"] = { ":UndotreeToggle<cr>", desc = "Toggle undo history" },
       ["<leader>gg"] = { ":Git<cr>", desc = "Open git" },
-      ["<leader>M"] = { ":MarkdownPreview<cr>", desc = "Show markdown preview" },
+      ["<leader>m"] = { ":MarkdownPreview<cr>", desc = "Show markdown preview" },
+      ["<leader>z"] = { ":ZenMode<cr>", desc = "Toggle Zen mode" },
     },
     i = {
       ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
