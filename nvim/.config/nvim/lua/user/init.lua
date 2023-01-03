@@ -382,6 +382,16 @@ local config = {
       pattern = "Cargo.toml",
       command = "call crates#toggle()",
     })
+    vim.api.nvim_create_autocmd("BufRead", {
+      desc = "Indicate out-of-date Cargo dependencies",
+      pattern = "PKGBUILD",
+      callback = function()
+        vim.g.ui_notifications_enabled = false
+        require("core.utils").ui.toggle_diagnostics()
+        require("core.utils").ui.toggle_autoformat()
+        vim.g.ui_notifications_enabled = true
+      end,
+    })
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
