@@ -1,6 +1,0 @@
-( if
-( contains ( window_class ) "VSCodium" )
-( begin
-( spawn_async (str "transset-df -i " (window_xid) " 0.90" ))
-)
-)

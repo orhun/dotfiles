@@ -30,9 +30,6 @@ xset m 1 4
 # start composite manager
 xcompmgr &
 
-# start devil's pie
-devilspie -a &
-
 # set background image
 ~/.fehbg &
 
