@@ -308,6 +308,11 @@ local config = {
           },
         },
       },
+      pickers = {
+        find_files = {
+          theme = "dropdown",
+        },
+      },
     },
     notify = {
       background_colour = "#000000",
