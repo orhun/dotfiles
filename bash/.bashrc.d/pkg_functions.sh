@@ -92,15 +92,19 @@ updpkgver() {
 }
 
 # publish a package to the [community]
-community-updpkg() { (
-  set -e
-  pkgname=$(basename $(dirname $(pwd)))
-  echo "==> Found package: $pkgname"
-  svn-diff
-  communitypkg "upstream release"
-  updcomdb
-  nv take "$pkgname"
-); }
+community-updpkg () {
+  commit_msg="upstream release"
+  if [ -n "$1" ]; then
+    commit_msg="$1"
+  fi
+  ( set -e;
+  pkgname=$(basename $(dirname $(pwd)));
+  echo "==> Found package: $pkgname";
+  svn diff | diff-so-fancy;
+  communitypkg "$commit_msg";
+  ssh repos.archlinux.org "/community/db-update";
+  nv take "$pkgname" )
+}
 
 # push package to the AUR
 pushpkg() {
