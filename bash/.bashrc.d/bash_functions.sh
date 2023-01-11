@@ -70,4 +70,25 @@ tere() {
     [ -n "$result" ] && cd -- "$result"
 }
 
+
+# deobfuscate email
+deobf-email() {
+	# pick all arguments as one string
+	args="$*"
+	# remove everything before <
+	mail="${args#*<}"
+	# remove everything after >
+	mail="${mail%>*}"
+	# (at) -> @
+	mail="${mail//(at)/@}"
+	# (dot) -> .
+	mail="${mail//(dot)/.}"
+	# at -> @
+	mail="${mail// at /@}"
+	# dot -> .
+	mail="${mail// dot /.}"
+	# remove remaining spaces an echo mail
+	echo "${mail//[[:space:]]/}"
+}
+
 # vim:set ts=2 sw=2 et:

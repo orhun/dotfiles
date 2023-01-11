@@ -9,3 +9,4 @@ alias svn-diff='svn diff | dsf'
 alias svn-last='svn log -vl 1 && svn diff -rPREV | dsf'
 alias extra-x86_64-build-aurdeps='paru -U --chroot'
 alias extra-x86_64-inspect="arch-nspawn /var/lib/archbuild/extra-x86_64/$USER/"
+alias deobf-email-pkg='deobf-email $(head -1 PKGBUILD)'
