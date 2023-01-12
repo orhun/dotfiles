@@ -180,6 +180,8 @@ local config = {
       ["<leader>gg"] = { ":Git<cr>", desc = "Open Git" },
       ["<leader>m"] = { ":MarkdownPreview<cr>", desc = "Show markdown preview" },
       ["<leader>z"] = { ":ZenMode<cr>", desc = "Toggle Zen mode" },
+      ["<leader>uR"] = { ":CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
+      ["<leader>uG"] = { ":CellularAutomaton game_of_life<cr>", desc = "Game of life" },
     },
     i = {
       ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
@@ -220,6 +222,7 @@ local config = {
       { "folke/zen-mode.nvim" },
       { "mbbill/undotree" },
       { "tpope/vim-fugitive" },
+      { "Eandrju/cellular-automaton.nvim" },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
