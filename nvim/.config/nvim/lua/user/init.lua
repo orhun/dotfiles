@@ -261,7 +261,7 @@ local config = {
       return config -- return final config table
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      auto_install = true,
+      auto_install = false,
       highlight = {
         enable = true,
       },
