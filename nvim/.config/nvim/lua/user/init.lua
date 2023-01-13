@@ -261,6 +261,11 @@ local config = {
       return config -- return final config table
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
+      auto_install = true,
+      highlight = {
+        enable = true,
+      },
+      ignore_install = { "lua" },
       -- ensure_installed = { "lua" },
     },
     ["neo-tree"] = {
