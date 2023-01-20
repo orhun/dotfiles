@@ -50,6 +50,7 @@ local config = {
       smartcase = true, -- sets vim.opt.smartcase
       ignorecase = true, -- sets vim.opt.ignorecase
       modifiable = true,
+      autoread = true,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
