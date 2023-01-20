@@ -1,18 +1,18 @@
 # BSD 2-Clause License
-# 
+#
 # Copyright (c) 2018, Elia El Lazkani
 # All rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
-# 
+#
 # * Redistributions of source code must retain the above copyright notice, this
 #   list of conditions and the following disclaimer.
-# 
+#
 # * Redistributions in binary form must reproduce the above copyright notice,
 #   this list of conditions and the following disclaimer in the documentation
 #   and/or other materials provided with the distribution.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 # AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 # IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -58,8 +58,7 @@ One can get the full script help print with:
 import json
 import socket
 import argparse
-import subprocess
-import os
+import re
 
 try:
     import notify2 as Notify
@@ -86,6 +85,7 @@ SCRIPT_VERSION = "0.4"
 SCRIPT_LICENSE = "BSD-2-Clause"
 SCRIPT_DESCRIPTION = "Plugin/Server to send/receive notifications and display them"
 
+
 def listener(sockt):
     """ Method to handle incoming data from client """
     conn, addr = sockt.accept()
@@ -102,16 +102,17 @@ def listener(sockt):
     if data:
         notify(json.loads(data.strip()))
 
+
 def server(host, port):
     """ Method to run the server in a loop """
-    #print("Starting server...")
+    # print("Starting server...")
     host = host if host else ''
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))
     s.listen(5)
-    #if host:
+    # if host:
     #    print("Server listening on {}:{}...".format(host, port))
-    #else:
+    # else:
     #    print("Server listening locally on port {}...".format(port))
 
     try:
@@ -122,24 +123,25 @@ def server(host, port):
     finally:
         s.close()
 
+
 def notify(data):
     """ Method to notify the user through dbus """
     if data['prefix'] != '--':
         try:
             msg = "{} | {}: {}".format(data['buffer'],
-                                        data['prefix'],
-                                        data['message'])
+                                       data['prefix'],
+                                       data['message'])
         except UnicodeEncodeError:
             msg = "{} | {}: {}".format(data['buffer'],
-                                        data['prefix'],
-                                        data['message'].encode('utf-8'))
+                                       data['prefix'],
+                                       data['message'].encode('utf-8'))
     else:
         try:
             msg = "{} | {}".format(data['buffer'],
-                                    data['message'])
+                                   data['message'])
         except UnicodeEncodeError:
             msg = "{} | {}".format(data['buffer'],
-                                    data['message'].encode('utf-8'))
+                                   data['message'].encode('utf-8'))
     notification = Notify.Notification(data['type'], msg)
     notification.set_hint("transient", "false")
     notification.set_hint("desktop-entry", "weechat")
@@ -148,7 +150,7 @@ def notify(data):
         notification.show()
     except dbus.exceptions.DBusException as e:
         print(e)
-        pass
+
 
 def local_notify(data):
     """ Method to send notification locally on the host """
@@ -157,12 +159,13 @@ def local_notify(data):
     else:
         if dbus_imported:
             w.prnt("", "notify2 could not be imported, disabling {}"
-                .format(SCRIPT_NAME))
+                   .format(SCRIPT_NAME))
         else:
             w.prnt("", "notify2 could not be imported due to missing dbus-python,"
                    "disabling {}".format(SCRIPT_NAME))
         w.config_set_plugin('enable', 'off')
-    
+
+
 def send(host, port, msg):
     """ Method to send data to the server for notification display """
     c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -175,6 +178,7 @@ def send(host, port, msg):
     message = str.encode(message, 'utf-8')
     c.sendall(message)
     c.close()
+
 
 def on_notify(data, buffer, date, tags, displayed,
               highlight, prefix, message):
@@ -193,6 +197,7 @@ def on_notify(data, buffer, date, tags, displayed,
                 local_notify(data)
     return w.WEECHAT_RC_OK
 
+
 def weechat_parser(data, buffer, date, tags, displayed,
                    highlight, prefix, message):
     """ Method to parte data coming from weechat and take action on it """
@@ -200,28 +205,30 @@ def weechat_parser(data, buffer, date, tags, displayed,
     if "NOTICE" in data and buffer_name != "highmon" and prefix != "--":
         if buffer_name == prefix:
             buffer_name = data
-        return { 'buffer': buffer_name,
-                 'type': data,
-                 'prefix': prefix,
-                 'message': message }
+        return {'buffer': buffer_name,
+                'type': data,
+                'prefix': prefix,
+                'message': message}
     elif "PRIVMSG" in data and "irc_notice" not in tags:
-        return { 'buffer': buffer_name,
-                 'type': data,
-                 'prefix': prefix,
-                 'message': message }
+        return {'buffer': buffer_name,
+                'type': data,
+                'prefix': prefix,
+                'message': message}
     elif "MSG" in data and int(highlight) and \
          "irc_notice" not in tags:
-        return { 'buffer': buffer_name,
-                 'type': data,
-                 'prefix': prefix,
-                 'message': message }
+        return {'buffer': buffer_name,
+                'type': data,
+                'prefix': prefix,
+                'message': message}
     elif "IRC" in data:
-        if buffer_name in w.config_get_plugin('notify_for').split(","):
-            if not prefix in w.config_get_plugin('ignore_nicks').split(","):
-                return { 'buffer': buffer_name,
-                    'type': data,
-                    'prefix': prefix,
-                    'message': message }
+        for regex in w.config_get_plugin('notify_for').split(","):
+            if re.match(regex, buffer_name):
+                if prefix not in w.config_get_plugin('ignore_nicks').split(","):
+                    return {'buffer': buffer_name,
+                            'type': data,
+                            'prefix': prefix,
+                            'message': message}
+
 
 def client():
     """ Method to register the plugin and hook into weechat """
@@ -275,6 +282,7 @@ def client():
         w.hook_print('', 'notify_private', '', 1, 'on_notify', 'PRIVMSG')
         w.hook_print('', 'irc_notice', '', 1, 'on_notify', 'NOTICE')
 
+
 def argument_parse():
     """ Method to parse command line arguments """
     parser = argparse.ArgumentParser(
@@ -294,6 +302,7 @@ def argument_parse():
         version='%(prog)s {}'.format(SCRIPT_VERSION),
         help='Prints version.')
     return parser
+
 
 if __name__ == '__main__':
     parser = argument_parse()
