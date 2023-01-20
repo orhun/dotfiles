@@ -1,7 +1,7 @@
 # bash shortcuts
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-"\C-a": "fg\n"
+"\C-f": "fg\n"
 "\C-s": "$(search-command)\e\C-e\er"
 "\e": "tere\n"
 
