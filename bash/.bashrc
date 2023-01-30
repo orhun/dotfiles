@@ -8,7 +8,7 @@
 [[ $- != *i* ]] && return
 
 # Pull in bash alias/functions definitions
-while read -r f; do source "$f"; done < <( find "$HOME/.bashrc.d/" -name "*.sh" | sort )
+while read -r f; do source "$f"; done < <(find "$HOME/.bashrc.d/" -name "*.sh" | sort)
 
 # Helper utilities
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
@@ -33,9 +33,9 @@ export LC_ALL="en_US.utf-8"
 export LC_CTYPE="en_US.utf-8"
 export LANG="en_US.utf-8"
 export TERM="xterm-256color"
-export VISUAL="vim"
+export VISUAL="nvim"
 export EDITOR="nvim"
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty)"
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export HISTSIZE=2000
