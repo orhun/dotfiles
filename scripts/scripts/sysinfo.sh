@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # System info
 
@@ -16,5 +16,5 @@ printf " \e[1;34m        font \e[0m$font $fontsize\n"
 printf " \e[1;34m      colors \e[0m$colors\n"
 printf " \e[0m\n"
 
-pcs() { for i in {0..7}; do echo -en "\e[${1}$((30+$i))m \u2588\u2588 \e[0m"; done; }
+pcs() { for i in {0..7}; do echo -en "\e[${1}$((30 + $i))m \u2588\u2588 \e[0m"; done; }
 printf "\n%s\n%s\n\n" "$(pcs)" "$(pcs '1;')"

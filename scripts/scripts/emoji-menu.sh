@@ -33,11 +33,11 @@ typeResult() {
 # Get Options
 while getopts ":c:f:th" o; do
   case "${o}" in
-    f) EMOJI_MENU_DB="${OPTARG}" ;;
-    c) EMOJI_MENU_COMMAND="${OPTARG}" ;;
-    t) EMOJI_MENU_COMMAND=typeResult ;;
-    h) usage 0 ;;
-    *) usage 1 ;;
+  f) EMOJI_MENU_DB="${OPTARG}" ;;
+  c) EMOJI_MENU_COMMAND="${OPTARG}" ;;
+  t) EMOJI_MENU_COMMAND=typeResult ;;
+  h) usage 0 ;;
+  *) usage 1 ;;
   esac
 done
 
@@ -48,7 +48,7 @@ fi
 
 # Rofi can handle large inputs and emojis
 rofi -p '🔍' -width 610 -dmenu \
-  < "$EMOJI_MENU_DB" \
-  | grep -oP '^[^\s]+' \
-  | tr -d '\n' \
-  | ${EMOJI_MENU_COMMAND}
+  <"$EMOJI_MENU_DB" |
+  grep -oP '^[^\s]+' |
+  tr -d '\n' |
+  ${EMOJI_MENU_COMMAND}

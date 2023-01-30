@@ -3,7 +3,7 @@
 set -e
 
 randomchar() {
- openssl rand -base64 1 | cut -c1-1
+  openssl rand -base64 1 | cut -c1-1
 }
 
 while true; do
@@ -17,4 +17,3 @@ while true; do
     sleep 0.1s
   done
 done
-
