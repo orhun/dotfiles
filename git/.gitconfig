@@ -54,6 +54,7 @@
 	ups = config --get remote.origin.url
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 	godsays = !git commit -m \"$(curl -s https://godsays.xyz)\"
+	god = !echo "god is listening"
 [commit]
 	template = ~/.git-commit-template
 	gpgsign = true
