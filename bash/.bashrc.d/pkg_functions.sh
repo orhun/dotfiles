@@ -162,4 +162,13 @@ commitnewpkg() {
   fi
 }
 
+# run VCS diff for the package
+pkg-diff() {
+  if git rev-parse HEAD >/dev/null 2>&1; then
+    git diff .
+  else
+    svn-diff
+  fi
+}
+
 # vim:set ts=2 sw=2 et:
