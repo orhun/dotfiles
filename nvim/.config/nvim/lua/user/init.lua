@@ -62,6 +62,7 @@ local config = {
       icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
       ui_notifications_enabled = true, -- disable notifications when toggling UI elements
       mkdp_browser = "firefox-developer-edition", -- use Firefox for markdown preview
+      silicon = { background = "#191a21", ["window-controls"] = false }, -- configure Silicon
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -183,6 +184,7 @@ local config = {
       ["<leader>z"] = { ":ZenMode<cr>", desc = "Toggle Zen mode" },
       ["<leader>uR"] = { ":CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
       ["<leader>uG"] = { ":CellularAutomaton game_of_life<cr>", desc = "Game of life" },
+      ["<leader>fs"] = { ":Silicon<cr>", desc = "Save image" },
     },
     i = {
       ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
@@ -190,6 +192,7 @@ local config = {
     },
     v = {
       ["<C-r>"] = { '"hy:%s/<C-r>h//gc<left><left><left>', desc = "Replace" },
+      ["<leader>s"] = { ":'<,'>Silicon<cr>", desc = "Save image" },
     },
     t = {
       -- ["<esc>"] = { "<C-\\><C-n>", desc = "Back to normal mode" },
@@ -224,6 +227,7 @@ local config = {
       { "mbbill/undotree" },
       { "tpope/vim-fugitive" },
       { "Eandrju/cellular-automaton.nvim" },
+      { "segeljakt/vim-silicon" },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
