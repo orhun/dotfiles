@@ -10,3 +10,5 @@ alias gups='git config --get remote.origin.url | sed -E "s|.*github.com/||g" | x
 alias git-addups='git remote add base "$(gups)"'
 alias ghpr='gh pr create'
 alias ghrun='gh run watch $(gh run list -L 1 --json databaseId -q '.[].databaseId') --exit-status -i 1 ; notify'
+alias ghfetch='gh userfetch'
+alias ghss='gh screensaver'
