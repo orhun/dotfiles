@@ -101,4 +101,9 @@ decode-jwt() {
   jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<<"${1}"
 }
 
+# scan the network
+net-scan() {
+  nmap -v "$(ip -o -f inet addr show | awk '/wlp/ {print $4}')"
+}
+
 # vim:set ts=2 sw=2 et:

@@ -2,6 +2,7 @@
 
 alias v='nvim'
 alias g='git'
+alias t='type'
 alias c='xclip -selection clipboard'
 alias p='xclip -o'
 alias y='yank'
@@ -61,3 +62,4 @@ alias httpy='python -m http.server 7777'
 alias xc='xcolor | tr -d "\n" | c'
 alias leave-me-alone='aplay -c 2 -f S16_LE -r 44100 /dev/urandom'
 alias o='ouch'
+alias cphist='fc -ln -1 | sed -e "s|^\s*||g" -e "s|\s*$||g" | c'
