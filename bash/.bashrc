@@ -50,3 +50,8 @@ export AUR_PKGS="$PKGBUILDS/aur"
 export COMMUNITY_PKGS="$PKGBUILDS/community"
 export CACHEDIR="/var/lib/repro/cache"
 export ANDROID_HOME="$HOME/Android/Sdk"
+
+# Run terminal multiplexer when connected via SSH
+if [[ $- =~ i ]] && [[ -n "$SSH_CONNECTION" ]]; then
+	zellij attach --create "${SSH_TTY#/dev/pts/*}" 2>/dev/null && exit
+fi

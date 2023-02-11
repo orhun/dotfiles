@@ -3,15 +3,16 @@
 This repository contains the configuration files and scripts that I use on my [Arch Linux workstation](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6).
 
 ```
-Distribution        : Arch Linux
-Window Manager      : i3-gaps + i3status
-Shell               : bash
-Terminal            : alacritty
-Resource Monitor    : bpytop
-Editor              : neovim
-IRC Client          : weechat
-Notification Daemon : runst
-Theme               : dracula
+Distribution         : Arch Linux
+Window Manager       : i3-gaps + i3status
+Shell                : bash
+Terminal             : alacritty
+Terminal Multiplexer : zellij
+Resource Monitor     : bpytop
+Editor               : neovim
+IRC Client           : weechat
+Notification Daemon  : runst
+Theme                : dracula
 ```
 
 ## Installation
