@@ -18,6 +18,7 @@ d = "doc"
 i = "install"
 o = "outdated -Rv"
 au = "audit"
+m = "msrv"
 
 [net]
 git-fetch-with-cli = true
