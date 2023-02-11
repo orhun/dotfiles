@@ -228,6 +228,7 @@ local config = {
       { "tpope/vim-fugitive" },
       { "Eandrju/cellular-automaton.nvim" },
       { "segeljakt/vim-silicon" },
+      { "TheBlob42/houdini.nvim" },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
