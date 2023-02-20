@@ -60,9 +60,13 @@
 	gpgsign = true
 	verbose = true
 [core]
-	editor = vim
+	editor = nvim
 [init]
 	defaultBranch = master
 [push]
 	autoSetupRemote = true
 	default = current
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
