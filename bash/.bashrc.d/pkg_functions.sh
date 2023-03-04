@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# !aurctl (phrik)
+aurctl() {
+  git clone "https://aur.archlinux.org/$1"
+  cd "$1" || exit
+}
+
 # check updates and new releases
 ups() {
   echo "==> Checking updates..."

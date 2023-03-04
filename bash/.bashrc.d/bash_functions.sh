@@ -8,11 +8,6 @@ notify() {
   gotify push -t "$status" "$last_cmd" >/dev/null
 }
 
-# !aurctl (phrik)
-aurctl() {
-  git clone "https://aur.archlinux.org/$1"
-}
-
 # switch to a temporary directory
 cdtmp() {
   cd $(mktemp -d)
