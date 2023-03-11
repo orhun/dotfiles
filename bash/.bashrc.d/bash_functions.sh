@@ -101,4 +101,14 @@ net-scan() {
   nmap -v "$(ip -o -f inet addr show | awk '/wlp/ {print $4}')"
 }
 
+# trick the command into thinking its stdout is a terminal, not a pipe
+fake-tty() {
+  script -qfc "$(printf "%q " "$@")" /dev/null
+}
+
+# grep the glibc version of a binary
+rglibc() {
+  objdump -T "$1" | rg GLIBC | sed 's/.*GLIBC_\([.0-9]*\).*/\1/g' | sort -Vu
+}
+
 # vim:set ts=2 sw=2 et:
