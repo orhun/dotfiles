@@ -58,4 +58,9 @@ gst() {
     cut -d: -f1
 }
 
+# approve GitHub PR and merge
+gh-borsmerge() {
+  gh pr review "$1" --approve --body "bors r+"
+}
+
 # vim:set ts=2 sw=2 et:

@@ -177,4 +177,17 @@ pkg-diff() {
   fi
 }
 
+# install the built package
+installpkg() {
+  pkgname=$(basename "$PWD")
+  if [[ $pkgname == "trunk" ]]; then
+    pkgname=$(basename $(dirname $(pwd)))
+  fi
+  version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+  if [[ -n "$version" ]]; then
+    pacman --noconfirm -U "$pkgname"-"$version"-*.tar.zst
+    halp "$pkgname"
+  fi
+}
+
 # vim:set ts=2 sw=2 et:

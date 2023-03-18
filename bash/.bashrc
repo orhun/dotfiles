@@ -48,6 +48,7 @@ export DOTFILES="$HOME/.dotfiles"
 export PKGBUILDS="$HOME/pkgbuilds"
 export AUR_PKGS="$PKGBUILDS/aur"
 export COMMUNITY_PKGS="$PKGBUILDS/community"
+export ALPINE_CHROOT="$HOME/alpine"
 export CACHEDIR="/var/lib/repro/cache"
 export ANDROID_HOME="$HOME/Android/Sdk"
 
