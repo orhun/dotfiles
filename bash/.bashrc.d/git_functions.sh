@@ -63,4 +63,10 @@ gh-borsmerge() {
   gh pr review "$1" --approve --body "bors r+"
 }
 
+# clone a repository and cd into it
+gitctl() {
+  git clone "$1"
+  cd "${1##*/}" || exit
+}
+
 # vim:set ts=2 sw=2 et:

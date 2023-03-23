@@ -190,4 +190,12 @@ installpkg() {
   fi
 }
 
+# chroot into Alpine container
+alpine-chroot() {
+  if ! grep -qs "$ALPINE_CHROOT/proc" /proc/mounts; then
+    sudo mount -n --bind /proc "$ALPINE_CHROOT/proc"
+  fi
+  sudo "$ALPINE_CHROOT/enter-chroot" -u "$USER"
+}
+
 # vim:set ts=2 sw=2 et:
