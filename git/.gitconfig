@@ -11,56 +11,66 @@
 #[url "ssh://git@bitbucket.org/"]
 #  insteadOf = https://bitbucket.org/
 [alias]
-	c = clone
-	i = init
 	a = add
 	aa = add -A
 	ap = add -p
-	m = mv
-	r = restore
-	rm = rm
 	b = bisect
-	d = diff
-	dc = diff --cached
-	g = grep
-	sh = show
-	st = status
 	br = branch
-	mr = merge
-	rb = rebase
-	rst = restore --staged
-	rs = restore
-	t = tag
-	f = fetch
-	p = pull
-	ps = push
-	psmt = "push origin master"
-	psmi = "push origin main"
+	c = clone
+	cb = checkout -b
+	ck = checkout
 	cm = commit
 	cmt = commit -m
 	cmta = commit --amend
 	cmtf = commit --amend --no-edit
-	dd = commit --dry-run
-	rmt = remote -v
-	cb = checkout -b
-	ck = checkout
-	l = log
-	lo = log --graph --decorate --all
-	ll = log --graph --decorate --oneline --all
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
-	ls = ls-files
 	crds = config credential.helper store
+	d = diff
+	dc = diff --cached
+	dd = commit --dry-run
+	f = fetch
+	g = grep
+	god = !echo "god is listening"
+	godsays = !git commit -m \"$(curl -s https://godsays.xyz)\"
+	i = init
+	l = log
+	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --graph --decorate --oneline --all
+	lo = log --graph --decorate --all
+	ls = ls-files
+	m = mv
+	mr = merge
+	p = pull
+	ps = push
+	psmi = push origin main
+	psmt = push origin master
+	r = restore
+	rb = rebase
+	rm = rm
+	rmt = remote -v
+	rs = restore
+	rst = restore --staged
+	sh = show
+	st = status
+	t = tag
 	ups = config --get remote.origin.url
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
-	godsays = !git commit -m \"$(curl -s https://godsays.xyz)\"
-	god = !echo "god is listening"
 [commit]
 	template = ~/.git-commit-template
 	gpgsign = true
 	verbose = true
 [core]
 	editor = nvim
+[core]
+    pager = delta --syntax-theme Dracula
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [init]
 	defaultBranch = master
 [push]
