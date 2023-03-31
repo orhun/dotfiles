@@ -67,9 +67,12 @@ return {
       desc = "Disable diagnostics for PKGBUILD files",
       pattern = "PKGBUILD",
       callback = function()
+        vim.o.filetype = "sh"
         vim.g.ui_notifications_enabled = false
-        require("astronvim.utils").ui.toggle_diagnostics()
-        require("astronvim.utils").ui.toggle_autoformat()
+        require("astronvim.utils.ui").toggle_diagnostics()
+        require("astronvim.utils.ui").toggle_diagnostics()
+        require("astronvim.utils.ui").toggle_diagnostics()
+        require("astronvim.utils.ui").toggle_autoformat()
         vim.g.ui_notifications_enabled = true
       end,
     })
