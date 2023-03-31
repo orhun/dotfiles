@@ -106,9 +106,21 @@ fake-tty() {
   script -qfc "$(printf "%q " "$@")" /dev/null
 }
 
-# grep the glibc version of a binary
-rglibc() {
+# grep binary properties
+rgbin() {
+  color='\033[1;32m'
+  nc='\033[0m'
+  echo -e "${color}GLIBC versions used:${nc}"
   objdump -T "$1" | rg GLIBC | sed 's/.*GLIBC_\([.0-9]*\).*/\1/g' | sort -Vu
+  echo -e "${color}RELRO:${nc}"
+  readelf -a "$1" | rg GNU_RELRO | sed 's/  */ /g'
+  echo -e "${color}Binary type:${nc}"
+  readelf -a "$1" | rg "Type:" | sed 's/  */ /g'
+}
+
+# download MP3 from YouTube
+yt-mp3() {
+  yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1"
 }
 
 # vim:set ts=2 sw=2 et:
