@@ -223,7 +223,6 @@ local config = {
           })
         end,
       },
-      { "mhinz/vim-crates" },
       { "folke/zen-mode.nvim" },
       { "mbbill/undotree" },
       { "tpope/vim-fugitive" },
@@ -317,10 +316,10 @@ local config = {
       defaults = {
         mappings = {
           i = {
-            ["<C-j>"] = require("telescope.actions").cycle_history_next,
-            ["<C-k>"] = require("telescope.actions").cycle_history_prev,
-            ["<C-n>"] = require("telescope.actions").move_selection_next,
-            ["<C-p>"] = require("telescope.actions").move_selection_previous,
+            -- ["<C-j>"] = require("telescope.actions").cycle_history_next,
+            -- ["<C-k>"] = require("telescope.actions").cycle_history_prev,
+            -- ["<C-n>"] = require("telescope.actions").move_selection_next,
+            -- ["<C-p>"] = require("telescope.actions").move_selection_previous,
           },
         },
       },
@@ -398,11 +397,6 @@ local config = {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    vim.api.nvim_create_autocmd("BufRead", {
-      desc = "Indicate out-of-date Cargo dependencies",
-      pattern = "Cargo.toml",
-      command = "call crates#toggle()",
-    })
     vim.api.nvim_create_autocmd("BufRead", {
       desc = "Indicate out-of-date Cargo dependencies",
       pattern = "PKGBUILD",
