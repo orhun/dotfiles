@@ -76,6 +76,9 @@ return {
         vim.g.ui_notifications_enabled = true
       end,
     })
+    vim.cmd [[
+      autocmd BufWinEnter,WinEnter term://* startinsert
+    ]]
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
