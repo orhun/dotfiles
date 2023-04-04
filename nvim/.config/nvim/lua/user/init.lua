@@ -65,7 +65,7 @@ return {
   polish = function()
     vim.api.nvim_create_autocmd("BufRead", {
       desc = "Disable diagnostics/formatting for specific files",
-      pattern = "PKGBUILD,APKBUILD",
+      pattern = "*PKGBUILD,*APKBUILD",
       callback = function()
         vim.o.filetype = "sh"
         vim.g.ui_notifications_enabled = false
