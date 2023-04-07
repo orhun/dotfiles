@@ -1,5 +1,8 @@
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = {
+    "nvim-telescope/telescope-media-files.nvim",
+  },
   opts = {
     defaults = {
       mappings = {
@@ -17,4 +20,9 @@ return {
       },
     },
   },
+  config = function(plugin, opts)
+    require "plugins.configs.telescope"(plugin, opts)
+    local telescope = require "telescope"
+    telescope.load_extension "media_files"
+  end,
 }
