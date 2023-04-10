@@ -59,7 +59,7 @@ gst() {
 }
 
 # approve GitHub PR and merge
-gh-borsmerge() {
+gh-pr-bors() {
   gh pr review "$1" --approve --body "bors r+"
 }
 
