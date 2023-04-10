@@ -1,0 +1,11 @@
+layout {
+    pane command="bpytop" focus=true
+    pane split_direction="vertical" size="30%" {
+        pane command="journalctl" {
+          args "-f" "-e" "-x"
+        }
+        pane command="dmesg" {
+            args "-w"
+        }
+    }
+}
