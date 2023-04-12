@@ -40,6 +40,7 @@
 	ls = ls-files
 	m = mv
 	mr = merge
+	new = checkout -b
 	p = pull
 	ps = push
 	psmi = push origin main
