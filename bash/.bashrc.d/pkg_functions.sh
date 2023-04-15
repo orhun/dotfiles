@@ -97,6 +97,25 @@ updpkgver() {
   fi
 }
 
+# update the Cargo.lock for a Rust package
+updpkglock() {
+  oldpwd="$(pwd)"
+  pkgname=$(basename "$oldpwd")
+  if [[ $pkgname == "trunk" ]]; then
+    pkgname=$(basename $(dirname $(pwd)))
+  fi
+  version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+  repo=$(rg -i -N -A 5 "\[$pkg\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
+  echo "==> Generating Cargo.lock for $pkgname:$version ($repo)"
+  cdtmp
+  gitctl "https://github.com/$repo"
+  git checkout "$version" 2>/dev/null
+  git checkout "v$version" 2>/dev/null
+  cargo generate-lockfile
+  cp Cargo.lock "$oldpwd"
+  cd "$oldpwd"
+}
+
 # publish a package to the [community]
 community-updpkg() {
   commit_msg="upstream release"
