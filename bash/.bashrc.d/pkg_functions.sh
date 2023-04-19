@@ -105,7 +105,7 @@ updpkglock() {
     pkgname=$(basename $(dirname $(pwd)))
   fi
   version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
-  repo=$(rg -i -N -A 5 "\[$pkg\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
+  repo=$(rg -i -N -A 5 "\[$pkgname\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
   echo "==> Generating Cargo.lock for $pkgname:$version ($repo)"
   cdtmp
   gitctl "https://github.com/$repo"
