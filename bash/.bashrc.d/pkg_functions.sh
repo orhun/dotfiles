@@ -114,6 +114,7 @@ updpkglock() {
   cargo generate-lockfile
   cp Cargo.lock "$oldpwd"
   cd "$oldpwd"
+  updpkgsums
 }
 
 # publish a package to the [community]
