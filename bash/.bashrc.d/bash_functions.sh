@@ -123,4 +123,9 @@ yt-mp3() {
   yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1"
 }
 
+# copy image to clipboard
+cp-img() {
+  xclip -selection clipboard -t image/png -i "$1"
+}
+
 # vim:set ts=2 sw=2 et:
