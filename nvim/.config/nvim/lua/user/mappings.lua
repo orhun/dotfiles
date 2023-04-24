@@ -28,6 +28,7 @@ return {
     ["<C-q>"] = { ":qa!<cr>", desc = "Exit" },
     ["<C-f>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
     ["<C-k>"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
+    ["<C-m>"] = { ":Mason<cr>", desc = "Open Mason installer" },
     ["<C-d>"] = { "<C-d>zz", desc = "Scroll down" },
     ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
     ["<A-z>"] = { ":set wrap!<cr>", desc = "Toggle word wrap" },
