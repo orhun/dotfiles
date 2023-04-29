@@ -128,4 +128,16 @@ cp-img() {
   xclip -selection clipboard -t image/png -i "$1"
 }
 
+# run in a clean env
+clean-exec() {
+  exec env -i \
+    _CLEAN=1 \
+    HOME="$HOME" \
+    PATH="$PATH" \
+    USER="$USER" \
+    TERM="xterm" \
+    ${ENV_YOU_KEEP:+ENV_YOU_KEEP="$ENV_YOU_KEEP"} \
+    "$0" "$@"
+}
+
 # vim:set ts=2 sw=2 et:
