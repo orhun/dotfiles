@@ -23,6 +23,7 @@ return {
       desc = "Previous buffer",
     },
     ["<leader>b"] = { name = "Buffers" },
+    ["<leader>r"] = { ":AstroReload<cr>", desc = "Reload AstroNvim" },
     ["<esc>"] = { ":nohl<cr>", desc = "No highlight" },
     ["<C-s>"] = { ":w!<cr>", desc = "Save file" },
     ["<C-q>"] = { ":qa!<cr>", desc = "Exit" },
