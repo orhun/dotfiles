@@ -25,9 +25,6 @@ nv() {
     pkg="$1"
     if [ -z "$pkg" ]; then
       pkg=$(basename "$PWD")
-      if [[ $pkg == "trunk" ]]; then
-        pkg=$(basename $(dirname $(pwd)))
-      fi
     fi
     repo=$(rg -i -N -A 5 "\[$pkg\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
     if [ -n "$repo" ]; then
@@ -41,9 +38,14 @@ nv() {
   fi
 }
 
-# fetch PKGBUILD
+# fetch PKGBUILD from the AUR
 fetchpkg() {
   curl "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=$1" >PKGBUILD
+}
+
+# fetch PKGBUILD from the official repositories
+pkgup() {
+  pkgctl repo clone "$1"
 }
 
 # update the version and checksums of a package
@@ -56,9 +58,9 @@ updpkg() {
     version=$(jq -r ".\"${pkg%-bin}\"" <"$AUR_PKGS/new_ver.json")
     if [[ -n "$version" ]]; then
       pkg_dir="$AUR_PKGS/$pkg"
-      if [[ -n $(find "$COMMUNITY_PKGS" -type d -name "$pkg" 2>/dev/null) ]]; then
-        echo "==> Found in [community]"
-        pkg_dir="$COMMUNITY_PKGS/$pkg/trunk"
+      if [[ -n $(find "$EXTRA_PKGS" -type d -name "$pkg" 2>/dev/null) ]]; then
+        echo "==> Found in official repositories"
+        pkg_dir="$EXTRA_PKGS/$pkg"
       else
         echo "==> Found in the AUR"
       fi
@@ -78,13 +80,9 @@ updpkgver() {
     sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
     sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
     updpkgsums
-    svn diff PKGBUILD 2>/dev/null | diff-so-fancy
     git diff PKGBUILD 2>/dev/null
   else
     pkgname=$(basename "$PWD")
-    if [[ $pkgname == "trunk" ]]; then
-      pkgname=$(basename $(dirname $(pwd)))
-    fi
     echo "==> Found package: $pkgname"
     version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
     if [[ -n "$version" ]]; then
@@ -101,9 +99,6 @@ updpkgver() {
 updpkglock() {
   oldpwd="$(pwd)"
   pkgname=$(basename "$oldpwd")
-  if [[ $pkgname == "trunk" ]]; then
-    pkgname=$(basename $(dirname $(pwd)))
-  fi
   version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
   repo=$(rg -i -N -A 5 "\[$pkgname\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
   echo "==> Generating Cargo.lock for $pkgname:$version ($repo)"
@@ -117,19 +112,18 @@ updpkglock() {
   updpkgsums
 }
 
-# publish a package to the [community]
-community-updpkg() {
+# publish a package to the official repositories
+releasepkg() {
   commit_msg="upstream release"
   if [ -n "$1" ]; then
     commit_msg="$1"
   fi
   (
     set -e
-    pkgname=$(basename $(dirname $(pwd)))
+    pkgname=$(basename $(pwd))
     echo "==> Found package: $pkgname"
-    svn diff | diff-so-fancy
-    communitypkg "$commit_msg"
-    ssh repos.archlinux.org "/community/db-update"
+    git diff
+    pkgctl release --db-update --message "$commit_msg"
     nv take "$pkgname"
   )
 }
@@ -157,52 +151,39 @@ pushpkg() {
   echo "==> Done publishing '$PKG'"
 }
 
-# create a new package directory in SVN
+# create a new package
 newpkg() {
   if [ -n "$1" ]; then
-    cd "$COMMUNITY_PKGS" || exit
-    mkdir -p "$1"/{repos,trunk}
-    cd "$1/trunk" || exit
+    cd "$EXTRA_PKGS" || exit
+    pkgctl repo create --clone "$1"
+    cd "$1" || exit
     cp /usr/share/pacman/PKGBUILD.proto PKGBUILD
   fi
 }
 
-# commit the new package into SVN
+# commit the new package
 commitnewpkg() {
   if [ -n "$1" ]; then
-    cd "$COMMUNITY_PKGS/$1" || exit
-    svn add --parents repos trunk/PKGBUILD
-    PKGVER=$(grep -Eo "^pkgver=.*\$" <trunk/PKGBUILD | cut -d '=' -f2)
-    PKGREL=$(grep -Eo "^pkgrel=.*\$" <trunk/PKGBUILD | cut -d '=' -f2)
+    cd "$EXTRA_PKGS/$1" || exit
+    git add .
+    PKGVER=$(grep -Eo "^pkgver=.*\$" <PKGBUILD | cut -d '=' -f2)
+    PKGREL=$(grep -Eo "^pkgrel=.*\$" <PKGBUILD | cut -d '=' -f2)
     PKG="$1 $PKGVER-$PKGREL"
     read -r -p "==> Commit new package: '$PKG'? [Y/n] "
     if [[ $REPLY =~ ^[Yy]$ ]]; then
       printf "\n==> Committing package...\n"
-      svn commit -m "addpkg: $PKG"
+      git commit -m "addpkg: $PKG"
     else
       printf "\n==> Bail.\n"
     fi
-    cd "trunk" || exit
   else
     echo "==> Tell me the package."
-  fi
-}
-
-# run VCS diff for the package
-pkg-diff() {
-  if git rev-parse HEAD >/dev/null 2>&1; then
-    git diff .
-  else
-    svn-diff
   fi
 }
 
 # install the built package
 installpkg() {
   pkgname=$(basename "$PWD")
-  if [[ $pkgname == "trunk" ]]; then
-    pkgname=$(basename $(dirname $(pwd)))
-  fi
   version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
   if [[ -n "$version" ]]; then
     pacman --noconfirm -U "$pkgname"-"$version"-*.tar.zst
