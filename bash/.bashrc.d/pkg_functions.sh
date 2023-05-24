@@ -165,7 +165,7 @@ newpkg() {
 commitnewpkg() {
   if [ -n "$1" ]; then
     cd "$EXTRA_PKGS/$1" || exit
-    git add .
+    git add PKGBUILD
     PKGVER=$(grep -Eo "^pkgver=.*\$" <PKGBUILD | cut -d '=' -f2)
     PKGREL=$(grep -Eo "^pkgrel=.*\$" <PKGBUILD | cut -d '=' -f2)
     PKG="$1 $PKGVER-$PKGREL"
