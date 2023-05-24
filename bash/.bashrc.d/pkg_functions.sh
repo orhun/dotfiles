@@ -123,7 +123,7 @@ releasepkg() {
     pkgname=$(basename $(pwd))
     echo "==> Found package: $pkgname"
     git diff
-    pkgctl release --db-update --message "$commit_msg"
+    pkgctl release --repo extra --db-update --message "$commit_msg"
     nv take "$pkgname"
   )
 }
