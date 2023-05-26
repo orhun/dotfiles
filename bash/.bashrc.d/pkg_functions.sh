@@ -124,7 +124,6 @@ releasepkg() {
     echo "==> Found package: $pkgname"
     git diff
     pkgctl release --repo extra --db-update --message "$commit_msg"
-    nv take "$pkgname"
     cd "$AUR_PKGS"
     pkg_remote="arch:archlinux/packaging/packages/$pkgname"
     git stash save --include-untracked
@@ -134,6 +133,8 @@ releasepkg() {
       git subtree add --squash -P "$pkgname" "$pkg_remote" main
     fi
     git stash pop
+    git push origin master
+    nv take "$pkgname"
   )
 }
 
