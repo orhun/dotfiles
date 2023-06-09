@@ -112,6 +112,25 @@ updpkglock() {
   updpkgsums
 }
 
+# update the last commit
+updpkgcommit() {
+  oldpwd="$(pwd)"
+  pkgname=$(basename "$oldpwd")
+  version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+  repo=$(rg -i -N -A 5 "\[$pkgname\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
+  echo "==> Fetching the last commit for $pkgname:$version ($repo)"
+  cdtmp
+  gitctl "https://github.com/$repo"
+  git checkout "$version" 2>/dev/null
+  git checkout "v$version" 2>/dev/null
+  commit=$(git rev-parse HEAD)
+  cd "$oldpwd"
+  for var in '_commit' '_tag'; do
+    sed -i "s|\(^$var\)=.*$|\1=$commit|g" PKGBUILD
+  done
+  git diff PKGBUILD
+}
+
 # publish a package to the official repositories
 releasepkg() {
   commit_msg="upstream release"
@@ -206,7 +225,26 @@ alpine-chroot() {
   if ! grep -qs "$ALPINE_CHROOT/proc" /proc/mounts; then
     sudo mount -n --bind /proc "$ALPINE_CHROOT/proc"
   fi
+  if ! grep -qs "$ALPINE_CHROOT/aports" /proc/mounts; then
+    sudo mount --bind "$APORTS" "$ALPINE_CHROOT/aports"
+  fi
   sudo "$ALPINE_CHROOT/enter-chroot" -u "$USER"
+}
+
+# checkout to the package
+alpine-checkout() {
+  if [ -n "$1" ]; then
+    cd "$APORTS"
+    git checkout master
+    git pull
+    git branch -D "aport/$1" 2>/dev/null
+    git checkout -b "aport/$1"
+    cd "testing/$1" || cd "community/$1" || exit
+    rm "$APKBUILDS/$1" 2>/dev/null
+    mkdir "$APKBUILDS/$1"
+    repo="$(basename $(dirname $PWD))"
+    ln -s "/aports/$repo/$1/APKBUILD" "$APKBUILDS/$1/APKBUILD"
+  fi
 }
 
 # vim:set ts=2 sw=2 et:

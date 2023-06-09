@@ -42,14 +42,15 @@ export HISTSIZE=2000
 export HISTCONTROL=ignorespace:erasedups
 
 # Workspace variables
-export WORKSPACE="$HOME/g"
+export WORKSPACE="$HOME/gh"
 export CHROOT="$HOME/.chroot"
 export DOTFILES="$HOME/.dotfiles"
 export PKGBUILDS="$HOME/pkgbuilds"
 export AUR_PKGS="$PKGBUILDS/aur"
 export EXTRA_PKGS="$PKGBUILDS/extra"
 export ALPINE_CHROOT="/alpine"
-export APKGBUILDS="$HOME/apkgbuilds"
+export APKBUILDS="$HOME/apkbuilds"
+export APORTS="$WORKSPACE/aports"
 export CACHEDIR="/var/lib/repro/cache"
 export ANDROID_HOME="$HOME/Android/Sdk"
 
