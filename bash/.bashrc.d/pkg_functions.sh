@@ -239,11 +239,11 @@ alpine-checkout() {
     git pull
     git branch -D "aport/$1" 2>/dev/null
     git checkout -b "aport/$1"
-    cd "testing/$1" || cd "community/$1" || exit
+    cd "testing/$1" || cd "community/$1" || mkdir "testing/$1" || exit
     rm "$APKBUILDS/$1" 2>/dev/null
     mkdir "$APKBUILDS/$1"
     repo="$(basename $(dirname $PWD))"
-    ln -s "/aports/$repo/$1/APKBUILD" "$APKBUILDS/$1/APKBUILD"
+    ln -s "/aports/$repo/$1/APKBUILD" "$APKBUILDS/$1/APKBUILD" 2>/dev/null
   fi
 }
 
