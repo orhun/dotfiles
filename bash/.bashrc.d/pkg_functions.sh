@@ -125,7 +125,7 @@ updpkgcommit() {
   git checkout "v$version" 2>/dev/null
   commit=$(git rev-parse HEAD)
   cd "$oldpwd"
-  for var in '_commit' '_tag'; do
+  for var in '_commit' '_tag' '_gitcommit'; do
     sed -i "s|\(^$var\)=.*$|\1=$commit|g" PKGBUILD
   done
   git diff PKGBUILD
