@@ -8,8 +8,8 @@
   insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
-#[url "ssh://git@bitbucket.org/"]
-#  insteadOf = https://bitbucket.org/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/
 [alias]
 	a = add
 	aa = add -A
@@ -63,7 +63,7 @@
 [core]
 	editor = nvim
 [core]
-    pager = delta --syntax-theme Dracula
+    pager = delta --syntax-theme gruvbox-dark
 [interactive]
     diffFilter = delta --color-only
 [delta]

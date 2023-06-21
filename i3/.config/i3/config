@@ -79,7 +79,7 @@ bindsym $mod+shift+grave exec dbus-send --print-reply \
 bindsym $mod+Shift+q kill
 
 # Start the dmenu
-bindsym $mod+d exec dmenu_run -nb '#191a21' -nf '#6272a4' -sb '#bd93f9' -sf '#21222c' -fn 'pango:monospace:pixelsize=14'
+bindsym $mod+d exec dmenu_run -nb '#16161d' -nf '#6a9589' -sb '#c8c093' -sf '#21222c' -fn 'pango:monospace:pixelsize=14'
 
 # Change focus
 bindsym $mod+j focus left
@@ -211,14 +211,14 @@ bar {
   status_command i3status
   tray_output none
   colors {
-    statusline #f8f8f2
-    background #191a21
-    focused_workspace #191a21 #191a21 #bd93f9
-    inactive_workspace #191a21 #191a21 #44475a
+    statusline #dcd7ba
+    background #16161d
+    focused_workspace #16161d #16161d #c8c093
+    inactive_workspace #16161d #16161d #3E3E38
   }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.unfocused        #191a21 #191a21 #44475a #6272a4 #44475a
-client.focused_inactive #191a21 #191a21 #44475a #6272a4 #44475a
-client.focused          #191a21 #191a21 #bd93f9 #bd93f9 #bd93f9
+client.unfocused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
+client.focused_inactive #16161d #16161d #3E3E38 #6a9589 #3E3E38
+client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
