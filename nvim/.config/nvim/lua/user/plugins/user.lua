@@ -1,10 +1,11 @@
 return {
   {
-    "Mofiqul/dracula.nvim",
+    "rebelot/kanagawa.nvim",
     config = function()
-      local dracula = require "dracula"
-      dracula.setup {
-        transparent_bg = true,
+      local kanagawa = require "kanagawa"
+      kanagawa.setup {
+        transparent = true,
+        theme = "wave",
       }
     end,
   },

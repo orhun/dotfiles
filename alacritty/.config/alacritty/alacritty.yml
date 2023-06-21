@@ -37,7 +37,11 @@ key_bindings:
   - { key: B, mods: Control|Alt, action: SearchBackward }
   - { key: Space, mods: Control, action: ToggleViMode }
   - { key: Escape, action: ToggleViMode, mode: Vi }
-  - { key: Return, mods: Control|Alt, action: SpawnNewInstance }
+  - {
+      key: Return,
+      mods: Control|Alt,
+      action: SpawnNewInstance
+    }
 
 import:
   - ~/.config/alacritty/theme.yml

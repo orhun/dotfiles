@@ -1,4 +1,4 @@
-# (•) files ![colors](https://user-images.githubusercontent.com/24392180/202919385-74f1d901-459c-4e5b-8b84-a8a853ea4d46.png)
+# (•) files ![colors](https://github.com/orhun/dotfiles/assets/24392180/7e92a9f0-4e87-4934-a33b-50b3fdfa72a9)
 
 This repository contains the configuration files and scripts that I use on my [Arch Linux workstation](https://gist.github.com/orhun/02102b3af3acfdaf9a5a2164bea7c3d6).
 
@@ -12,7 +12,7 @@ Resource Monitor     : bpytop
 Editor               : neovim
 IRC Client           : weechat
 Notification Daemon  : runst
-Theme                : dracula
+Theme                : kanagawa
 ```
 
 ## Installation
@@ -26,6 +26,18 @@ Theme                : dracula
 
 ## Preview
 
+![21-06-2023](https://github.com/orhun/dotfiles/assets/24392180/c25aa48a-a15d-478b-8225-dd0db674380e)
+
+![21-06-2023](https://github.com/orhun/dotfiles/assets/24392180/8e45510f-d480-482b-9152-fa6082d5d433)
+
+![21-06-2023](https://github.com/orhun/dotfiles/assets/24392180/f004e615-b6c0-4e32-86ba-7575b944d906)
+
+![21-06-2023](https://github.com/orhun/dotfiles/assets/24392180/36f7daab-2f7a-4032-8f64-11461e31ec10)
+
+## History
+
+### 20-11-2022
+
 ![20-11-2022](https://user-images.githubusercontent.com/24392180/202918885-6e1fbdfe-af10-4361-b982-b61227527357.jpg)
 
 ![20-11-2022](https://user-images.githubusercontent.com/24392180/229474193-bed889c2-493f-4041-aef8-9cf9d1b76477.jpg)
@@ -33,8 +45,6 @@ Theme                : dracula
 ![20-11-2022](https://user-images.githubusercontent.com/24392180/202918879-b519a2d3-39bf-472e-8dbc-2de33dbb8203.jpg)
 
 ![20-11-2022](https://user-images.githubusercontent.com/24392180/202918882-eb3da01a-6f17-4fc2-ae51-4adeb88262a9.jpg)
-
-## History
 
 ### 20-10-2020
 
