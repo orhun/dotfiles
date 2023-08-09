@@ -11,6 +11,8 @@ return {
           "**/.DS_Store",
           "**/node_modules",
           "**/target",
+          "**/zig-cache",
+          "**/zig-out",
         },
       },
       window = {
