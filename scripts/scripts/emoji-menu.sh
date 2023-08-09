@@ -44,6 +44,9 @@ done
 # Default DB
 if [ ! -e "$EMOJI_MENU_DB" ]; then
   wget -O "$EMOJI_MENU_DB" 'https://raw.githubusercontent.com/jchook/emoji-menu/master/data/emojis.txt'
+  for alt in '⚡ zig' '🦀 rust' '⭐ github' '🐻 orhun'; do
+    echo "$alt" >>"$EMOJI_MENU_DB"
+  done
 fi
 
 # Rofi can handle large inputs and emojis
