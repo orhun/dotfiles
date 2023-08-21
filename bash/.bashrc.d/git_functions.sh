@@ -63,6 +63,11 @@ gh-pr-bors() {
   gh pr review "$1" --approve --body "bors r+"
 }
 
+# checkout GitHub PR
+prck() {
+  gh pr checkout "$1"
+}
+
 # clone a repository and cd into it
 gitctl() {
   git clone "$1"
