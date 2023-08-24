@@ -50,6 +50,7 @@ return {
     ["<leader>uG"] = { ":CellularAutomaton game_of_life<cr>", desc = "Game of life" },
     ["<leader>fs"] = { ":Silicon<cr>", desc = "Save image" },
     ["<leader>fM"] = { ":Telescope media_files<cr>", desc = "Find media files" },
+    ["<leader>s"] = { ":SessionManager! load_current_dir_session<cr>", desc = "Load the last session" },
   },
   i = {
     ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
