@@ -145,6 +145,8 @@ releasepkg() {
     pkgctl release --repo extra --db-update --message "$commit_msg"
     cd "$AUR_PKGS"
     pkg_remote="arch:archlinux/packaging/packages/$pkgname"
+    nv take "$pkgname"
+    echo "==> Releasing to the tracking repo"
     git stash save --include-untracked
     if [ -d "$pkgname" ]; then
       git subtree pull --squash -P "$pkgname" "$pkg_remote" main -m "Merge subtree $pkgname"
@@ -153,7 +155,6 @@ releasepkg() {
     fi
     git stash pop
     git push origin master
-    nv take "$pkgname"
   )
 }
 
