@@ -77,6 +77,7 @@ updpkg() {
 # update the version in a PKGBUILD
 updpkgver() {
   if [ -n "$1" ]; then
+    git pull
     sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
     sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
     updpkgsums
