@@ -74,4 +74,9 @@ gitctl() {
   cd "${1##*/}" || exit
 }
 
+# named stash
+stsh() {
+  git stash push -m "$1"
+}
+
 # vim:set ts=2 sw=2 et:

@@ -140,4 +140,9 @@ clean-exec() {
     "$0" "$@"
 }
 
+# generate random string
+rand-str() {
+  openssl rand -base64 "$1"
+}
+
 # vim:set ts=2 sw=2 et:
