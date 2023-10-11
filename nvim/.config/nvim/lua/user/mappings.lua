@@ -48,6 +48,7 @@ return {
     ["<leader>z"] = { ":ZenMode<cr>", desc = "Toggle Zen mode" },
     ["<leader>uR"] = { ":CellularAutomaton make_it_rain<cr>", desc = "Make it rain" },
     ["<leader>uG"] = { ":CellularAutomaton game_of_life<cr>", desc = "Game of life" },
+    ["<leader>uz"] = { ":CellularAutomaton scramble<cr>", desc = "Scrambe" },
     ["<leader>fs"] = { ":Silicon<cr>", desc = "Save image" },
     ["<leader>fM"] = { ":Telescope media_files<cr>", desc = "Find media files" },
     ["<leader>s"] = { ":SessionManager! load_current_dir_session<cr>", desc = "Load the last session" },
