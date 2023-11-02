@@ -146,7 +146,7 @@ releasepkg() {
     pkgctl release --repo extra --db-update --message "$commit_msg"
     cd "$AUR_PKGS"
     pkg_remote="arch:archlinux/packaging/packages/$pkgname"
-    nv take "$pkgname"
+    nv take "$pkgname" 2>/dev/null
     echo "==> Releasing to the tracking repo"
     git stash save --include-untracked
     if [ -d "$pkgname" ]; then
