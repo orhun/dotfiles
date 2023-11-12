@@ -20,11 +20,8 @@ o = "outdated -Rv"
 au = "audit"
 m = "msrv"
 
+[build]
+target-dir = "/home/orhun/.cargo/target"
+
 [net]
 git-fetch-with-cli = true
-
-[build]
-rustc-wrapper = "sccache"
-
-[registries.crates-io]
-protocol = "sparse"
