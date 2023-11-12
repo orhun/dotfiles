@@ -74,16 +74,26 @@ updpkg() {
   fi
 }
 
-# update the version in a PKGBUILD
+# update the version in a PKGBUILD/APKBUILD
 updpkgver() {
+  pkgname=$(basename "$PWD")
   if [ -n "$1" ]; then
-    git pull >/dev/null
-    sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
-    sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
-    updpkgsums
-    git diff PKGBUILD 2>/dev/null
+    if [ -f PKGBUILD ]; then
+      git pull >/dev/null
+      sed "s/^pkgrel=.*\$/pkgrel=1/" -i PKGBUILD
+      sed "s/^pkgver=.*\$/pkgver=$1/" -i PKGBUILD
+      updpkgsums
+      git diff PKGBUILD 2>/dev/null
+    elif [ -f APKBUILD ]; then
+      sed "s/^pkgrel=.*\$/pkgrel=0/" -i APKBUILD
+      sed "s/^pkgver=.*\$/pkgver=$1/" -i APKBUILD
+      alpine-chroot bash -c "cd $pkgname && abuild checksum"
+      git diff APKBUILD 2>/dev/null
+      git add APKBUILD
+      git commit
+      git push --force
+    fi
   else
-    pkgname=$(basename "$PWD")
     echo "==> Found package: $pkgname"
     version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
     if [[ -n "$version" ]]; then
@@ -230,7 +240,7 @@ alpine-chroot() {
   if ! grep -qs "$ALPINE_CHROOT/aports" /proc/mounts; then
     sudo mount --bind "$APORTS" "$ALPINE_CHROOT/aports"
   fi
-  sudo "$ALPINE_CHROOT/enter-chroot" -u "$USER"
+  sudo "$ALPINE_CHROOT/enter-chroot" -u "$USER" "$@"
 }
 
 # checkout to the package
