@@ -18,11 +18,15 @@ return {
     cmp_enabled = true, -- enable completion at start
     autopairs_enabled = true, -- enable autopairs at start
     diagnostics_enabled = true, -- enable diagnostics at start
+    diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     status_diagnostics_enabled = true, -- enable diagnostics in statusline
+    inlay_hints_enabled = true, -- enable or disable LSP inlay hints on startup (Neovim v0.10 only)
+    lsp_handlers_enabled = true, -- enable or disable default vim.lsp.handlers (hover and signature help)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     mkdp_browser = "firefox-developer-edition", -- use Firefox for markdown preview
     silicon = { background = "#191a21", ["window-controls"] = false }, -- configure Silicon
+    -- noswapfile = true, -- disable swap files
   },
 }
 -- If you need more control, you can use the function()...end notation
