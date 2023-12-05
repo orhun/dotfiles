@@ -22,6 +22,7 @@ order += "wireless _first_"
 order += "read_file updates"
 order += "battery all"
 order += "disk /"
+order += "disk /drv"
 order += "volume master"
 order += "load"
 order += "memory"
@@ -64,11 +65,15 @@ volume master {
 }
 
 disk "/" {
-    format = "%avail"
+    format = "/:%avail"
+}
+
+disk "/drv" {
+    format = "/drv:%avail"
 }
 
 load {
-    format = "%1min"
+    format = "%5min"
 }
 
 memory {
