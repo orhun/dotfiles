@@ -64,7 +64,7 @@ gh-pr-bors() {
 }
 
 # checkout GitHub PR
-prck() {
+pull() {
   gh pr checkout "$1"
 }
 
