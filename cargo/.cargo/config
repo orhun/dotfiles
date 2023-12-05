@@ -21,7 +21,8 @@ au = "audit"
 m = "msrv"
 
 [build]
-target-dir = "/home/orhun/.cargo/target"
+target-dir = "/drv/cargo/target"
+# rustflags = ["-Z", "threads=8"]
 
 [net]
 git-fetch-with-cli = true
