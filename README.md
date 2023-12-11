@@ -34,6 +34,8 @@ Theme                : kanagawa
 
 ![21-06-2023](https://github.com/orhun/dotfiles/assets/24392180/36f7daab-2f7a-4032-8f64-11461e31ec10)
 
+![21-06-2023](https://github.com/orhun/dotfiles/assets/24392180/6a8e1d69-0e02-4020-b473-4f19ac6dedc1)
+
 ## History
 
 ### 20-11-2022
