@@ -53,6 +53,7 @@ export APKBUILDS="$HOME/apkbuilds"
 export APORTS="$WORKSPACE/aports"
 export CACHEDIR="/var/lib/repro/cache"
 export ANDROID_HOME="$HOME/Android/Sdk"
+export WINEPREFIX="/drv/wine"
 
 # Run terminal multiplexer when connected via SSH
 if [[ $- =~ i ]] && [[ -n "$SSH_CONNECTION" ]]; then
