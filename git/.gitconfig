@@ -23,9 +23,11 @@
 	cmt = commit -m
 	cmta = commit --amend
 	cmtf = commit --amend --no-edit
+	cmtt = commit --allow-empty
 	crds = config credential.helper store
 	d = diff
 	dc = diff --cached
+	dm = diff HEAD~ --color-moved=dimmed-zebra
 	dd = commit --dry-run
 	f = fetch
 	g = grep
