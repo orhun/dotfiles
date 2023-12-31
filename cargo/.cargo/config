@@ -9,16 +9,17 @@ c = "check"
 f = "fmt"
 t = "nextest run"
 pp = "clippy"
-clr = "clean"
 upd = "update"
 updr = "update --dry-run"
 upg = "upgrade"
 trp = "tarpaulin -o Xml -v"
 d = "doc"
+dd = "watch -x doc"
 i = "install"
 o = "outdated -Rv"
 au = "audit"
 m = "msrv"
+w = "watch"
 
 [build]
 target-dir = "/drv/cargo/target"
@@ -26,3 +27,6 @@ target-dir = "/drv/cargo/target"
 
 [net]
 git-fetch-with-cli = true
+
+[unstable]
+gc = true
