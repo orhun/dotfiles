@@ -36,5 +36,8 @@ xcompmgr &
 # notification daemon
 { sleep 2; runst; } &
 
+# start i3-workspace-groups
+exec i3-workspace-groups server &
+
 # start i3
 exec i3
