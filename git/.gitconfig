@@ -55,6 +55,7 @@
 	rst = restore --staged
 	sh = show
 	st = status
+	stsh = stash save --include-untracked
 	t = tag
 	ups = config --get remote.origin.url
 	yolo = !git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"
