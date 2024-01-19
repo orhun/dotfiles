@@ -75,7 +75,7 @@ gitctl() {
 }
 
 # named stash
-stsh() {
+git-named-stash() {
   git stash push -m "$1"
 }
 
