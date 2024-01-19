@@ -24,7 +24,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # preferences
-xset r rate 300 40
+xset r rate 180 80
 xset m 1 4
 
 # start composite manager
