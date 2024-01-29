@@ -70,8 +70,13 @@ pull() {
 
 # clone a repository and cd into it
 gitctl() {
-  git clone "$1"
-  cd "${1##*/}" || exit
+  if [ -n "$2" ]; then
+    git clone "$@"
+    cd "${2}" || return
+  else
+    git clone "$1"
+    cd "${1##*/}" || return
+  fi
 }
 
 # named stash
