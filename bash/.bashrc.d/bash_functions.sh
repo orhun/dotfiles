@@ -120,7 +120,7 @@ rgbin() {
 
 # download MP3 from YouTube
 yt-mp3() {
-  yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1"
+  yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1" -o "$2"
 }
 
 # copy image to clipboard
