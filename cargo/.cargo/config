@@ -20,6 +20,7 @@ o = "outdated -Rv"
 au = "audit"
 m = "msrv"
 w = "watch"
+n = "new"
 
 [build]
 target-dir = "/drv/cargo/target"
