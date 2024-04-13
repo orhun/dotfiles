@@ -145,4 +145,14 @@ rand-str() {
   openssl rand -base64 "$1"
 }
 
+# run yazi
+yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 # vim:set ts=2 sw=2 et:
