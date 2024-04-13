@@ -32,4 +32,13 @@ return {
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
+  {
+    "ruifm/gitlinker.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      local gitlinker = require "gitlinker"
+      gitlinker.setup()
+    end,
+    lazy = false,
+  },
 }
