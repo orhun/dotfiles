@@ -29,5 +29,5 @@ target-dir = "/drv/cargo/target"
 [net]
 git-fetch-with-cli = true
 
-[unstable]
-gc = true
+# [unstable]
+# gc = true
