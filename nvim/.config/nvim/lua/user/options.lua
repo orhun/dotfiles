@@ -25,7 +25,20 @@ return {
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     mkdp_browser = "firefox", -- use Firefox for markdown preview
-    silicon = { background = "#191a21", ["window-controls"] = false }, -- configure Silicon
+    silicon = {
+      background = "#191a21",
+      ["window-controls"] = false,
+      ["pad-horiz"] = 15,
+      ["pad-vert"] = 15,
+    }, -- configure Silicon
+    -- silicon = {
+    --   background = "#d5cac2",
+    --   ["window-controls"] = false,
+    --   ["round-corner"] = true,
+    --   ["theme"] = "gruvbox-dark",
+    --   ["pad-horiz"] = 10,
+    --   ["pad-vert"] = 10,
+    -- }, -- configure Silicon
     -- noswapfile = true, -- disable swap files
   },
 }
