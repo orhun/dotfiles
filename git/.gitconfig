@@ -65,16 +65,16 @@
 	verbose = true
 [core]
 	editor = nvim
-[core]
-    pager = delta --syntax-theme gruvbox-dark
+  pager = delta --syntax-theme gruvbox-dark
+	autcrlf = input
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
-    navigate = true
+  navigate = true
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 [diff]
-    colorMoved = default
+  colorMoved = default
 [init]
 	defaultBranch = master
 [push]
