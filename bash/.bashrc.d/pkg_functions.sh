@@ -95,7 +95,7 @@ updpkgver() {
     fi
   else
     echo "==> Found package: $pkgname"
-    version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+    version=$(jq -r ".data.\"${pkgname%-bin}\".version" <"$AUR_PKGS/new_ver.json")
     if [[ -n "$version" ]]; then
       echo "==> New version: $version"
       updpkgver "$version"
@@ -110,7 +110,7 @@ updpkgver() {
 updpkglock() {
   oldpwd="$(pwd)"
   pkgname=$(basename "$oldpwd")
-  version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+  version=$(jq -r ".data.\"${pkgname%-bin}\".version" <"$AUR_PKGS/new_ver.json")
   repo=$(rg -i -N -A 5 "\[$pkgname\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
   echo "==> Generating Cargo.lock for $pkgname:$version ($repo)"
   cdtmp
@@ -127,7 +127,7 @@ updpkglock() {
 updpkgcommit() {
   oldpwd="$(pwd)"
   pkgname=$(basename "$oldpwd")
-  version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+  version=$(jq -r ".data.\"${pkgname%-bin}\".version" <"$AUR_PKGS/new_ver.json")
   repo=$(rg -i -N -A 5 "\[$pkgname\]" "$AUR_PKGS/nvchecker.toml" | rg 'github =' | cut -d \" -f2)
   echo "==> Fetching the last commit for $pkgname:$version ($repo)"
   cdtmp
@@ -225,7 +225,7 @@ commitnewpkg() {
 # install the built package
 installpkg() {
   pkgname=$(basename "$PWD")
-  version=$(jq -r ".\"${pkgname%-bin}\"" <"$AUR_PKGS/new_ver.json")
+  version=$(jq -r ".data.\"${pkgname%-bin}\".version" <"$AUR_PKGS/new_ver.json")
   if [[ -n "$version" ]]; then
     pacman --noconfirm -U "$pkgname"-"$version"-*.tar.zst
     halp "$pkgname"
