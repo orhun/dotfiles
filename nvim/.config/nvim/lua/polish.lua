@@ -21,10 +21,10 @@ vim.api.nvim_create_autocmd("BufRead", {
   callback = function()
     vim.o.filetype = "sh"
     vim.g.ui_notifications_enabled = false
-    require("astronvim.utils.ui").toggle_diagnostics()
-    require("astronvim.utils.ui").toggle_diagnostics()
-    require("astronvim.utils.ui").toggle_diagnostics()
-    require("astronvim.utils.ui").toggle_autoformat()
+    require("astrocore.toggles").diagnostics()
+    require("astrocore.toggles").diagnostics()
+    require("astrocore.toggles").diagnostics()
+    require("astrolsp.toggles").buffer_autoformat()
     vim.g.ui_notifications_enabled = true
   end,
 })
