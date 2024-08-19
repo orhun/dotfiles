@@ -1,5 +1,6 @@
 live_config_reload = true
 import = ["/home/orhun/.config/alacritty/theme.toml"]
+# import = ["/home/orhun/.config/alacritty/gruvbox.toml"]
 
 [window]
 decorations = "full"
