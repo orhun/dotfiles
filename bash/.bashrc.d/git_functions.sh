@@ -84,4 +84,9 @@ git-named-stash() {
   git stash push -m "$1"
 }
 
+# dummy commit
+git-dummy() {
+  git commit --allow-empty --no-gpg-sign -m "$@"
+}
+
 # vim:set ts=2 sw=2 et:

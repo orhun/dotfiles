@@ -10,3 +10,4 @@ alias extra-x86_64-inspect='arch-nspawn "/var/lib/archbuild/extra-x86_64/$USER/"
 alias deobf-email-pkg='deobf-email $(head -1 PKGBUILD)'
 alias alp='alpine-chroot'
 alias pkg-diff='git diff *BUILD'
+alias update-srcinfo='makepkg --printsrcinfo > .SRCINFO'
