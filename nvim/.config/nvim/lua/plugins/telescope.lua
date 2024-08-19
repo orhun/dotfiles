@@ -20,9 +20,9 @@ return {
       },
     },
   },
-  config = function(plugin, opts)
-    require "plugins.configs.telescope"(plugin, opts)
-    local telescope = require "telescope"
-    telescope.load_extension "media_files"
-  end,
+  -- config = function(plugin, opts)
+  --   require "plugins.configs.telescope"(plugin, opts)
+  --   local telescope = require "telescope"
+  --   telescope.load_extension "media_files"
+  -- end,
 }
