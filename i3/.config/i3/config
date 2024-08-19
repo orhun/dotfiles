@@ -41,7 +41,7 @@ bindsym $mod+g exec --no-startup-id i3-switch-active-workspace-group
 bindsym Mod1+$mod+n exec --no-startup-id i3-rename-workspace
 
 # Move the focused container to another workspace
-bindsym $mod+Shift+m exec --no-startup-id i3-move-to-workspace
+# bindsym $mod+Shift+m exec --no-startup-id i3-move-to-workspace
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -205,7 +205,7 @@ bindsym $mod+Shift+e exec i3-msg exit
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
-# bindsym $mod+Shift+m resize set 800 px 600 px
+bindsym $mod+Shift+m resize set 1320 px 700 px
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -253,3 +253,4 @@ bar {
 client.unfocused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
 client.focused_inactive #16161d #16161d #3E3E38 #6a9589 #3E3E38
 client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
+# client.focused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
