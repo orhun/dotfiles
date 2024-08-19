@@ -10,6 +10,8 @@
   insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
   insteadOf = https://bitbucket.org/
+[url "ssh://git@gitlab.archlinux.org/"]
+  insteadOf = https://gitlab.archlinux.org/
 [alias]
 	a = add
 	aa = add -A
