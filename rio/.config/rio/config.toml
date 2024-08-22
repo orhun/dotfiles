@@ -1,0 +1,94 @@
+cursor = '▇'
+blinking-cursor = false
+hide-cursor-when-typing = false
+padding-x = 0
+padding-y = [0, 0]
+
+line-height = 1.0
+confirm-before-quit = false
+
+[window]
+mode = "Windowed"
+opacity = 0.9
+blur = false
+decorations = "Disabled"
+
+[editor]
+program = "nvim"
+args = []
+
+[renderer]
+performance = "High"
+backend = "Automatic"
+disable-unfocused-render = false
+level = 1
+
+[keyboard]
+use-kitty-keyboard-protocol = false
+disable-ctlseqs-alt = false
+
+[fonts]
+family = "Ubuntu Mono Ligaturized"
+size = 11
+
+[scroll]
+multiplier = 3.0
+divider = 1.0
+
+[navigation]
+mode = "CollapsedTab"
+clickable = false
+use-current-path = false
+color-automation = []
+
+[shell]
+program = "/bin/bash"
+args = []
+
+[colors]
+
+background = "#1f1f28"
+foreground = "#dcd7ba"
+
+black            = '#44475A'
+blue             = '#BD93F9'
+cursor           = '#F8F8F2'
+cyan             = '#8BE9FD'
+green            = '#50fa7b'
+magenta          = '#FF79C6'
+red              = '#FF5555'
+tabs             = '#494c62'
+tabs-active      = '#6a6e8e'
+white            = '#F8F8F2'
+yellow           = '#F1FA8C'
+dim-black        = '#393C4b'
+dim-blue         = '#AE7BF8'
+dim-cyan         = '#69C3dE'
+dim-foreground   = '#dfdfd9'
+dim-green        = '#06572F'
+dim-magenta      = '#FF60BB'
+dim-red          = '#FF3C3C'
+dim-white        = '#EFEFE1'
+dim-yellow       = '#E6A003'
+light-black      = '#6272A4'
+light-blue       = '#D6ACFF'
+light-cyan       = '#A4FFFF'
+light-foreground = '#f8f8f1'
+light-green      = '#69FF94'
+light-magenta    = '#FF92DF'
+light-red        = '#FF6E6E'
+light-white      = '#FFFFFF'
+light-yellow     = '#FFFFA5'
+
+# Bindings
+#
+# Create custom Key bindings for Rio terminal
+# More information in: https://raphamorim.io/rio/docs/next/key-bindings#custom-key-bindings
+#
+# Example:
+# [bindings]
+# keys = [
+#   { key = "q", with = "super", action = "Quit" },
+#   # Bytes[27, 91, 53, 126] is equivalent to "\x1b[5~"
+#   { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
+# ]
