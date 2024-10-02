@@ -1,27 +1,32 @@
-cursor = '▇'
-blinking-cursor = false
-hide-cursor-when-typing = false
 padding-x = 0
 padding-y = [0, 0]
-
 line-height = 1.0
-confirm-before-quit = false
+confirm-before-quit = true
+hide-mouse-cursor-when-typing = false
+
+# [cursor]
+# shape = 'block'
+# blinking = false
 
 [window]
-mode = "Windowed"
+mode = "windowed"
 opacity = 0.9
 blur = false
-decorations = "Disabled"
+decorations = "disabled"
+
+# [window.background-image]
+# path = "/home/orhun/images/arch.png"
 
 [editor]
 program = "nvim"
 args = []
 
 [renderer]
-performance = "High"
-backend = "Automatic"
+performance = "high"
+backend = "vulkan"
 disable-unfocused-render = false
 level = 1
+max-fps = 120
 
 [keyboard]
 use-kitty-keyboard-protocol = false
@@ -36,7 +41,7 @@ multiplier = 3.0
 divider = 1.0
 
 [navigation]
-mode = "CollapsedTab"
+# mode = "Bookmark"
 clickable = false
 use-current-path = false
 color-automation = []
@@ -87,8 +92,24 @@ light-yellow     = '#FFFFA5'
 #
 # Example:
 # [bindings]
+# leader = { key = "b", with = "control" }
 # keys = [
-#   { key = "q", with = "super", action = "Quit" },
-#   # Bytes[27, 91, 53, 126] is equivalent to "\x1b[5~"
-#   { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
+#   { key = "c", mode = "leader", action = "createtab" },
 # ]
+
+
+# keys = [
+#   { key = "space", with = "control", action = "createtab" },
+#   { key = "h", with = "control", action = "selectprevtab" },
+#   { key = "l", with = "control", action = "selectnexttab" },
+#   { key = "q", with = "control", action = "closeunfocusedtabs" },
+#   { key = "w", with = "control", action = "closetab" },
+#   { key = "w", with = "control", action = "closetab" },
+#   { key = "v", with = "control", action = "togglevimode" },
+  # Bytes[27, 91, 53, 126] is equivalent to "\x1b[5~"
+  # { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
+# ]
+
+[developer]
+log-level = "info"
+log-file = true
