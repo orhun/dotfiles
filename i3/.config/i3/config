@@ -32,13 +32,13 @@ exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 exec_always --no-startup-id GET_BRIGHTNESS="light" SET_BRIGHTNESS="light -S {}" i3-workspace-brightness
 
 # Workspace groups
-set $exec_i3_groups exec --no-startup-id i3-workspace-groups-client
+# set $exec_i3_groups exec --no-startup-id i3-workspace-groups-client
 
 # Switch active workspace group
-bindsym $mod+g exec --no-startup-id i3-switch-active-workspace-group
+# bindsym $mod+g exec --no-startup-id i3-switch-active-workspace-group
 
 # Rename/renumber workspace. Uses Super+Alt+n
-bindsym Mod1+$mod+n exec --no-startup-id i3-rename-workspace
+# bindsym Mod1+$mod+n exec --no-startup-id i3-rename-workspace
 
 # Move the focused container to another workspace
 # bindsym $mod+Shift+m exec --no-startup-id i3-move-to-workspace
@@ -159,40 +159,40 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Switch to workspace
-bindsym $mod+1 $exec_i3_groups workspace-number $ws1
-bindsym $mod+2 $exec_i3_groups workspace-number $ws2
-bindsym $mod+3 $exec_i3_groups workspace-number $ws3
-bindsym $mod+4 $exec_i3_groups workspace-number $ws4
-bindsym $mod+5 $exec_i3_groups workspace-number $ws5
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 exec ~/.config/i3/ws6.sh
-bindsym $mod+7 $exec_i3_groups workspace-number $ws7
-bindsym $mod+8 $exec_i3_groups workspace-number $ws8
-bindsym $mod+9 $exec_i3_groups workspace-number $ws9
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 exec ~/.config/i3/ws10.sh
 bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
-bindsym $mod+Control+1 $exec_i3_groups workspace-number 11
-bindsym $mod+Control+2 $exec_i3_groups workspace-number 12
-bindsym $mod+Control+3 $exec_i3_groups workspace-number 13
-bindsym $mod+Control+4 $exec_i3_groups workspace-number 14
-bindsym $mod+Control+5 $exec_i3_groups workspace-number 15
-bindsym $mod+Control+6 $exec_i3_groups workspace-number 16
-bindsym $mod+Control+7 $exec_i3_groups workspace-number 17
-bindsym $mod+Control+8 $exec_i3_groups workspace-number 18
-bindsym $mod+Control+9 $exec_i3_groups workspace-number 19
-bindsym $mod+Control+0 $exec_i3_groups workspace-number 20
+bindsym $mod+Control+1 workspace number 11
+bindsym $mod+Control+2 workspace number 12
+bindsym $mod+Control+3 workspace number 13
+bindsym $mod+Control+4 workspace number 14
+bindsym $mod+Control+5 workspace number 15
+bindsym $mod+Control+6 workspace number 16
+bindsym $mod+Control+7 workspace number 17
+bindsym $mod+Control+8 workspace number 18
+bindsym $mod+Control+9 workspace number 19
+bindsym $mod+Control+0 workspace number 20
 
 # Move focused container to workspace
-bindsym $mod+Shift+1 $exec_i3_groups move-to-number $ws1
-bindsym $mod+Shift+2 $exec_i3_groups move-to-number $ws2
-bindsym $mod+Shift+3 $exec_i3_groups move-to-number $ws3
-bindsym $mod+Shift+4 $exec_i3_groups move-to-number $ws4
-bindsym $mod+Shift+5 $exec_i3_groups move-to-number $ws5
-bindsym $mod+Shift+6 $exec_i3_groups move-to-number $ws6
-bindsym $mod+Shift+7 $exec_i3_groups move-to-number $ws7
-bindsym $mod+Shift+8 $exec_i3_groups move-to-number $ws8
-bindsym $mod+Shift+9 $exec_i3_groups move-to-number $ws9
-bindsym $mod+Shift+0 $exec_i3_groups move-to-number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -205,7 +205,7 @@ bindsym $mod+Shift+e exec i3-msg exit
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
-bindsym $mod+Shift+m resize set 1320 px 700 px
+bindsym $mod+Shift+m resize set 1070 px 730 px
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -237,7 +237,7 @@ bindsym XF86MonBrightnessDown exec light -U 10
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  strip_workspace_numbers yes
+  # strip_workspace_numbers yes
   position top
   status_command i3status
   tray_output none
