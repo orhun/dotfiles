@@ -21,6 +21,7 @@ au = "audit"
 m = "msrv"
 w = "watch"
 n = "new"
+lock = "generate-lockfile"
 
 [build]
 target-dir = "/drv/cargo/target"
