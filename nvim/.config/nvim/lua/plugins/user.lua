@@ -84,4 +84,32 @@ return {
     cmd = { "Preview" },
     config = function() require("preview").setup() end,
   },
+  {"github/copilot.vim"},
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim" },
+    },
+    opts = {
+      debug = false,
+    },
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zjp-CN/nvim-cmp-lsp-rs",
+        ---@type cmp_lsp_rs.Opts
+        opts = {
+          -- Filter out import items starting with one of these prefixes.
+          -- A prefix can be crate name, module name or anything an import
+          -- path starts with, no matter it's complete or incomplete.
+          -- Only literals are recognized: no regex matching.
+          unwanted_prefix = { "ratatui::crossterm::style::Stylize", "crossterm", "Styled" },
+        },
+      },
+    },
+  }
 }

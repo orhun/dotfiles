@@ -48,12 +48,13 @@ return {
         ui_notifications_enabled = true, -- disable notifications when toggling UI elements
         mkdp_browser = "firefox", -- use Firefox for markdown preview
         silicon = {
-          -- background = "#191a21",
+          background = "#191a21",
           ["window-controls"] = false,
-          background = "#2e1f1e",
-          ["theme"] = "gruvbox-dark",
-          ["pad-horiz"] = 15,
-          ["pad-vert"] = 15,
+          -- background = "#161616",
+          -- ["theme"] = "gruvbox-dark",
+          -- ["pad-horiz"] = 10,
+          -- ["pad-vert"] = 10,
+          -- ["round-corner"] = true,
         }, -- configure Silicon
         -- silicon = {
         --   background = "#d5cac2",
@@ -78,6 +79,7 @@ return {
           desc = "Previous buffer",
         },
         ["<C-g>"] = { ":ToggleTerm size=30 direction=horizontal<cr>", desc = "Toggle terminal" },
+        ["<C-;>"] = { ":ToggleTerm size=30 direction=horizontal<cr>", desc = "Toggle terminal" },
         ["<Leader>;"] = { ":2ToggleTerm size=30 direction=horizontal<cr>", desc = "Open terminal with tab" },
         ["<Leader>r"] = { ":AstroReload<cr>", desc = "Reload AstroNvim" },
         ["<esc>"] = { ":nohl<cr>", desc = "No highlight" },
@@ -85,7 +87,6 @@ return {
         ["<C-q>"] = { ":qa!<cr>", desc = "Exit" },
         ["<C-f>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
         ["<C-k>"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
-        ["<C-i>"] = { ":Mason<cr>", desc = "Open Mason installer" },
         ["<C-d>"] = { "<C-d>zz", desc = "Scroll down" },
         ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
         ["<A-z>"] = { ":set wrap!<cr>", desc = "Toggle word wrap" },
@@ -118,6 +119,7 @@ return {
       },
       t = {
         ["<C-g>"] = { "<C-\\><C-N>", desc = "Switch to normal mode" },
+        ["<C-;>"] = { "<C-\\><C-N>", desc = "Switch to normal mode" },
       },
     },
   },
