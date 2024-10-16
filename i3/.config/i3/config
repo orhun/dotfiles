@@ -83,6 +83,9 @@ bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
 # Take a screenshot
 bindsym $mod+shift+o exec ~/scripts/capture.sh
 
+# Toggle VPN
+bindsym $mod+shift+v exec pkexec ~/scripts/toggle_vpn.sh
+
 # Notification history
 bindsym $mod+grave exec dbus-send --print-reply \
         --dest=org.freedesktop.Notifications /org/freedesktop/Notifications/ctl org.freedesktop.Notifications.History

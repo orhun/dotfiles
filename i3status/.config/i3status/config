@@ -19,6 +19,7 @@ general {
 order += "ipv6"
 order += "ethernet _first_"
 order += "wireless _first_"
+order += "read_file vpn"
 order += "read_file updates"
 order += "battery all"
 order += "disk /"
@@ -41,6 +42,12 @@ ethernet _first_ {
 wireless _first_ {
     format_up = "W: %ip"
     format_down = "W: down"
+}
+
+read_file vpn {
+    format = "V: %content"
+    format_bad = "V: -"
+    path = "/var/local/openvpn_status"
 }
 
 read_file updates {
