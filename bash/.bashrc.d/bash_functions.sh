@@ -155,4 +155,9 @@ yy() {
   rm -f -- "$tmp"
 }
 
+# create spectogram
+ffmpeg-spectogram() {
+  ffmpeg -i "$1" -lavfi showspectrumpic=s=1920x1080:mode=separate spectrogram.png
+}
+
 # vim:set ts=2 sw=2 et:

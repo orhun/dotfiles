@@ -55,7 +55,7 @@ export CACHEDIR="/var/lib/repro/cache"
 export ANDROID_HOME="$HOME/Android/Sdk"
 export WINEPREFIX="/drv/wine"
 
-# Run terminal multiplexer when connected via SSH
+# Run zellij when connected via SSH
 if [[ $- =~ i ]] && [[ -n "$SSH_CONNECTION" ]]; then
 	cat /etc/motd 2>/dev/null
 	zellij attach --create "${SSH_TTY#/dev/pts/*}" 2>/dev/null && exit
@@ -63,3 +63,6 @@ fi
 
 # Initialize directory jumper
 eval "$(zoxide init bash)"
+
+# Start zellij
+eval "$(zellij setup --generate-auto-start bash)"

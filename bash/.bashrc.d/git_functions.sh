@@ -89,4 +89,21 @@ git-dummy() {
   git commit --allow-empty --no-gpg-sign -m "$@"
 }
 
+# fetch all branches
+git-fetch-branches() {
+  git branch -r |
+    grep -v '\->' |
+    sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" |
+    while read remote; do
+      git branch --track "${remote#origin/}" "$remote"
+    done
+  git fetch --all
+  git pull --all
+}
+
+# delete all branches
+git-delete-branches() {
+  git branch --merged | grep -v \* | xargs git branch -D
+}
+
 # vim:set ts=2 sw=2 et:

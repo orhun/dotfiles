@@ -248,4 +248,23 @@ alpine-checkout() {
   fi
 }
 
+# taken from
+# <https://gitlab.archlinux.org/pacman/pacman/-/blob/a2d029388c7c206f5576456f91bfbea2dca98c96/scripts/repo-add.sh.in#L374-387>
+elephant() {
+  case $((RANDOM % 2)) in
+  0)
+    printf '%s\n' "H4sIAL3qBE4CAyWLwQ3AMAgD/0xh5UPzYiFUMgjq7LUJsk7yIQNAQTAikFUDnqkr" \
+      "OQFOUm0Wd9pHCi13ONjBpVdqcWx+EdXVX4vXvGv5cgztB9+fJxZ7AAAA"
+    ;;
+
+  1)
+    printf '%s\n' "H4sIAJVWBU4CA21RMQ7DIBDbeYWrDgQJ7rZ+IA/IB05l69alcx5fc0ASVXUk4jOO" \
+      "7yAAUWtorygwJ4hlMii0YkJKKRKGvsMsiykl1SalvrMD1gUXyXRkGZPx5OPft81K" \
+      "tNAiAjyGjYO47h1JjizPkJrCWbK/4C+uLkT7bzpGc7CT9bmOzNSW5WLSO5vexjmH" \
+      "ZL9JFFZeAa0a2+lKjL2anpYfV+0Zx9LJ+/MC8nRayuDlSNy2rfAPibOzsiWHL0jL" \
+      "SsjFAQAA"
+    ;;
+  esac | base64 -d | gzip -d
+}
+
 # vim:set ts=2 sw=2 et:
