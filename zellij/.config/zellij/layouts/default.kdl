@@ -1,0 +1,39 @@
+layout {
+    pane borderless=true
+
+    // pane size=1 borderless=true {
+    //     plugin location="compact-bar"
+    // }
+    pane size=1 borderless=true {
+        plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+            hide_frame_for_single_pane "true"
+            format_right "{mode}{tabs}{mode} "
+            format_space  ""
+
+            tab_normal              "#[fg=#54534D,bg=#1f1f28] #[fg=#54534D,bg=#1f1f28]{index} #[fg=#1f1f28,bg=#54534D]"
+            tab_normal_fullscreen   "#[fg=#54534D,bg=#1f1f28] {index} []"
+            tab_normal_sync         "#[fg=#54534D,bg=#1f1f28] {index} <>"
+
+            tab_active              "#[fg=#c8c093,bg=#1f1f28,bold] {index} #[fg=#c8c093,bg=#1f1f28]"
+            tab_active_fullscreen   "#[fg=#c8c093,bg=#1f1f28,bold] {index} []"
+            tab_active_sync         "#[fg=#c8c093,bg=#1f1f28,bold] {index} <>"
+
+            mode_normal         "#[bg=#957fb8] "
+            mode_locked         "#[bg=#2a2a37] "
+            mode_resize         "#[bg=#76946a] "
+            mode_pane           "#[bg=#7e9cd8] "
+            mode_tab            "#[bg=#c0a36e] "
+            mode_scroll         "#[bg=#ff9e3b] "
+            mode_enter_search   "#[bg=#6a9589] "
+            mode_search         "#[bg=#a3d4d5] "
+            mode_rename_tab     "#[bg=#c34043] "
+            mode_rename_pane    "#[bg=#d27e99] "
+            mode_session        "#[bg=#ff5d62] "
+            mode_move           "#[bg=#76946a] "
+            mode_prompt         "#[bg=#4c4f69] "
+            mode_tmux           "#[bg=#ffc387] "
+
+            mode_default_to_mode "tmux"
+        }
+    }
+}
