@@ -4,8 +4,8 @@
 	signingkey = 165E0FF7C48C226E1EC363A7F83424824B3E4B90
 [gpg]
 	program = gpg
-[url "ssh://git@github.com/"]
-  insteadOf = https://github.com/
+; [url "ssh://git@github.com/"]
+;   insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
@@ -59,6 +59,8 @@
 	st = status
 	t = tag
 	stash-all = stash save --include-untracked
+	reset-soft = reset --soft HEAD~
+	stash-unstaged = stash --keep-index -u
 	ups = config --get remote.origin.url
 	yolo = !git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"
 [commit]
@@ -69,14 +71,19 @@
 	editor = nvim
   pager = delta --syntax-theme gruvbox-dark
 	autcrlf = input
+  attributesfile = ~/.gitattributes
 [interactive]
   diffFilter = delta --color-only
 [delta]
   navigate = true
 [merge]
   conflictstyle = diff3
+; [merge "mergiraf"]
+;     name = mergiraf
+;     driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P
 [diff]
   colorMoved = default
+  external = difft
 [init]
 	defaultBranch = master
 [push]
