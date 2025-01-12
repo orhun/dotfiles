@@ -3,7 +3,17 @@
 # $all is shorthand for $username$hostname$localip$shlvl$singularity$kubernetes$nats$directory$vcsh$fossil_branch$fossil_metrics$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$bun$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$gleam$golang$gradle$haskell$haxe$helm$java$julia$kotlin$lua$mojo$nim$nodejs$ocaml$odin$opa$perl$php$pulumi$purescript$python$quarto$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$typst$vlang$vagrant$zig$buf$guix_shell$nix_shell$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$direnv$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery$time$status$container$os$shell$character
 "$schema" = "https://starship.rs/config-schema.json"
 
-format = '\($username $directory$git_branch$git_commit$git_state$git_metrics$git_status$status\) '
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$status\
+$line_break\
+$username
+"""
 right_format = ""
 continuation_prompt = "[∙](bright-black) "
 scan_timeout = 30
@@ -13,7 +23,7 @@ follow_symlinks = true
 
 [username]
 detect_env_vars = []
-format = "[$user]($style) [ζ](blue)"
+format = "[>_](bold) [$user]($style) [ζ](blue) "
 style_root = "red bold"
 style_user = "white"
 show_always = true
@@ -26,11 +36,11 @@ fish_style_pwd_dir_length = 0
 use_logical_path = true
 format = "[$path]($style)[$read_only]($read_only_style) "
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
-style = "white"
+style = "yellow bold"
 disabled = false
 read_only_style = "red"
 truncation_symbol = ""
-home_symbol = "~"
+home_symbol = "/home/orhun"
 use_os_path_sep = true
 
 [git_branch]
@@ -82,12 +92,12 @@ ahead = "⇡"
 behind = "⇣"
 up_to_date = ""
 diverged = "⇕"
-conflicted = "="
+conflicted = "!"
 deleted = "✘"
 renamed = "»"
-modified = "!"
+modified = "~"
 staged = "+"
-untracked = "~"
+untracked = "-"
 typechanged = ""
 ignore_submodules = false
 disabled = false
@@ -381,7 +391,7 @@ format = "via [$symbol($version )]($style)"
 version_format = "v${raw}"
 symbol = " "
 style = "bold green"
-disabled = true
+disabled = false
 not_capable_style = "bold red"
 detect_extensions = [
     "js",
@@ -414,55 +424,6 @@ disabled = true
 format = "[$symbol]($style)"
 style = "bold white"
 disabled = true
-
-[os.symbols]
-AIX = "➿ "
-Alpaquita = "🔔 "
-AlmaLinux = "💠 "
-Alpine = "🏔️ "
-Amazon = "🙂 "
-Android = "🤖 "
-Arch = "🎗️ "
-Artix = "🎗️ "
-CentOS = "💠 "
-Debian = "🌀 "
-DragonFly = "🐉 "
-Emscripten = "🔗 "
-EndeavourOS = "🚀 "
-Fedora = "🎩 "
-FreeBSD = "😈 "
-Garuda = "🦅 "
-Gentoo = "🗜️ "
-HardenedBSD = "🛡️ "
-Illumos = "🐦 "
-Kali = "🐉 "
-Linux = "🐧 "
-Mabox = "📦 "
-Macos = "🍎 "
-Manjaro = "🥭 "
-Mariner = "🌊 "
-MidnightBSD = "🌘 "
-Mint = "🌿 "
-NetBSD = "🚩 "
-NixOS = "❄️ "
-OpenBSD = "🐡 "
-OpenCloudOS = "☁️ "
-openEuler = "🦉 "
-openSUSE = "🦎 "
-OracleLinux = "🦴 "
-Pop = "🍭 "
-Raspbian = "🍓 "
-Redhat = "🎩 "
-RedHatEnterprise = "🎩 "
-RockyLinux = "💠 "
-Redox = "🧪 "
-Solus = "⛵ "
-SUSE = "🦎 "
-Ubuntu = "🎯 "
-Ultramarine = "🔷 "
-Unknown = "❓ "
-Void = "  "
-Windows = "🪟 "
 
 [package]
 format = "is [$symbol$version]($style) "
@@ -512,9 +473,9 @@ disabled = true
 
 [rust]
 format = "via [$symbol($version )]($style)"
-version_format = "v${raw}"
+version_format = "${raw}"
 symbol = "🦀 "
-style = "bold red"
+style = ""
 disabled = false
 detect_extensions = ["rs"]
 detect_files = ["Cargo.toml"]
