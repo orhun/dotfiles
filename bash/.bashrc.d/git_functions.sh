@@ -13,14 +13,6 @@ gt() {
       --preview 'git show --color=always {} | head -'$LINES
 }
 
-# git status
-gs() {
-  is_git_repo || return
-  git -c color.status=always status --short |
-    fzf-tmux -m --preview-window top:80% --ansi --nth 2..,.. \
-      --preview 'git diff -- {-1} | diff-so-fancy'
-}
-
 # git branch
 gb() {
   is_git_repo || return
