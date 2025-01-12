@@ -420,7 +420,7 @@ pane_frames false
 
 ui {
     pane_frames {
-        rounded_corners false
+        rounded_corners true
         hide_session_name true
     }
 }
