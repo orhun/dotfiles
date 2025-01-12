@@ -29,7 +29,7 @@ font pango:monospace 10
 exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 
 # Workspace brightness
-exec_always --no-startup-id GET_BRIGHTNESS="light" SET_BRIGHTNESS="light -S {}" i3-workspace-brightness
+# exec_always --no-startup-id GET_BRIGHTNESS="light" SET_BRIGHTNESS="light -S {}" i3-workspace-brightness
 
 # Workspace groups
 # set $exec_i3_groups exec --no-startup-id i3-workspace-groups-client
@@ -57,7 +57,7 @@ bindsym $mod+shift+d exec setxkbmap de && notify-send -u low "Keyboard layout: D
 
 # Systemctl calls
 bindsym $mod+shift+s exec systemctl suspend
-bindsym $mod+shift+h exec systemctl hibernate
+# bindsym $mod+shift+h exec systemctl hibernate
 
 # Start the terminal
 bindsym $mod+Return exec alacritty
