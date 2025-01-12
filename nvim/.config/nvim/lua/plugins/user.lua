@@ -25,56 +25,61 @@ return {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
+    config = function()
+      require("lsp_signature").setup()
+    end,
   },
   { "max397574/better-escape.nvim", enabled = false },
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require("astronvim.plugins.configs.luasnip")(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
+      local luasnip = require("luasnip")
       luasnip.filetype_extend("javascript", { "javascriptreact" })
     end,
   },
   {
     "rebelot/kanagawa.nvim",
     config = function()
-      local kanagawa = require "kanagawa"
-      kanagawa.setup {
+      local kanagawa = require("kanagawa")
+      kanagawa.setup({
         transparent = true,
         theme = "wave",
-      }
+      })
     end,
   },
-  { "m-pilia/vim-pkgbuild", lazy = false },
+  { "m-pilia/vim-pkgbuild",         lazy = false },
   { "iamcco/markdown-preview.nvim", lazy = false },
   {
     "akinsho/git-conflict.nvim",
+    tag = "v2.1.0",
     config = function()
-      require("git-conflict").setup {
+      require("git-conflict").setup({
         default_mappings = false,
-      }
+      })
     end,
     lazy = false,
   },
-  { "folke/zen-mode.nvim", lazy = false },
-  { "mbbill/undotree", lazy = false },
-  { "tpope/vim-fugitive", lazy = false },
+  { "folke/zen-mode.nvim",             lazy = false },
+  { "mbbill/undotree",                 lazy = false },
+  { "tpope/vim-fugitive",              lazy = false },
   { "Eandrju/cellular-automaton.nvim", lazy = false },
-  { "segeljakt/vim-silicon", lazy = false },
-  { "TheBlob42/houdini.nvim", lazy = false },
-  { "mzlogin/vim-markdown-toc", lazy = false },
+  { "segeljakt/vim-silicon",           lazy = false },
+  { "TheBlob42/houdini.nvim",          lazy = false },
+  { "mzlogin/vim-markdown-toc",        lazy = false },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
+    config = function()
+      require("lsp_signature").setup()
+    end,
   },
   {
     "ruifm/gitlinker.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      local gitlinker = require "gitlinker"
+      local gitlinker = require("gitlinker")
       gitlinker.setup()
     end,
     lazy = false,
@@ -82,20 +87,11 @@ return {
   {
     "henriklovhaug/Preview.nvim",
     cmd = { "Preview" },
-    config = function() require("preview").setup() end,
+    config = function()
+      require("preview").setup()
+    end,
   },
-  {"github/copilot.vim"},
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-    dependencies = {
-      { "zbirenbaum/copilot.lua" },
-      { "nvim-lua/plenary.nvim" },
-    },
-    opts = {
-      debug = false,
-    },
-  },
+  { "github/copilot.vim" },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -111,5 +107,17 @@ return {
         },
       },
     },
-  }
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {
+      stiffness = 0.8,
+      trailing_stiffness = 0.5,
+      distance_stop_animating = 0.5,
+      hide_target_hack = false,
+      smear_between_buffers = true,
+      smear_between_neighbor_lines = true,
+      legacy_computing_symbols_support = false,
+    },
+  },
 }
