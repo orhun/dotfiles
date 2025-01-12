@@ -66,3 +66,6 @@ eval "$(zoxide init bash)"
 
 # Start zellij
 eval "$(zellij setup --generate-auto-start bash)"
+
+# Initialize starship prompt
+eval "$(starship init bash)"
