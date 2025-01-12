@@ -62,7 +62,8 @@ cleanup-workspace() {
 
 # file explorer
 tere() {
-  local result=$(command tere --mouse on -m alt-enter:Exit "$@")
+  bindings="alt-enter:Exit"
+  result=$(command tere --mouse on -m "$bindings" "$@")
   [ -n "$result" ] && cd -- "$result"
 }
 

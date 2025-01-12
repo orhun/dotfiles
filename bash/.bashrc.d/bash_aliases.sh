@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias r='reset'
 alias v='nvim'
 alias vim='nvim'
 alias g='git'
@@ -39,7 +40,6 @@ alias rm='trash'
 alias src='source $HOME/.bashrc'
 alias less='less -R'
 alias vpn='sudo openvpn --config $HOME/.openvpn/client.ovpn'
-alias rst='reset'
 alias tlp-stat='sudo tlp-stat'
 alias mdp='mdp -sc'
 alias tasks='taskwarrior-tui'
