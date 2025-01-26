@@ -124,6 +124,11 @@ yt-mp3() {
   yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1" -o "$2"
 }
 
+# download MP4 from YouTube
+yt-mp4() {
+  yt-dlp -S ext "$1"
+}
+
 # copy image to clipboard
 cp-img() {
   xclip -selection clipboard -t image/png -i "$1"
