@@ -15,6 +15,7 @@ alias starfield='gh screensaver -s starfield'
 alias lgtm='gh lgtmoon'
 alias gsubmod='GIT_TRACE=1 GIT_CURL_VERBOSE=1 git submodule update --init --recursive --progress'
 alias git-signall="git rebase --signoff main && git push --force-with-lease"
+alias git-update-submodule="git submodule update --remote --merge"
 
 alias d="git d"
 alias st="git st"
