@@ -48,7 +48,7 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
-local function log_diagnostics()
+function _G.log_diagnostics()
 	-- local file_path = vim.fn.stdpath("data") .. "/diagnostics_log.txt"
 	local file_path = "/home/orhun/diagnostics_log.txt"
 	local current_total = 0
@@ -61,6 +61,9 @@ local function log_diagnostics()
 	end
 
 	local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+	if errors == 0 then
+		return
+	end
 
 	local new_total = current_total + errors
 
