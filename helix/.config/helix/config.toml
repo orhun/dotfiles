@@ -1,0 +1,12 @@
+theme = "kanagawa"
+
+[editor]
+line-number = "relative"
+auto-completion = true
+
+[keys.insert]
+C-c = "normal_mode"
+
+[keys.normal]
+C-s = ":w"
+
