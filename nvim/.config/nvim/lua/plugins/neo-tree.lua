@@ -18,6 +18,7 @@ return {
       window = {
         mappings = {
           ["o"] = "open",
+          ["e"] = "rename",
           ["h"] = function(state)
             local node = state.tree:get_node()
             if node.type == "directory" and node:is_expanded() then

@@ -120,4 +120,17 @@ return {
       legacy_computing_symbols_support = false,
     },
   },
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
+  {
+    'saecki/crates.nvim',
+    event = { "BufRead Cargo.toml" },
+    config = function()
+      require('crates').setup()
+    end,
+  }
 }
