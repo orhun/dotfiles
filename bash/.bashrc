@@ -65,7 +65,8 @@ fi
 eval "$(zoxide init bash)"
 
 # Start zellij
-eval "$(zellij setup --generate-auto-start bash)"
+term=$(basename "$(cat "/proc/$PPID/comm")")
+[[ "$term" != "wezterm"* ]] && eval "$(zellij setup --generate-auto-start bash)"
 
 # Initialize starship prompt
 eval "$(starship init bash)"
