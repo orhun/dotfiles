@@ -85,7 +85,7 @@
   colorMoved = default
   external = difft
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [push]
 	autoSetupRemote = true
 	default = current
@@ -98,3 +98,13 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[help]
+	autocorrect = prompt
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[pull]
+	rebase = true
