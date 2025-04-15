@@ -4,9 +4,9 @@ line-height = 1.0
 confirm-before-quit = true
 hide-mouse-cursor-when-typing = false
 
-# [cursor]
-# shape = 'block'
-# blinking = false
+[cursor]
+shape = 'block'
+blinking = false
 
 [window]
 mode = "windowed"
@@ -27,14 +27,18 @@ backend = "vulkan"
 disable-unfocused-render = false
 level = 1
 max-fps = 120
+filters = [
+  "/home/orhun/gh/slang-shaders/crt/newpixie-crt.slangp"
+  # "/home/orhun/gh/rio-rc-shader/rc/rc.slangp"
+]
 
 [keyboard]
 use-kitty-keyboard-protocol = false
 disable-ctlseqs-alt = false
 
 [fonts]
-family = "Ubuntu Mono Ligaturized"
-size = 11
+# family = "Ubuntu Mono Ligaturized"
+size = 35
 
 [scroll]
 multiplier = 3.0
