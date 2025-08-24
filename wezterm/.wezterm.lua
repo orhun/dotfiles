@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 config.colors = {
-	background = "#151515",
+	background = "#1d1c2d",
 	foreground = "#fff",
 }
 config.color_scheme = "Gruvbox dark, pale (base16)"
