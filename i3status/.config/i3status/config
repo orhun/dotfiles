@@ -28,67 +28,76 @@ order += "volume master"
 order += "load"
 order += "memory"
 order += "tztime local"
+# order += "tztime foreign"
 
 ipv6 {
-    format_up = "IPv6: %ip"
-    format_down = "no IPv6"
+    format_up = "🌐IPv6: %ip"
+    format_down = "🌐no IPv6"
 }
 
 ethernet _first_ {
-    format_up = "E: %ip (%speed)"
-    format_down = "E: down"
+    format_up = "🔌E:%ip (%speed)"
+    format_down = "🔌E:down"
 }
 
 wireless _first_ {
-    format_up = "W: %ip"
-    format_down = "W: down"
+    format_up = "📶W:%ip"
+    format_down = "📶W:down"
 }
 
 read_file vpn {
-    format = "V: %content"
-    format_bad = "V: -"
+    format = "🛡️V:%content"
+    format_bad = "🛡️V:-"
     path = "/var/local/openvpn_status"
 }
 
 read_file updates {
-    format = "U: %content"
-    format_bad = "U: -"
+    format = "📦U:%content"
+    format_bad = "📦U:-"
     path = "/var/local/updates/count"
 }
 
 battery all {
-    status_chr = "CHR"
-    status_bat = "BAT"
-    status_unk = "UNK"
-    format = "%status %percentage %remaining"
-	last_full_capacity = true
+    status_chr = "⚡"
+    status_bat = "🔋"
+    status_unk = "❓"
+    status_idle = "🔌"
+    status_full = "💯"
+    format = "%status%percentage %remaining"
+    last_full_capacity = true
 }
 
 volume master {
-	device = "default"
-	mixer = "Master"
-	mixer_idx = 0
-	format = "%volume"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+    format = "🔊%volume"
 }
 
 disk "/" {
-    format = "/:%avail"
+    format = "💾/:%avail"
 }
 
 disk "/drv" {
-    format = "/drv:%avail"
+    format = "💽/drv:%avail"
 }
 
 load {
-    format = "%5min"
+    format = "🧮%5min"
 }
 
 memory {
-    format = "%used/%available"
+    format = "🧠%used/%available"
     threshold_degraded = "1G"
-    format_degraded = "%available"
+    format_degraded = "🧠%available"
 }
 
 tztime local {
-    format = "%d-%m-%Y %H:%M:%S "
+    timezone = "Asia/Istanbul"
+    format = "🇹🇷:%d-%m-%Y %H:%M:%S "
+}
+
+tztime foreign {
+    format = "%H:%M"
+    timezone = "Europe/Berlin"
 }
