@@ -108,3 +108,5 @@
 	sort = version:refname
 [pull]
 	rebase = true
+[credential "https://gitlab.archlinux.org"]
+	helper = !/usr/bin/glab auth git-credential
