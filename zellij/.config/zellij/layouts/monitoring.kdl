@@ -5,7 +5,7 @@ layout {
           args "-f" "-e" "-x"
         }
         pane command="dmesg" {
-            args "-w"
+            args "-w" "--color=never"
         }
     }
 }
