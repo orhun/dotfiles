@@ -1,16 +1,18 @@
 {
-  "BACKGROUND_COLOR": "#2b2d31",
+  "BACKGROUND_COLOR": "#2c2d32",
   "IS_MAXIMIZED": true,
   "IS_MINIMIZED": false,
   "WINDOW_BOUNDS": {
-    "x": 0,
-    "y": 23,
-    "width": 1920,
-    "height": 1057
+    "x": 963,
+    "y": 34,
+    "width": 946,
+    "height": 1035
   },
   "MINIMIZE_TO_TRAY": false,
   "OPEN_ON_STARTUP": false,
   "SKIP_HOST_UPDATE": true,
   "DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true,
-  "chromiumSwitches": {}
+  "chromiumSwitches": {},
+  "offloadAdmControls": true,
+  "enableHardwareAcceleration": true
 }
