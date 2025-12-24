@@ -1,35 +1,54 @@
+# ----------------------------
+# Indexed colors (16–17)
+# ----------------------------
 [[colors.indexed_colors]]
-color = "#ffa066"
 index = 16
+color = "#D08770" # orange
 
 [[colors.indexed_colors]]
-color = "#ff5d62"
 index = 17
+color = "#BF616A" # red
 
-[colors.bright]
-black = "#727169"
-blue = "#7fb4ca"
-cyan = "#7aa89f"
-green = "#98bb6c"
-magenta = "#938aa9"
-red = "#e82424"
-white = "#dcd7ba"
-yellow = "#e6c384"
 
+# ----------------------------
+# Normal colors
+# ----------------------------
 [colors.normal]
-black = "#090618"
-blue = "#7e9cd8"
-cyan = "#6a9589"
-green = "#76946a"
-magenta = "#957fb8"
-red = "#c34043"
-white = "#c8c093"
-yellow = "#c0a36e"
+black   = "#191D24"
+red     = "#BF616A"
+green   = "#A3BE8C"
+yellow  = "#EBCB8B"
+blue    = "#5E81AC"
+magenta = "#B48EAD"
+cyan    = "#8FBCBB"
+white   = "#D8DEE9"
 
+
+# ----------------------------
+# Bright colors
+# ----------------------------
+[colors.bright]
+black   = "#434C5E"
+red     = "#C5727A"
+green   = "#B1C89D"
+yellow  = "#EFD49F"
+blue    = "#81A1C1"
+magenta = "#BE9DB8"
+cyan    = "#9FC6C5"
+white   = "#ECEFF4"
+
+
+# ----------------------------
+# Primary colors
+# ----------------------------
 [colors.primary]
-background = "#1f1f23"
-foreground = "#dcd7ba"
+background = "#191D24"
+foreground = "#D8DEE9"
 
+
+# ----------------------------
+# Selection colors
+# ----------------------------
 [colors.selection]
-background = "#2d4f67"
-foreground = "#c8c093"
+background = "#3B4252"
+foreground = "#ECEFF4"
