@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-feh --no-fehbg --image-bg "#252b39" --bg-max /home/orhun/images/kanagawa-arch.png
+images=(
+  /home/orhun/images/arch_blue.png
+  /home/orhun/images/arch_nz.png
+  /home/orhun/images/arch_probes.jpg
+  /home/orhun/images/patrol-night.jpg
+)
+
+feh --no-fehbg --image-bg "#252b39" --bg-fill "${images[RANDOM % ${#images[@]}]}"
