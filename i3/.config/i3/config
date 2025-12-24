@@ -240,20 +240,20 @@ bindsym XF86MonBrightnessDown exec light -U 10
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  # strip_workspace_numbers yes
   position top
   status_command i3status
   tray_output none
   colors {
-    statusline #dcd7ba
-    background #16161d
-    focused_workspace #16161d #16161d #c8c093
-    inactive_workspace #16161d #16161d #3E3E38
+    statusline #D8DEE9
+    background #191D24
+
+    focused_workspace   #191D24 #191D24 #A3BE8C
+    inactive_workspace  #191D24 #191D24 #4C566A
   }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.unfocused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
-client.focused_inactive #16161d #16161d #3E3E38 #6a9589 #3E3E38
-client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
+client.unfocused        #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
+client.focused_inactive #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
+client.focused          #5E81AC   #191D24   #D8DEE9   #A3BE8C   #5E81AC
 # client.focused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
