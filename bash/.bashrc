@@ -27,7 +27,7 @@ PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
 
 # General variables
 XDG_CONFIG_HOME="$HOME/.config"
-PATH="$PATH:$HOME/.cargo/bin:$HOME/scripts:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/var/lib/snapd/snap/bin"
+PATH="$PATH:$HOME/.cargo/bin:$HOME/scripts:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/var/lib/snapd/snap/bin:/drv/rustrover/RustRover-2025.2/bin"
 export ARCH="x86_64"
 export LC_ALL="en_US.utf-8"
 export LC_CTYPE="en_US.utf-8"
