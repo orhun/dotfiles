@@ -1,6 +1,6 @@
--- AstroUI provides the basis for configuring the AstroNvim User Interface
--- Configuration documentation can be found with `:h astroui`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
+-- astroui provides the basis for configuring the astronvim user interface
+-- configuration documentation can be found with `:h astroui`
+-- note: we highly recommend setting up the lua language server (`:lspinstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec

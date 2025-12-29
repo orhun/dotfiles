@@ -1,10 +1,11 @@
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
+-- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
+--       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
-  lazy = false,
   ---@type AstroCoreOpts
   opts = {
     -- Configure core features of AstroNvim
@@ -12,7 +13,7 @@ return {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -67,15 +68,16 @@ return {
         -- noswapfile = true, -- disable swap files
       },
     },
+    -- Mappings can be configured through AstroCore as well.
+    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
-        ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
         L = {
-          function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+          function() require("astrocore.buffer").nav(vim.v.count1) end,
           desc = "Next buffer",
         },
         H = {
-          function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+          function() require("astrocore.buffer").nav(-vim.v.count1) end,
           desc = "Previous buffer",
         },
         ["<C-g>"] = { ":ToggleTerm size=30 direction=horizontal<cr>", desc = "Toggle terminal" },
@@ -85,10 +87,9 @@ return {
         ["<esc>"] = { ":nohl<cr>", desc = "No highlight" },
         ["<C-s>"] = { ":w!<cr>", desc = "Save file" },
         ["<C-q>"] = { ":qa!<cr>", desc = "Exit" },
-        ["<C-f>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
-        ["<C-k>"] = { function() require("telescope.builtin").live_grep() end, desc = "Find words" },
         ["<C-d>"] = { "<C-d>zz", desc = "Scroll down" },
         ["<C-u>"] = { "<C-u>zz", desc = "Scroll up" },
+        ["<C-t>"] = { ":Tv<cr>", desc = "Launch Television" },
         ["<A-z>"] = { ":set wrap!<cr>", desc = "Toggle word wrap" },
         ["[x"] = { ":GitConflictPrevConflict<cr>", desc = "Previous Git conflict" },
         ["]x"] = { ":GitConflictNextConflict<cr>", desc = "Next Git conflict" },
@@ -97,7 +98,6 @@ return {
         ["ct"] = { ":GitConflictChooseTheirs<cr>", desc = "Git conflict - choose theirs" },
         ["cb"] = { ":GitConflictChooseBoth<cr>", desc = "Git conflict - choose both" },
         ["c0"] = { ":GitConflictChooseNone<cr>", desc = "Git conflict - choose none" },
-        ["<Leader>U"] = { ":UndotreeToggle<cr>", desc = "Toggle undo history" },
         ["<Leader>gg"] = { ":Git<cr>", desc = "Open Git" },
         ["<Leader>m"] = { ":MarkdownPreview<cr>", desc = "Show markdown preview" },
         ["<Leader>z"] = { ":ZenMode<cr>", desc = "Toggle Zen mode" },
@@ -105,8 +105,9 @@ return {
         ["<Leader>uG"] = { ":CellularAutomaton game_of_life<cr>", desc = "Game of life" },
         ["<Leader>uz"] = { ":CellularAutomaton scramble<cr>", desc = "Scramble" },
         ["<Leader>fs"] = { ":Silicon<cr>", desc = "Save image" },
-        ["<Leader>fM"] = { ":Telescope media_files<cr>", desc = "Find media files" },
         ["<Leader>s"] = { function() require("resession").load "Last Session" end, desc = "Load last session" },
+        ["<Leader>um"] = { ":MinimapToggle<cr>", desc = "Toggle minimap" },
+        ["<Leader>ld"] = { ":Krust<cr>", desc = "Rust diagnostics" },
       },
       i = {
         ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },
