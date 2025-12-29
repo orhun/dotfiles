@@ -98,7 +98,12 @@ bindsym $mod+shift+grave exec dbus-send --print-reply \
 bindsym $mod+Shift+q kill
 
 # Start the dmenu
-bindsym $mod+d exec dmenu_run -nb '#16161d' -nf '#6a9589' -sb '#c8c093' -sf '#21222c' -fn 'pango:monospace:pixelsize=14'
+bindsym $mod+d exec dmenu_run \
+  -nb '#141821' \
+  -nf '#4C566A' \
+  -sb '#5E81AC' \
+  -sf '#ECEFF4' \
+  -fn 'pango:monospace:pixelsize=14'
 
 # Change focus
 bindsym $mod+j focus left
