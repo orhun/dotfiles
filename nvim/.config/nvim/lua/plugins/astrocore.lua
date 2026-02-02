@@ -108,6 +108,7 @@ return {
         ["<Leader>s"] = { function() require("resession").load "Last Session" end, desc = "Load last session" },
         ["<Leader>um"] = { ":MinimapToggle<cr>", desc = "Toggle minimap" },
         ["<Leader>ld"] = { ":Krust<cr>", desc = "Rust diagnostics" },
+        ["<Leader>ll"] = { ":LspStart<cr>", desc = "Start LSP" },
       },
       i = {
         ["<C-s>"] = { "<esc>:w!<cr>", desc = "Save file" },

@@ -180,4 +180,13 @@ return {
       },
     },
   },
+  {
+    "AstroNvim/astrolsp",
+    opts = function(_, opts)
+      opts.config = opts.config or {}
+      local ra = opts.config.rust_analyzer or {}
+      ra.autostart = false
+      opts.config.rust_analyzer = ra
+    end,
+  },
 }
