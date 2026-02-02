@@ -166,4 +166,15 @@ ffmpeg-spectogram() {
   ffmpeg -i "$1" -lavfi showspectrumpic=s=1920x1080:mode=separate spectrogram.png
 }
 
+# re-run the last command and yank it
+yank_last_command() {
+  local cmd
+  cmd="$(fc -ln -0)"
+
+  # avoid recursion
+  [[ "$cmd" == *"| y"* ]] && return
+
+  eval "$cmd | y"
+}
+
 # vim:set ts=2 sw=2 et:

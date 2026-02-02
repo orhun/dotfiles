@@ -21,6 +21,7 @@ shopt -s histappend
 stty -ixon
 bind -x '"\t": fzf_bash_completion'
 bind '"\ec": "$EDITOR .\n"'
+bind -x '"\C-y": yank_last_command'
 
 # Prompt
 PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
