@@ -3,7 +3,7 @@
 "\e[B": history-search-forward
 "\C-f": "fg\n"
 "\C-s": "$(search-command)\e\C-e\er"
-"\e": "tere\n"
+"\e\C-m": "tere\n"
 
 # git shortcuts
 "\er": redraw-current-line

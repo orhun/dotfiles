@@ -177,4 +177,44 @@ yank_last_command() {
   eval "$cmd | y"
 }
 
+# restart USB bus
+restart-usb() {
+  DEV=0000:05:00.3
+  echo "$DEV" | sudo tee /sys/bus/pci/drivers/xhci_hcd/unbind
+  sleep 2
+  echo "$DEV" | sudo tee /sys/bus/pci/drivers/xhci_hcd/bind
+}
+
+# show DNS status
+dns_status() {
+  echo "===== DNS STATUS (resolvectl) ====="
+  resolvectl status
+
+  echo -e "\n===== SYSTEM RESOLUTION (getent) ====="
+  getent ahosts discord.com
+  getent ahosts gateway.discord.gg
+
+  echo -e "\n===== DIRECT DNS (dig) ====="
+  dig +short discord.com
+  dig +short gateway.discord.gg
+
+  echo -e "\n===== RESOLVECTL QUERY ====="
+  resolvectl query discord.com
+
+  echo -e "\n===== /etc/resolv.conf ====="
+  cat /etc/resolv.conf
+
+  echo -e "\n===== DNSCRYPT STATUS ====="
+  systemctl status dnscrypt-proxy --no-pager
+
+  echo -e "\n===== LISTENING ON 127.0.2.1 ====="
+  ss -lntup | grep 127.0.2.1 || echo "Nothing listening on 127.0.2.1"
+
+  echo -e "\n===== ROUTING ====="
+  ip route
+
+  echo -e "\n===== PUBLIC IP ====="
+  curl -s https://ifconfig.me && echo
+}
+
 # vim:set ts=2 sw=2 et:

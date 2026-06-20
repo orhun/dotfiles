@@ -267,4 +267,9 @@ elephant() {
   esac | base64 -d | gzip -d
 }
 
+# launch templeOS
+templeos() {
+  QEMU_AUDIO_DRV= qemu-system-x86_64 -m 1G -enable-kvm -drive file=/home/orhun/temple
+}
+
 # vim:set ts=2 sw=2 et:
