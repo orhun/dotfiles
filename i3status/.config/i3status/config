@@ -19,7 +19,7 @@ general {
 order += "ipv6"
 order += "ethernet _first_"
 order += "wireless _first_"
-order += "read_file vpn"
+order += "run_watch vpn"
 order += "read_file updates"
 order += "battery all"
 order += "disk /"
@@ -27,8 +27,8 @@ order += "disk /drv"
 order += "volume master"
 order += "load"
 order += "memory"
-order += "tztime local"
-# order += "tztime foreign"
+# order += "tztime local"
+order += "tztime foreign"
 
 ipv6 {
     format_up = "🌐IPv6: %ip"
@@ -45,10 +45,10 @@ wireless _first_ {
     format_down = "📶W:down"
 }
 
-read_file vpn {
-    format = "🛡️V:%content"
-    format_bad = "🛡️V:-"
-    path = "/var/local/openvpn_status"
+run_watch vpn {
+    format = "🛡️V:%status"
+    format_down = "🛡️V:no"
+    pidfile = "/home/orhun/.config/vortix/run/do.pid"
 }
 
 read_file updates {
@@ -98,6 +98,6 @@ tztime local {
 }
 
 tztime foreign {
-    format = "%H:%M"
+    format = "%d-%m-%Y %H:%M:%S "
     timezone = "Europe/Berlin"
 }
