@@ -1,11 +1,19 @@
 layout {
-    pane command="bpytop" focus=true
-    pane split_direction="vertical" size="30%" {
-        pane command="journalctl" {
-          args "-f" "-e" "-x"
+    tab name="monitoring" {
+        pane command="bpytop" focus=true
+        pane split_direction="vertical" size="30%" {
+            pane command="journalctl" {
+                args "-f" "-e" "-x"
+            }
+            pane command="dmesg" {
+                args "-w" "--color=never"
+            }
         }
-        pane command="dmesg" {
-            args "-w" "--color=never"
+    }
+
+    tab name="vortix" {
+        pane command="sudo" {
+            args "vortix" "--config-dir" "/home/orhun/.config/vortix"
         }
     }
 }
