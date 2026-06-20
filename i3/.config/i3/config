@@ -83,9 +83,6 @@ bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
 # Take a screenshot
 bindsym $mod+shift+o exec ~/scripts/capture.sh
 
-# Toggle VPN
-bindsym $mod+shift+v exec pkexec ~/scripts/toggle_vpn.sh
-
 # Notification history
 bindsym $mod+grave exec dbus-send --print-reply \
         --dest=org.freedesktop.Notifications /org/freedesktop/Notifications/ctl org.freedesktop.Notifications.History
@@ -261,4 +258,4 @@ bar {
 client.unfocused        #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
 client.focused_inactive #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
 client.focused          #5E81AC   #191D24   #D8DEE9   #A3BE8C   #5E81AC
-# client.focused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
+# client.focused        #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
