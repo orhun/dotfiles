@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo wifi-menu
+sudo impala
