@@ -13,8 +13,13 @@ set scrolloff=5
 
 " Do incremental searching.
 set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 set relativenumber
 set nowrap
+set clipboard+=unnamedplus
+set ideajoin
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -59,6 +64,7 @@ nnoremap <C-u> <C-u>zz
 nnoremap <Esc> :nohlsearch<CR>
 map <C-w> <Action>(FindInPath)
 vnoremap <Leader>p "0p
+vnoremap // y/<C-R>"<CR>
 
 " Override inherited NERDTree bindings with RustRover equivalents.
 map <C-n> <Action>(ActivateProjectToolWindow)
@@ -72,6 +78,11 @@ map <Leader>r <Action>(ExternalSystem.ProjectRefreshAction)
 map <Leader>s <Action>(FileStructurePopup)
 map <Leader>o <Action>(ActivateProjectToolWindow)
 map <Leader>c <Action>(CloseEditor)
+map <Leader>a <Action>(GotoAction)
+map <Leader>f <Action>(ReformatCode)
+map <Leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <Leader>m <Action>(ShowBookmarks)
+map <Leader>j <Action>(GotoSymbol)
 map <Leader>b <Action>(ToggleLineBreakpoint)
 
 
