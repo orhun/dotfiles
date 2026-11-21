@@ -34,7 +34,7 @@ wezterm.on("toggle-theme", function(window, pane)
 		window:set_config_overrides({
 			color_scheme = scheme,
 			colors = {
-				background = "#1d1c2d",
+				background = "#02080d",
 				foreground = "#ffffff",
 			},
 		})
