@@ -50,7 +50,7 @@ if [ ! -e "$EMOJI_MENU_DB" ]; then
 fi
 
 # Rofi can handle large inputs and emojis
-rofi -p '🔍' -width 610 -dmenu \
+rofi -p '🔍' -width 610 -font 'monospace 16' -dmenu \
   <"$EMOJI_MENU_DB" |
   grep -oP '^[^\s]+' |
   tr -d '\n' |
