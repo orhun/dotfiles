@@ -23,7 +23,7 @@ follow_symlinks = true
 
 [username]
 detect_env_vars = []
-format = "[>_](bold) [$user]($style) [ζ](blue) "
+format = "[>_](bold) [$user]($style) [~](blue) "
 style_root = "red bold"
 style_user = "white"
 show_always = true

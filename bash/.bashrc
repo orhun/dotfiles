@@ -24,11 +24,11 @@ bind '"\ec": "$EDITOR .\n"'
 bind -x '"\C-y": yank_last_command'
 
 # Prompt
-PS1='(\u \[\e[34m\]ζ\[\e[39m\] \w) '
+PS1='(\u \[\e[34m\]🐀\[\e[39m\] \w) '
 
 # General variables
 XDG_CONFIG_HOME="$HOME/.config"
-PATH="$PATH:$HOME/.cargo/bin:$HOME/scripts:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/var/lib/snapd/snap/bin:/home/orhun/rustrover/RustRover-2025.2/bin"
+PATH="$PATH:$HOME/.cargo/bin:$HOME/scripts:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/var/lib/snapd/snap/bin"
 export ARCH="x86_64"
 export LC_ALL="en_US.utf-8"
 export LC_CTYPE="en_US.utf-8"
@@ -39,7 +39,7 @@ export EDITOR="nvim"
 export GPG_TTY="$(tty)"
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/library
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
-export HISTSIZE=2000
+export HISTSIZE=4200000
 export HISTCONTROL=ignorespace:erasedups
 
 # Workspace variables
@@ -54,7 +54,7 @@ export APKBUILDS="$HOME/apkbuilds"
 export APORTS="$WORKSPACE/aports"
 export CACHEDIR="/var/lib/repro/cache"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export WINEPREFIX="/drv/wine"
+export WINEPREFIX="/drv2/wine"
 
 # Run zellij when connected via SSH
 if [[ $- =~ i ]] && [[ -n "$SSH_CONNECTION" ]]; then
@@ -67,7 +67,19 @@ eval "$(zoxide init bash)"
 
 # Start zellij
 term=$(basename "$(cat "/proc/$PPID/comm")")
-[[ "$term" != "wezterm"* ]] && eval "$(zellij setup --generate-auto-start bash)"
+[[ "$term" != "wezterm"* && "$term" != "ratty"* ]] && eval "$(zellij setup --generate-auto-start bash)"
 
 # Initialize starship prompt
 eval "$(starship init bash)"
+
+# Initialize flyline prompt
+if [[ $- == *i* && "$term" != "ratty" ]] && enable -f /usr/lib/bash/libflyline.so flyline; then
+	flyline key bind Ctrl+f 'always=insertString(fg)+submitOrNewline'
+	flyline key bind Alt+Enter 'always=insertString(tere)+submitOrNewline'
+	flyline key bind Alt+c 'always=insertString($EDITOR .)+submitOrNewline'
+	flyline key bind Ctrl+Enter always=runAgentMode
+	flyline set-agent-mode \
+    --system-prompt "Be concise. Answer with a JSON array of at most 3 items with objects containing: command and description. Command will be a Bash command." \
+    --trigger-prefix ': ' \
+    --command 'codex -a never exec -m gpt-5.6-luna --skip-git-repo-check --ephemeral --color always'
+fi
