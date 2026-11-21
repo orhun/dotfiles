@@ -42,7 +42,7 @@ white   = "#ECEFF4"
 # Primary colors
 # ----------------------------
 [colors.primary]
-background = "#191D24"
+background = "#1d1c2d"
 foreground = "#D8DEE9"
 
 

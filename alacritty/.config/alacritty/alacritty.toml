@@ -12,7 +12,7 @@ program = "/bin/bash"
 TERM = "xterm-256color"
 
 [font]
-size = 9.0
+size = 14.0
 
 [font.bold]
 family = "Ubuntu Mono Ligaturized"
