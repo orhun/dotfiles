@@ -1,0 +1,9 @@
+<application>
+  <component name="GraziConfig">
+    <option name="checkingContext">
+      <CheckingContext>
+        <option name="isCheckInStringLiteralsEnabled" value="false" />
+      </CheckingContext>
+    </option>
+  </component>
+</application>

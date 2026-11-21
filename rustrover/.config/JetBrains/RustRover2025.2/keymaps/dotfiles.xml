@@ -1,7 +1,217 @@
 <keymap version="1" name="dotfiles" parent="Default for XWin">
+  <action id="ActivateBookmarksToolWindow" />
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="alt f12" />
     <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="CIDR.Debugger.CopyAddress">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
+  <action id="CIDR.Debugger.DisassembleFrame">
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="CIDR.Debugger.ImageViewerActions.CopyImage">
+    <keyboard-shortcut first-keystroke="ctrl c" />
+    <keyboard-shortcut first-keystroke="ctrl insert" />
+  </action>
+  <action id="Cargo.DetachCargoProject">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="ChangesView.AddUnversioned">
+    <keyboard-shortcut first-keystroke="ctrl alt a" />
+  </action>
+  <action id="ChangesView.EditSource">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="ChangesView.ShelveSilently">
+    <keyboard-shortcut first-keystroke="shift ctrl h" />
+  </action>
+  <action id="ChangesView.ToggleCommitUi">
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="ChangesView.UnshelveSilently">
+    <keyboard-shortcut first-keystroke="ctrl alt u" />
+  </action>
+  <action id="CheckinProject">
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="Code.Review.Editor.New.Comment">
+    <keyboard-shortcut first-keystroke="shift ctrl x" />
+  </action>
+  <action id="CodeReview.NextComment">
+    <keyboard-shortcut first-keystroke="ctrl alt down" />
+  </action>
+  <action id="CodeReview.PreviousComment">
+    <keyboard-shortcut first-keystroke="ctrl alt up" />
+  </action>
+  <action id="Console.Jdbc.BrowseHistory">
+    <keyboard-shortcut first-keystroke="ctrl alt e" />
+  </action>
+  <action id="Console.Jdbc.Cancel">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
+  <action id="Console.Jdbc.Execute">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
+  <action id="Console.TableResult.EditFilterCriteria">
+    <keyboard-shortcut first-keystroke="shift ctrl alt f" />
+  </action>
+  <action id="Console.TableResult.MaximizeEditingCell">
+    <keyboard-shortcut first-keystroke="shift ctrl alt m" />
+  </action>
+  <action id="Console.TableResult.NavigateAction">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Console.TableResult.OpenLocalFileAction">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Console.TableResult.OpenWebUrlAction">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Console.TableResult.SelectColumn">
+    <keyboard-shortcut first-keystroke="ctrl space" />
+  </action>
+  <action id="Console.TableResult.SelectRow">
+    <keyboard-shortcut first-keystroke="shift space" />
+  </action>
+  <action id="Console.TableResult.SetDefault">
+    <keyboard-shortcut first-keystroke="ctrl alt d" />
+  </action>
+  <action id="Console.TableResult.SetDefault.Fallback">
+    <keyboard-shortcut first-keystroke="ctrl alt d" />
+  </action>
+  <action id="Console.TableResult.SetNull">
+    <keyboard-shortcut first-keystroke="ctrl alt n" />
+  </action>
+  <action id="Console.TableResult.SetNull.Fallback">
+    <keyboard-shortcut first-keystroke="ctrl alt n" />
+  </action>
+  <action id="Console.TableResult.Submit">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
+  <action id="Console.TableResult.SubmitAndCommit">
+    <keyboard-shortcut first-keystroke="shift ctrl alt enter" />
+  </action>
+  <action id="Console.Transaction.Commit">
+    <keyboard-shortcut first-keystroke="shift ctrl alt enter" />
+  </action>
+  <action id="DatabaseView.CopyAction">
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="DatabaseView.CopyDdlAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt g" />
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
+  <action id="DatabaseView.CopyTable">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="DatabaseView.DataSourceCopyAction">
+    <keyboard-shortcut first-keystroke="ctrl c" />
+    <keyboard-shortcut first-keystroke="ctrl insert" />
+  </action>
+  <action id="DatabaseView.DataSourceCutAction">
+    <keyboard-shortcut first-keystroke="ctrl x" />
+    <keyboard-shortcut first-keystroke="shift delete" />
+  </action>
+  <action id="DatabaseView.DataSourcePasteAction">
+    <keyboard-shortcut first-keystroke="ctrl v" />
+    <keyboard-shortcut first-keystroke="shift insert" />
+  </action>
+  <action id="DatabaseView.Ddl.AlterObject">
+    <keyboard-shortcut first-keystroke="ctrl f6" />
+  </action>
+  <action id="DatabaseView.DeactivateAction">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
+  <action id="DatabaseView.DropAction">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="DatabaseView.ForceRefresh">
+    <keyboard-shortcut first-keystroke="shift ctrl f5" />
+  </action>
+  <action id="DatabaseView.ForestNodeShiftDownAction">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="DatabaseView.ForestNodeShiftLeftAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt left" />
+  </action>
+  <action id="DatabaseView.ForestNodeShiftRightAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt right" />
+  </action>
+  <action id="DatabaseView.ForestNodeShiftUpAction">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="DatabaseView.FullTextSearch">
+    <keyboard-shortcut first-keystroke="shift ctrl alt f" />
+  </action>
+  <action id="DatabaseView.MoveToGroup">
+    <keyboard-shortcut first-keystroke="f6" />
+  </action>
+  <action id="DatabaseView.OpenDdlInConsole">
+    <keyboard-shortcut first-keystroke="shift ctrl alt b" />
+  </action>
+  <action id="DatabaseView.OpenFamilyAction">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="DatabaseView.PropertiesAction">
+    <keyboard-shortcut first-keystroke="shift enter" />
+  </action>
+  <action id="DatabaseView.Refresh">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="DatabaseView.ShowDiff">
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="DatabaseView.SqlGenerator">
+    <keyboard-shortcut first-keystroke="ctrl alt g" />
+  </action>
+  <action id="DatabaseView.Tools">
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="DatabaseView.Tools.RevertChanges">
+    <keyboard-shortcut first-keystroke="ctrl alt z" />
+  </action>
+  <action id="DatabaseView.Tools.SubmitChanges">
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="Diagram.DeleteSelection">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="Diagram.DeselectAll">
+    <keyboard-shortcut first-keystroke="ctrl alt a" />
+  </action>
+  <action id="Diagram.SelectAll">
+    <keyboard-shortcut first-keystroke="ctrl a" />
+  </action>
+  <action id="Docker.RemoteServers.StartComposeService">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
+  <action id="Docker.RemoteServers.StartContainer">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
+  <action id="Docker.RemoteServers.StopComposeApp">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
+  <action id="Docker.RemoteServers.StopComposeService">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
+  <action id="Docker.RemoteServers.StopContainer">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+  </action>
+  <action id="DomCollectionControl.Add">
+    <keyboard-shortcut first-keystroke="insert" />
+  </action>
+  <action id="DomCollectionControl.Edit">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="DomCollectionControl.Remove">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="DownloadBackendFileToClient">
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+  <action id="DumpMLCompletionFeatures">
+    <keyboard-shortcut first-keystroke="shift ctrl alt 9" />
   </action>
   <action id="EditorDown">
     <keyboard-shortcut first-keystroke="ctrl n" />
@@ -9,16 +219,274 @@
   <action id="EditorUp">
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
+  <action id="Generate.Missing.Members.ES6">
+    <keyboard-shortcut first-keystroke="ctrl i" />
+  </action>
+  <action id="Generate.Missing.Members.TypeScript">
+    <keyboard-shortcut first-keystroke="ctrl i" />
+  </action>
+  <action id="Git.Add">
+    <keyboard-shortcut first-keystroke="ctrl alt a" />
+  </action>
+  <action id="Git.Branches">
+    <keyboard-shortcut first-keystroke="shift ctrl back_quote" />
+  </action>
+  <action id="Git.Commit.And.Push.Executor">
+    <keyboard-shortcut first-keystroke="ctrl alt k" />
+  </action>
+  <action id="Git.Commit.Stage">
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="Git.CreateNewBranch.FromCommit">
+    <keyboard-shortcut first-keystroke="ctrl alt n" />
+  </action>
+  <action id="Git.Log.Branches.Navigate.Log.To.Selected.Branch">
+    <keyboard-shortcut first-keystroke="alt f1" />
+  </action>
+  <action id="Git.ShowBranches">
+    <keyboard-shortcut first-keystroke="shift ctrl back_quote" />
+  </action>
+  <action id="Git.Stage.Add">
+    <keyboard-shortcut first-keystroke="ctrl alt a" />
+  </action>
+  <action id="Git.Stage.Reset">
+    <keyboard-shortcut first-keystroke="ctrl alt z" />
+  </action>
+  <action id="Git.Stage.Revert">
+    <keyboard-shortcut first-keystroke="ctrl alt z" />
+  </action>
+  <action id="Git.Stash.Drop">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="Git.WorkingTrees.Refresh">
+    <keyboard-shortcut first-keystroke="ctrl alt y" />
+  </action>
+  <action id="Git.WorkingTrees.Remove">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="GitLab.Merge.Request.List.Refresh">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="GitLab.Merge.Request.Refresh">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="Github.PullRequest.Changed.MarkViewed.Toggle">
+    <keyboard-shortcut first-keystroke="shift ctrl s" />
+  </action>
+  <action id="Github.PullRequest.Details.Reload">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="Github.PullRequest.List.Reload">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="Github.PullRequest.Timeline.Update">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="Graph.ApplyCurrentLayout">
+    <keyboard-shortcut first-keystroke="shift f5" />
+  </action>
+  <action id="Graph.Delete">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="Graph.RouteEdges">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="Graph.ZoomIn">
+    <keyboard-shortcut first-keystroke="add" />
+  </action>
+  <action id="Graph.ZoomOut">
+    <keyboard-shortcut first-keystroke="subtract" />
+  </action>
+  <action id="HTTPClient.PreviewHtml.NavigateBack">
+    <keyboard-shortcut first-keystroke="left" />
+  </action>
+  <action id="HTTPClient.PreviewHtml.NavigateForward">
+    <keyboard-shortcut first-keystroke="right" />
+  </action>
   <action id="InsertLiveTemplate" />
   <action id="IntroduceVariable" />
+  <action id="JavaScript.ShowComponentUsages">
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+  <action id="Jdbc.OpenConsole.Any">
+    <keyboard-shortcut first-keystroke="shift ctrl f10" />
+  </action>
+  <action id="Jdbc.OpenConsole.New">
+    <keyboard-shortcut first-keystroke="shift ctrl q" />
+  </action>
+  <action id="Jdbc.OpenConsole.New.Generate">
+    <keyboard-shortcut first-keystroke="shift ctrl q" />
+  </action>
+  <action id="Jdbc.OpenConsole.New.InPath">
+    <keyboard-shortcut first-keystroke="shift ctrl alt q" />
+  </action>
+  <action id="Jdbc.OpenEditor.Console">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Jdbc.OpenEditor.DDL">
+    <keyboard-shortcut first-keystroke="ctrl b" />
+  </action>
+  <action id="Jdbc.OpenEditor.Data">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Jdbc.OpenEditor.Grid.DDL">
+    <keyboard-shortcut first-keystroke="ctrl alt home" />
+  </action>
+  <action id="JsonPathExportEvaluateResultAction">
+    <keyboard-shortcut first-keystroke="alt o" />
+  </action>
+  <action id="PublishGroup.UploadTo">
+    <keyboard-shortcut first-keystroke="shift ctrl alt x" />
+  </action>
+  <action id="RecentChanges">
+    <keyboard-shortcut first-keystroke="shift alt c" />
+  </action>
+  <action id="ReformatWithPrettierAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt p" />
+  </action>
+  <action id="RemoteHostView.CopyPaths">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+  </action>
+  <action id="RemoteHostView.EditSource">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="RemoteHostView.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="RemoteServers.EditServerConfig">
+    <keyboard-shortcut first-keystroke="shift f4" />
+  </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
     <keyboard-shortcut first-keystroke="shift caps_lock" />
+  </action>
+  <action id="RunAnything" />
+  <action id="RunJsbtTask">
+    <keyboard-shortcut first-keystroke="alt f11" />
+  </action>
+  <action id="Rust.Build">
+    <keyboard-shortcut first-keystroke="ctrl f9" />
+  </action>
+  <action id="Rust.CallHierarchy">
+    <keyboard-shortcut first-keystroke="ctrl alt h" />
+  </action>
+  <action id="Session.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="ShowUmlDiagram">
+    <keyboard-shortcut first-keystroke="shift ctrl alt u" />
+  </action>
+  <action id="ShowUmlDiagramPopup">
+    <keyboard-shortcut first-keystroke="ctrl alt u" />
+  </action>
+  <action id="Sql.EditParameter">
+    <keyboard-shortcut first-keystroke="f4" />
   </action>
   <action id="Terminal.Paste">
     <keyboard-shortcut first-keystroke="ctrl v" />
     <keyboard-shortcut first-keystroke="shift insert" />
     <keyboard-shortcut first-keystroke="shift ctrl v" />
     <keyboard-shortcut first-keystroke="ctrl alt v" />
+  </action>
+  <action id="UML.Find">
+    <keyboard-shortcut first-keystroke="ctrl f" />
+    <keyboard-shortcut first-keystroke="alt f3" />
+  </action>
+  <action id="UML.ShowChanges">
+    <keyboard-shortcut first-keystroke="shift ctrl alt d" />
+  </action>
+  <action id="UML.ShowStructure">
+    <keyboard-shortcut first-keystroke="ctrl f12" />
+  </action>
+  <action id="Uml.NewElement">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
+  <action id="Uml.NodeIntentions">
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Uml.ShowDiff">
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+  <action id="Vcs.CombinedDiff.CaretToNextBlock">
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="Vcs.CombinedDiff.CaretToPrevBlock">
+    <keyboard-shortcut first-keystroke="ctrl p" />
+  </action>
+  <action id="Vcs.CombinedDiff.ToggleCollapseBlock">
+    <keyboard-shortcut first-keystroke="ctrl escape" />
+  </action>
+  <action id="Vcs.Commit.CloseDialog">
+    <keyboard-shortcut first-keystroke="escape" />
+  </action>
+  <action id="Vcs.CopyRevisionNumberAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt c" />
+  </action>
+  <action id="Vcs.EditSource">
+    <keyboard-shortcut first-keystroke="f4" />
+  </action>
+  <action id="Vcs.Log.FocusTextFilter">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="Vcs.Log.GoToChild">
+    <keyboard-shortcut first-keystroke="left" />
+  </action>
+  <action id="Vcs.Log.GoToParent">
+    <keyboard-shortcut first-keystroke="right" />
+  </action>
+  <action id="Vcs.Log.GoToRef">
+    <keyboard-shortcut first-keystroke="ctrl f" />
+    <keyboard-shortcut first-keystroke="alt f3" />
+  </action>
+  <action id="Vcs.Log.Refresh">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="Vcs.Log.ShowAllAffected">
+    <keyboard-shortcut first-keystroke="shift alt a" />
+  </action>
+  <action id="Vcs.Log.ShowTooltip">
+    <keyboard-shortcut first-keystroke="ctrl q" />
+  </action>
+  <action id="Vcs.Push">
+    <keyboard-shortcut first-keystroke="shift ctrl k" />
+  </action>
+  <action id="Vcs.ReformatCommitMessage">
+    <keyboard-shortcut first-keystroke="ctrl alt l" />
+  </action>
+  <action id="Vcs.RefreshFileHistory">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="Vcs.Shelf.Drop">
+    <keyboard-shortcut first-keystroke="delete" />
+  </action>
+  <action id="Vcs.UpdateProject">
+    <keyboard-shortcut first-keystroke="ctrl t" />
+  </action>
+  <action id="WD.UploadCurrentRemoteFileAction">
+    <keyboard-shortcut first-keystroke="shift alt q" />
+  </action>
+  <action id="WebOpenInAction">
+    <keyboard-shortcut first-keystroke="alt f2" />
+  </action>
+  <action id="XPathView.Actions.Evaluate">
+    <keyboard-shortcut first-keystroke="ctrl alt x" second-keystroke="e" />
+  </action>
+  <action id="XPathView.Actions.FindByExpression">
+    <keyboard-shortcut first-keystroke="ctrl alt x" second-keystroke="f" />
+  </action>
+  <action id="XPathView.Actions.ShowPath">
+    <keyboard-shortcut first-keystroke="ctrl alt x" second-keystroke="p" />
+  </action>
+  <action id="org.intellij.plugins.markdown.ui.actions.styling.InsertImageAction">
+    <keyboard-shortcut first-keystroke="ctrl u" />
+  </action>
+  <action id="runShellFileAction">
+    <keyboard-shortcut first-keystroke="shift ctrl f10" />
+  </action>
+  <action id="sql.ExtractFunctionAction">
+    <keyboard-shortcut first-keystroke="ctrl alt m" />
+  </action>
+  <action id="sql.SelectInDatabaseView">
+    <keyboard-shortcut first-keystroke="shift alt b" />
   </action>
 </keymap>

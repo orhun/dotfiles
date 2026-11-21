@@ -1,0 +1,17 @@
+<application>
+  <component name="LLMSettings">
+    <option name="chat_forced_llm_per_mode">
+      <map>
+        <entry key="chat" value="6" />
+      </map>
+    </option>
+    <option name="chat_preferred_llm" value="auto_9f9c7f49" />
+    <option name="chat_preferred_llm_per_mode">
+      <map>
+        <entry key="chat" value="auto_9f9c7f49" />
+      </map>
+    </option>
+    <option name="codebase_enabled_in_chat_mode" value="false" />
+    <option name="custom_chat_instruction_was_shown" value="true" />
+  </component>
+</application>

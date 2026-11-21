@@ -1,0 +1,6 @@
+de.ax.powermode
+mcdonalds
+com.intellij.ml.llm
+org.jetbrains.junie
+Subversion
+com.jetbrains.restClient
