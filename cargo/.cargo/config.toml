@@ -24,8 +24,9 @@ upg = "upgrade"
 w = "watch"
 
 [build]
-target-dir = "/drv/cargo/target"
-# rustflags = ["-Z", "threads=8"]
+target-dir = "/drv2/cargo/target"
+jobs = 16
+# rustflags = ["-Zunstable-options", "--jobs-frontend=8"]
 
 [net]
 git-fetch-with-cli = true
