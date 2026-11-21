@@ -1,9 +1,9 @@
 [global]
     log_verbosity = "trace"
     startup_notification = true
-    geometry = "1920x23+0+0"
+    geometry = "1920x46+0+0"
     wrap_content = true
-    font = "Monospace 10"
+    font = "Monospace 14"
     template = """
     [{{app_name}}] <b>{{summary}}</b>\
     {% if body %} {{body}}{% endif %} \
