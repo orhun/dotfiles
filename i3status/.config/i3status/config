@@ -23,7 +23,7 @@ order += "run_watch vpn"
 order += "read_file updates"
 order += "battery all"
 order += "disk /"
-order += "disk /drv"
+order += "disk /drv2"
 order += "volume master"
 order += "load"
 order += "memory"
@@ -78,8 +78,8 @@ disk "/" {
     format = "💾/:%avail"
 }
 
-disk "/drv" {
-    format = "💽/drv:%avail"
+disk "/drv2" {
+    format = "💽/drv2:%avail"
 }
 
 load {

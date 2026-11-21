@@ -23,10 +23,16 @@ popup_during_fullscreen smart
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monospace 12
 
 # Alternating layout
 exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
+
+# Screen resolution fix
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+
+# P1 touchpad pointer speed (-1 slowest, 1 fastest)
+exec_always --no-startup-id xinput set-prop "SNSL002D:00 2C2F:002D Touchpad" "libinput Accel Speed" 0.3
 
 # Workspace brightness
 # exec_always --no-startup-id GET_BRIGHTNESS="light" SET_BRIGHTNESS="light -S {}" i3-workspace-brightness
@@ -100,7 +106,7 @@ bindsym $mod+d exec dmenu_run \
   -nf '#4C566A' \
   -sb '#5E81AC' \
   -sf '#ECEFF4' \
-  -fn 'pango:monospace:pixelsize=14'
+  -fn 'monospace:size=12'
 
 # Change focus
 bindsym $mod+j focus left
@@ -210,7 +216,7 @@ bindsym $mod+Shift+e exec i3-msg exit
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
-bindsym $mod+Shift+m resize set 1070 px 730 px
+bindsym $mod+Shift+m resize set 3200 px 1800 px
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -242,6 +248,7 @@ bindsym XF86MonBrightnessDown exec light -U 10
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  font pango:monospace 10
   position top
   status_command i3status
   tray_output none
@@ -257,5 +264,5 @@ bar {
 # class                 border  backgr. text    indicator child_border
 client.unfocused        #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
 client.focused_inactive #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
-client.focused          #5E81AC   #191D24   #D8DEE9   #A3BE8C   #5E81AC
-# client.focused        #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
+# client.focused          #5E81AC   #191D24   #D8DEE9   #A3BE8C   #5E81AC
+client.focused        #1E222A   #191D24   #4C566A   #8FBCBB   #1E222A
